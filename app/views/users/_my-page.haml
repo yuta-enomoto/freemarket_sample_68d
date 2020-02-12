@@ -168,8 +168,32 @@
         %li.mypage-go-list
           = link_to '#' do
             一覧を見る
-
-
-
-
   %section.mypage-tab-container-bottom
+    %h2.mypage-tab-head
+      購入した商品
+    %ul.mypage-tabs
+      %li.current-transaction
+        %h3 
+          = link_to '#' do
+            取引中
+      %li.past-transaction
+        %h3 
+          = link_to '#' do
+            過去の取引
+    .tab-content
+      %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane
+        %li 
+          = link_to '#', class:"mypage-item-link" do
+            %figure
+              %img{alt: "test", src: "/assets/mypage/app-icon.jpg"}/
+            .mypage-item-body
+              .mypage-item-text
+                「Apple Air pods pro」を購入しました。
+                %span
+                  受け取評価をしてください
+              .mypage-item-status.bold.action-required
+                受け取評価待ち
+            %i.fas.fa-chevron-right
+        %li.mypage-go-list
+          = link_to '#' do
+            一覧を見る
