@@ -1,7 +1,7 @@
 .mp-container__mp-side
-  %nav.mypage-nav
-    %ul.mypage-nav-list
-      %li.nav-listmypage-zone
+  %nav.mp-container__mp-side__mypage-nav
+    %ul.mp-container__mp-side__mypage-nav__mypage-nav-list
+      %li.mp-container__mp-side__mypage-nav__mypage-nav-list__nav-listmypage-zone
         = link_to root_path do
           マイページ
           %i.fas.fa-chevron-right
@@ -57,9 +57,9 @@
         = link_to '#' do
           お問い合わせ
           %i.fas.fa-chevron-right
-    %h3.mypage-nav-head
+    %h3.mp-container__mp-side__mypage-nav__mypage-nav-head
       メルペイ
-    %ul.mypage-nav-list-2
+    %ul.mp-container__mp-side__mypage-nav__mypage-nav-list-2
       %li 
         = link_to '#' do
           売上・振込申請
@@ -68,9 +68,9 @@
         = link_to '#' do
           ポイント
           %i.fas.fa-chevron-right
-    %h3.mypage-nav-head
+    %h3.mp-container__mp-side__mypage-nav__mypage-nav-head
       設定
-    %ul.mypage-nav-list-2
+    %ul.mp-container__mp-side__mypage-nav__mypage-nav-list-2
       %li 
         = link_to '#' do
           プロフィール
