@@ -176,7 +176,6 @@ h2 {
       }
     }
     &__mypage-tab-container-notification-todo {
-      // height: 400px;
       margin: 0;
       background-color: $white;
       ul.mypage-tabs {
@@ -323,14 +322,18 @@ h2 {
         border: 0;
         background: #eee;
         font-size: 0;
-
-        li.current-transaction {
+        
+        li.active-now {
           background-color: $white;
           h3 {
             a {
+              background-color: $white;
               border-top: 2px solid #ea352d;
               position: relative;
               display: block;
+            }
+            a:hover {
+              opacity: .7;
             }
           }
         }
@@ -355,8 +358,11 @@ h2 {
         }
       }
       .tab-content {
-        ul.mypage-item-list.tab-pane {
+        ul.mypage-item-list.tab-pane.is-active-now{
           display: block;
+        }
+        ul.mypage-item-list.tab-pane {
+          display: none;
           li {
             position: relative;
             border-bottom: 1px solid #eee;
@@ -396,6 +402,15 @@ h2 {
                 }
                 .mypage-item-status.bold.action-required {
                   background: #ea352d;
+                  display: inline-block;
+                  margin: 8px 0 0 0;
+                  padding: 1px 5px 2px 5px;
+                  border-radius: 2px;
+                  font-size: 12px;
+                  color: #fff;
+                }
+                .mypage-item-status.bold.action-required-2 {
+                  background: #888;
                   display: inline-block;
                   margin: 8px 0 0 0;
                   padding: 1px 5px 2px 5px;
