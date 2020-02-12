@@ -1,6 +1,23 @@
 body {
   background: #f5f5f5;
 }
+a {
+  text-decoration: none;
+}
+.bold {
+  font-weight: 600;
+}
+.header {
+  width: 100vw;
+  height: 150px;
+  background-color: gray;
+}
+.footer {
+  width: 100vw;
+  height: 150px;
+  background-color: gray;
+
+}
 .clearfix::after {
   content: '';
   display: block;
@@ -21,7 +38,7 @@ body {
 
       ul{
         list-style: none;
-        background-color: $wh;
+        background-color: $white;
         display: block;
         
         li.nav-listmypage-zone { //後でjsでfitst-childで色と動きの指定をするのでこのクラス名は不要になります。
@@ -30,7 +47,6 @@ body {
 
           a {
             background-color: #eee;
-            text-decoration: none;
             font-size: 14px;
             padding: 16px;
             color: $sub-font;
@@ -51,7 +67,6 @@ body {
           border-top: 1px solid #eee;
 
           a {
-            text-decoration: none;
             font-size: 14px;
             padding: 16px;
             color: $sub-font;
@@ -91,19 +106,81 @@ body {
   }
   .mp-content {
     float: right;
-    height: 600px;
+    // height: 600px;
     width: 700px;
-    background-color: yellowgreen;
-  }
-}
-.header {
-  width: 100vw;
-  height: 150px;
-  background-color: gray;
-}
-.footer {
-  width: 100vw;
-  height: 150px;
-  background-color: gray;
+    // background-color: yellowgreen;
 
+    .mypage-user-icon {
+      height: 200px;
+      padding: 20px;
+      text-align: center;
+      background-image: url("/assets/mypage/mypage-background.jpg");
+      position: relative;
+
+      a.user-profile {
+        display: block;
+        color: $sub-font;
+        position: absolute;
+        top: 20%;
+        left: 0;
+        right: 0;
+        figure {
+          overflow: hidden;
+          width: 60px;
+          height: 60px;
+          margin: 0 auto;
+          border-radius: 50%;
+          img {
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+          }
+        }
+      }
+      a:hover {
+        text-decoration: underline;
+        opacity: .7;
+      }
+
+      h2.bold {
+        margin: 8px 0 0;
+        font-size: 14px;
+        line-height: 1.4;
+      }
+      .mypage-number {
+        margin: 8px 0 0;
+        font-size:0;
+        .evaluation {
+          display: inline-block;
+          font-size: 14px;
+
+          span.bold {
+            font-size: 16px;
+            margin: 0 0 0 8px;
+          }
+        }
+        .exhibit {
+          display: inline-block;
+          margin: 0 0 0 16px;
+          font-size: 14px;
+
+          span.bold {
+            font-size: 16px;
+            margin: 0 0 0 8px;
+          }
+        }
+      }
+    }
+    .mypage-tab-container-notification-todo {
+      height: 400px;
+      margin: 0;
+      background-color: $white;
+    }
+
+    .mypage-tab-container-bottom {
+      height: 400px;
+      margin: 40px 0 0;
+      background-color: $white;
+    }
+  }
 }
