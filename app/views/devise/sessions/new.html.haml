@@ -1,0 +1,110 @@
+
+.header.single-header
+  %mercari
+
+.main.single-main
+  .div.login-no-acounnt
+    .p 
+      アカウントをお持ちでない方はこちら
+    .a 
+      新規会員登録
+  .div.login-form-inner
+    .button#facebook-login.btn-default.b
+      .i.icon-facebook::before
+    
+    .button#google-login.btn-default.btn
+
+  .div.login-form-inner
+    .input.login-input-text.input-default
+      メールアドレス
+    .input.login-input-text.input-default
+      パスワード
+
+    .div.form-group
+      .div.recaptcha.checkbox
+
+      .?
+        私はロボットではありません
+      
+      .div.rc-anchor-logo-img-portrait
+
+      .  
+
+      .  
+
+      .  
+
+    .button.login-submit.btn-default.btn-red
+
+  .div.single-container
+    .footer.single-footer
+      .a 
+        プライバシーポリシー
+      .a
+        メリカリ利用規約
+      .a
+        特定商取引に関する表記
+      .img
+      .small
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%h2 Log in
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .field
+    = f.label :email
+    %br/
+    = f.email_field :email, autofocus: true, autocomplete: "email"
+  .field
+    = f.label :password
+    %br/
+    = f.password_field :password, autocomplete: "current-password"
+  - if devise_mapping.rememberable?
+    .field
+      = f.check_box :remember_me
+      = f.label :remember_me
+  .actions
+    = f.submit "Log in"
+= render "devise/shared/links"
