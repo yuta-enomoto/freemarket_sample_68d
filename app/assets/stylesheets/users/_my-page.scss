@@ -3,6 +3,8 @@ body {
 }
 a {
   text-decoration: none;
+  color: $sub-font;
+
 }
 .bold {
   font-weight: 600;
@@ -17,11 +19,6 @@ a {
   height: 150px;
   background-color: gray;
 
-}
-.clearfix::after {
-  content: '';
-  display: block;
-  clear: both;
 }
 .mp-container {
   margin: 40px auto 0;
@@ -106,11 +103,9 @@ a {
   }
   .mp-content {
     float: right;
-    // height: 600px;
     width: 700px;
-    // background-color: yellowgreen;
 
-    .mypage-user-icon {
+    section.mypage-user-icon {
       height: 200px;
       padding: 20px;
       text-align: center;
@@ -171,10 +166,120 @@ a {
         }
       }
     }
-    .mypage-tab-container-notification-todo {
-      height: 400px;
+    section.mypage-tab-container-notification-todo {
+      // height: 400px;
       margin: 0;
       background-color: $white;
+      ul.mypage-tabs {
+        border: 0;
+        background: #eee;
+        font-size: 0;
+
+        li.notification {
+          background-color: $white;
+          h3 {
+            a {
+              border-top: 2px solid #ea352d;
+              position: relative;
+              display: block;
+            }
+          }
+        }
+        li {
+          width: 50%;
+          display: inline-block;
+          text-align: center;
+          vertical-align: top;
+          h3 {
+            font-size: 22px;
+            font-weight: bold;
+            a {
+              position: relative;
+              display: block;
+              font-size: 16px;
+              line-height: 72px;
+            }
+          }
+        }
+      }
+      .tab-content {
+        ul.mypage-item-list.tab-pane {
+          display: block;
+          li {
+            position: relative;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            a.mypage-item-link {
+              display: block;
+              min-height: 80px;
+              padding: 16px;
+              figure {
+                position: relative;
+                overflow: hidden;
+                float: left;
+                width: 48px;
+                height: 48px;
+                margin: 0;
+                img {
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  bottom: 0;
+                  left: 0;
+                  z-index: 1;
+                  width: 100%;
+                }
+              }
+              .mypage-item-body {
+                margin: 0 40px 0 68px;
+                .mypage-item-text {
+                  font-size: 14px;
+                  overflow: hidden;
+                  display: -webkit-box;
+                  max-height: 4.4em;
+                  -webkit-line-clamp: 3;
+                  -webkit-box-orient: vertical;
+                  text-overflow: ellipsis;
+                  line-height: 1.5;
+                }
+                time {
+                  display: inline-block;
+                  color: #888;
+                  font-size: 0px;
+                  i.fa-clock {
+                    font-size: 16px;
+                    margin: 0 8px 0 0;
+                    position: relative;
+                    top: 1px;
+                  }
+                  span {
+                    font-size: 14px;
+                  }
+                }
+              }
+              i.fa-chevron-right {
+                position: absolute;
+                top: 50%;
+                right: 16px;
+                transform: translate(0, -50%);
+              }
+            }
+          }
+          li.mypage-go-list {
+            border: none;
+            padding: 16px;
+            a {
+              display: block;
+              height: 56px;
+              margin: 0 auto;
+              background: #eee;
+              color: $sub-font;
+              line-height: 56px;
+              text-align: center;
+            }
+          }
+        }
+      }
     }
 
     .mypage-tab-container-bottom {

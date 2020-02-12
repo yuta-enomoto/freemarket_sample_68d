@@ -117,4 +117,59 @@
           %span.bold
             0
   %section.mypage-tab-container-notification-todo
+    %ul.mypage-tabs
+      %li.notification
+        %h3 
+          = link_to '#' do
+            お知らせ
+      %li.to-do
+        %h3 
+          = link_to '#' do
+            やることリスト
+    .tab-content
+      %ul#mypage-tab-notification.mypage-item-list.tab-pane
+        %li 
+          = link_to '#', class:"mypage-item-link" do
+            %figure
+              %img{alt: "test", src: "/assets/mypage/app-icon.jpg"}/
+            .mypage-item-body
+              .mypage-item-text
+                事務局から個別メッセージ「ログイン通知」
+              %time 
+                %i.far.fa-clock
+                %span
+                  19 時間前
+            %i.fas.fa-chevron-right
+        %li 
+          = link_to '#', class:"mypage-item-link" do
+            %figure
+              %img{alt: "test", src: "/assets/mypage/app-icon.jpg"}/
+            .mypage-item-body
+              .mypage-item-text
+                《メルペイでゆうちょ銀行が使えるようになりました》銀行口座登録すると売上金の振込期限がなくなります
+              %time 
+                %i.far.fa-clock
+                %span
+                  3 日前
+            %i.fas.fa-chevron-right
+        %li 
+          = link_to '#', class:"mypage-item-link" do
+            %figure
+              %img{alt: "test", src: "/assets/mypage/app-icon.jpg"}/
+            .mypage-item-body
+              .mypage-item-text
+                《最大4万円分!?》今ならd払いで最大＋20% dポイント還元中！！！
+              %time 
+                %i.far.fa-clock
+                %span
+                  4 日前
+            %i.fas.fa-chevron-right
+
+        %li.mypage-go-list
+          = link_to '#' do
+            一覧を見る
+
+
+
+
   %section.mypage-tab-container-bottom
