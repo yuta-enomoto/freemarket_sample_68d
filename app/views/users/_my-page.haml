@@ -1,4 +1,4 @@
-.mp-side
+.mp-container__mp-side
   %nav.mypage-nav
     %ul.mypage-nav-list
       %li.nav-listmypage-zone
@@ -100,23 +100,23 @@
           ログアウト
           %i.fas.fa-chevron-right
 
-.mp-content
-  %section.mypage-user-icon
-    = link_to '#',class: 'user-profile' do
+.mp-container__mp-content
+  %section.mp-container__mp-content__mypage-user-icon
+    = link_to '#',class: 'mp-container__mp-content__mypage-user-icon__user-profile' do
       %figure 
         %img{alt: "test", src: "/assets/mypage/user-icon.jpg"}/
       %h2.bold
         ユーザー
-      .mypage-number
-        .evaluation
+      .mp-container__mp-content__mypage-user-icon__mypage-number
+        .mp-container__mp-content__mypage-user-icon__mypage-number__evaluation
           評価
           %span.bold
             0
-        .exhibit
+        .mp-container__mp-content__mypage-user-icon__mypage-number__exhibit
           出品数
           %span.bold
             0
-  %section.mypage-tab-container-notification-todo
+  %section.mp-container__mp-content__mypage-tab-container-notification-todo
     %ul.mypage-tabs
       %li.notification
         %h3 
@@ -126,7 +126,7 @@
         %h3 
           = link_to '#' do
             やることリスト
-    .tab-content
+    .mp-container__mp-content__mypage-tab-container-notification-todo__tab-content
       %ul#mypage-tab-notification.mypage-item-list.tab-pane
         %li 
           = link_to '#', class:"mypage-item-link" do
@@ -168,7 +168,7 @@
         %li.mypage-go-list
           = link_to '#' do
             一覧を見る
-  %section.mypage-tab-container-bottom
+  %section.mp-container__mp-content__mypage-tab-container-bottom
     %h2.mypage-tab-head
       購入した商品
     %ul.mypage-tabs
