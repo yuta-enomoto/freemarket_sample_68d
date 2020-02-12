@@ -1,5 +1,5 @@
-a.sell-icon {
-  .sell-item-btn {
+.sell-icon {
+  &__sell-item-btn {
     width: 120px;
     background: #3CCACE;
     text-align: center;
@@ -9,17 +9,16 @@ a.sell-icon {
     position: fixed;
     padding: 15px;
 
-    span.sell-item-btn__text {
+    &__text {
       color: #fff;
       display: block;
       font-size: 18px;
       text-decoration: none;
       margin-bottom: 5px;
     }
-    img {
+    &__pic {
       width: 60%;
       vertical-align: bottom;
     }
-
   }
 }
