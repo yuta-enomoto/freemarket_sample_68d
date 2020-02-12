@@ -1,0 +1,109 @@
+body {
+  background: #f5f5f5;
+}
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.mp-container {
+  margin: 40px auto 0;
+  padding: 0 0 40px;
+  width: 1020px;
+
+  .mp-side {
+    float: left;
+    width: 280px;
+    margin: 0 40px 0 0;
+
+    nav.mypage-nav {
+      display: block;
+
+      ul{
+        list-style: none;
+        background-color: $wh;
+        display: block;
+        
+        li.nav-listmypage-zone { //後でjsでfitst-childで色と動きの指定をするのでこのクラス名は不要になります。
+          border: none;
+          font-weight: 600;
+
+          a {
+            background-color: #eee;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 16px;
+            color: $sub-font;
+            display: block;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            i {
+              color: $sub-font;
+            }
+          }
+          a:hover {
+            background-color: #eee;
+          }
+        }
+        li {
+          min-height: 48px;
+          border-top: 1px solid #eee;
+
+          a {
+            text-decoration: none;
+            font-size: 14px;
+            padding: 16px;
+            color: $sub-font;
+            display: block;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; 
+
+            i {
+              color: $lightgray;
+              -webkit-transition: all ease-out .2s;
+              transition: all ease-out .2s;
+              font-size: 16px;
+            }
+          }
+          a:hover {
+            background-color: rgba(241, 241, 241, 0.479);
+            i{
+              transform: translate(5px,0);
+              color: $sub-font;
+            }
+          }
+        }
+      }
+      ul.mypage-nav-list-2 {
+        margin: 8px 0 0;
+      }
+      h3.mypage-nav-head {
+        color: $sub-font;
+        margin: 40px 0 0;
+        font-size: 16px;
+        height:16px;
+        font-weight: 600;
+        line-height: 16px;
+      }
+    }
+  }
+  .mp-content {
+    float: right;
+    height: 600px;
+    width: 700px;
+    background-color: yellowgreen;
+  }
+}
+.header {
+  width: 100vw;
+  height: 150px;
+  background-color: gray;
+}
+.footer {
+  width: 100vw;
+  height: 150px;
+  background-color: gray;
+
+}
