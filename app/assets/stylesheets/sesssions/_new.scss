@@ -1,0 +1,161 @@
+.header.single-header{
+  height: 128px;
+  width: 1440px;
+  color: #333333;
+  font-size: 14px;
+
+  .img{
+    height: 49px;
+    width: 185px;
+  }
+
+}
+
+.main.single-main{
+  height: 847px;
+  width: 1440px;
+
+  .div.login-no-acount{
+    height: 144px;
+    width: 456px;
+    color: #333333;
+    font-size: 14px;
+    padding: 40px 64px;
+
+    .p{
+      height: 14px;
+      width: 328px;
+      color: #333333;
+      font-size: 14px;
+    }
+
+    a{
+      height: 42px;
+      width: 328px;
+      color: #FFFFFF;
+      font-size: 14px;
+      background-color: #0099E8;
+      margin: 8px 0px 0px;
+    }
+  }
+
+  .div.login-form-inner{
+    height: 181px;
+    width: 456px;
+    color: #333333;
+    font-size: 14px;
+    padding: 32px 64px;
+
+    .button#facebook-login.btn-default.b{
+      height: 50px;
+      width: 328px;
+      color: #FFFFFF;
+      font-size: 14px;
+      background-color: #385185;
+
+      .i.icon#google-login.btn-default.btn{
+        height: 26px;
+        width: 26px;
+      }
+    }
+
+    .button#google-login.btn-default.btn{
+      height: 50px;
+      width: 328px;
+      color: #333333;
+      font-size: 14px;
+      background-color: #FFFFFF;
+      margin: 16px 0px 0px;
+    }
+  }
+
+  .div.login-form-inner{
+    height: 406px;
+    width: 456px;
+    color: #333333;
+    font-size: 14px;
+    padding: 24px 64px 32px;
+
+    .input.login-input.text.input-default{
+      background-color: #FFFFFF;
+      padding: 10px 16px 8px;
+    }
+
+    .input.login-input.text.input-default{
+      height: 48px;
+      width: 328px;
+      padding: 10px 16px 8px;
+    }
+
+    .div.form-group{
+      height: 107px;
+      width: 328px;
+      color: #333333;
+      font-size: 14px;
+      margin: 24px 0px 0px;
+
+      .div.recaptcha-chackbox{
+        height: 28px;
+        width: 28px;
+      }
+
+      .{
+
+      }
+
+      .div.rc-anchor-logo-img-portrait{
+        background-size: 32px;
+        height: 32px;
+        margin: 0px 13px 0px 13px;
+        width: 32px;
+      }
+    }
+
+    .button.login-submit.btn-default.btn-red{
+      height: 50px;
+      width: 328px;
+      color: #FFFFFF;
+      font-size: 14px;
+      background-color: #E62017;
+      margin: 24px 0px 0px;
+    }
+  }
+}
+  
+.div.single-container{
+  height: 1079px;
+  width: 1440px;
+  color: #333333;
+  font-size: 14px;
+  padding: 0px 0px 220px;
+
+  .footer.single-footer{
+    height: 220px;
+    width: 456px;
+    color: #333333;
+    font-size: 14px;
+    margin: 0px 492px;
+    padding: 40px 0px;
+
+    .a{
+      height: 12px;
+      width: 119.41px;
+      color: #333333;
+      font-size: 12px;
+    }
+
+    .a{
+      height: 12px;
+      width: 96px;
+      color: #333333;
+      font-size: 12px;
+    }
+
+    a{
+      height: 12px;
+      width: 131.53px;
+      color: #333333;
+      font-size: 12px;
+    }
+  }
+}
