@@ -183,11 +183,11 @@ h2 {
         border: 0;
         background: #eee;
         font-size: 0;
-
-        li.notification {
+        li.is-active {
           background-color: $white;
           h3 {
             a {
+              background-color: $white;
               border-top: 2px solid #ea352d;
               position: relative;
               display: block;
@@ -218,8 +218,11 @@ h2 {
         }
       }
       &__tab-content {
-        ul.mypage-item-list.tab-pane {
+        ul.mypage-item-list.tab-pane.active{
           display: block;
+        }
+        ul.mypage-item-list.tab-pane {
+          display: none;
           li {
             position: relative;
             border-bottom: 1px solid #eee;

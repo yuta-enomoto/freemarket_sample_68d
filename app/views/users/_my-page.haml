@@ -118,16 +118,16 @@
             0
   %section.mp-container__mp-content__mypage-tab-container-notification-todo
     %ul.mypage-tabs
-      %li.notification
+      %li.tab-list.is-active
         %h3 
-          = link_to '#' do
+          = link_to '#mypage-tab-notification',class: "tab-link" do
             お知らせ
-      %li.to-do
+      %li.tab-list
         %h3 
-          = link_to '#' do
+          = link_to '#mypage-tab-todo',class: "tab-link" do
             やることリスト
     .mp-container__mp-content__mypage-tab-container-notification-todo__tab-content
-      %ul#mypage-tab-notification.mypage-item-list.tab-pane
+      %ul#mypage-tab-notification.mypage-item-list.tab-pane.active
         %li 
           = link_to '#', class:"mypage-item-link" do
             %figure
@@ -165,6 +165,22 @@
                   4 日前
             %i.fas.fa-chevron-right
 
+        %li.mypage-go-list
+          = link_to '#' do
+            一覧を見る
+      %ul#mypage-tab-todo.mypage-item-list.tab-pane
+        %li 
+          = link_to '#', class:"mypage-item-link" do
+            %figure
+              %img{alt: "test", src: "/assets/mypage/app-icon.jpg"}/
+            .mypage-item-body
+              .mypage-item-text
+                Skrowaczewskiさんから「Sound Core 2」が発送されました。届いたら内容を確認して、受取評価してください
+              %time 
+                %i.far.fa-clock
+                %span
+                  10 時間前
+            %i.fas.fa-chevron-right
         %li.mypage-go-list
           = link_to '#' do
             一覧を見る
