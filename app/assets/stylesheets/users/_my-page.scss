@@ -192,6 +192,9 @@ h2 {
               position: relative;
               display: block;
             }
+            a:hover {
+              opacity: .7;
+            }
           }
         }
         li {
@@ -207,6 +210,9 @@ h2 {
               display: block;
               font-size: 16px;
               line-height: 72px;
+            }
+            a:hover {
+              opacity: .7;
             }
           }
         }
@@ -273,6 +279,9 @@ h2 {
                 transform: translate(0, -50%);
               }
             }
+            a:hover {
+              background-color: rgba(241, 241, 241, 0.479);
+            }
           }
           li.mypage-go-list {
             border: none;
@@ -285,6 +294,11 @@ h2 {
               color: $sub-font;
               line-height: 56px;
               text-align: center;
+            }
+            a:hover {
+              background: #fafafa;
+              opacity: 1;
+              text-decoration: none;
             }
           }
         }
@@ -330,6 +344,9 @@ h2 {
               display: block;
               font-size: 16px;
               line-height: 72px;
+            }
+            a:hover {
+              opacity: .7;
             }
           }
         }
@@ -392,6 +409,9 @@ h2 {
                 transform: translate(0, -50%);
               }
             }
+            a:hover {
+              background-color: rgba(241, 241, 241, 0.479);
+            }
           }
           li.mypage-go-list {
             border: none;
@@ -404,6 +424,11 @@ h2 {
               color: $sub-font;
               line-height: 56px;
               text-align: center;
+            }
+            a:hover {
+              background: #fafafa;
+              opacity: 1;
+              text-decoration: none;
             }
           }
         }
