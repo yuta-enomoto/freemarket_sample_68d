@@ -103,7 +103,7 @@
 .mp-container__mp-content
   %section.mp-container__mp-content__mypage-user-icon
     = link_to '#',class: 'mp-container__mp-content__mypage-user-icon__user-profile' do
-      %figure 
+      %figure.picture
         %img{alt: "test", src: "/assets/mypage/user-icon.jpg"}/
       %h2.bold
         ユーザー
@@ -117,18 +117,18 @@
           %span.bold
             0
   %section.mp-container__mp-content__mypage-tab-container-notification-todo
-    %ul.mypage-tabs
+    %ul.mp-container__mp-content__mypage-tab-container-notification-todo__mypage-tabs
       %li.tab-list.is-active
-        %h3 
+        %h3.tab-content
           = link_to '#mypage-tab-notification',class: "tab-link" do
             お知らせ
       %li.tab-list
-        %h3 
+        %h3.tab-content
           = link_to '#mypage-tab-todo',class: "tab-link" do
             やることリスト
     .mp-container__mp-content__mypage-tab-container-notification-todo__tab-content
       %ul#mypage-tab-notification.mypage-item-list.tab-pane.active
-        %li 
+        %li
           = link_to '#', class:"mypage-item-link" do
             %figure
               %img{alt: "test", src: "/assets/mypage/app-icon.jpg"}/
@@ -186,20 +186,20 @@
             一覧を見る
 
   %section.mp-container__mp-content__mypage-tab-container-bottom
-    %h2.mypage-tab-head
+    %h2.mp-container__mp-content__mypage-tab-container-bottom__mypage-tab-head
       購入した商品
-    %ul.mypage-tabs
+    %ul.mp-container__mp-content__mypage-tab-container-bottom__mypage-tabs
       %li.tab-list.active-now
-        %h3 
+        %h3.tab-content
           = link_to '#mypage-tab-transaction-now',class: "tab-link-2" do
             取引中
       %li.tab-list
-        %h3 
+        %h3.tab-content
           = link_to '#mypage-tab-transaction-past',class: "tab-link-2" do
             過去の取引
-    .tab-content
+    .mp-container__mp-content__mypage-tab-container-bottom__tab-content
       %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane.is-active-now
-        %li 
+        %li
           = link_to '#', class:"mypage-item-link" do
             %figure
               %img{alt: "test", src: "/assets/mypage/app-icon.jpg"}/

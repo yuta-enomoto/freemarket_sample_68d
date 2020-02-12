@@ -33,7 +33,7 @@ h2 {
     &__mypage-nav {
       display: block;
 
-      ul {
+      &__mypage-nav-list {
         list-style: none;
         background-color: $white;
         display: block;
@@ -121,7 +121,7 @@ h2 {
         top: 20%;
         left: 0;
         right: 0;
-        figure {
+        figure.picture {
           overflow: hidden;
           width: 60px;
           height: 60px;
@@ -171,33 +171,32 @@ h2 {
     &__mypage-tab-container-notification-todo {
       margin: 0;
       background-color: $white;
-      ul.mypage-tabs {
+      &__mypage-tabs {
         border: 0;
         background: #eee;
         font-size: 0;
-        li.is-active {
+        li.tab-list.is-active {
           background-color: $white;
-          h3 {
-            a {
+          h3.tab-content {
+            a.tab-link {
               background-color: $white;
               border-top: 2px solid #ea352d;
               position: relative;
-              display: block;
             }
-            a:hover {
+            a.tab-link:hover {
               opacity: .7;
             }
           }
         }
-        li {
+        li.tab-list {
           width: 50%;
           display: inline-block;
           text-align: center;
           vertical-align: top;
-          h3 {
+          h3.tab-content {
             font-size: 22px;
             font-weight: bold;
-            a {
+            a.tab-link {
               position: relative;
               display: block;
               font-size: 16px;
@@ -299,58 +298,55 @@ h2 {
         }
       }
     }
-
     &__mypage-tab-container-bottom {
-      // height: 400px;
       margin: 40px 0 0;
       background-color: $white;
-      h2.mypage-tab-head {
+      &__mypage-tab-head {
         padding: 0 16px;
         background: #fafafa;
         font-size: 16px;
         line-height: 72px;
         margin: 0px;
       }
-      ul.mypage-tabs {
+      &__mypage-tabs {
         border: 0;
         background: #eee;
         font-size: 0;
         
-        li.active-now {
+        li.tab-list.active-now {
           background-color: $white;
-          h3 {
-            a {
+          h3.tab-content {
+            a.tab-link-2 {
               background-color: $white;
               border-top: 2px solid #ea352d;
               position: relative;
-              display: block;
             }
             a:hover {
               opacity: .7;
             }
           }
         }
-        li {
+        li.tab-list {
           width: 50%;
           display: inline-block;
           text-align: center;
           vertical-align: top;
-          h3 {
+          h3.tab-content {
             font-size: 22px;
             font-weight: bold;
-            a {
+            a.tab-link-2 {
               position: relative;
               display: block;
               font-size: 16px;
               line-height: 72px;
             }
-            a:hover {
+            a.tab-link-2:hover {
               opacity: .7;
             }
           }
         }
       }
-      .tab-content {
+      &__tab-content {
         ul.mypage-item-list.tab-pane.is-active-now{
           display: block;
         }
