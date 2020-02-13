@@ -79,7 +79,7 @@
           }
         }
       }
-      &__mypage-nav-list-2 {
+      &__mypage-nav-list {
         margin: 8px 0 0;
       }
       &__mypage-nav-head {
@@ -129,6 +129,12 @@
       }
 
       h2.bold {
+        display: block;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
         margin: 8px 0 0;
         font-size: 14px;
         line-height: 1.4;
