@@ -1,2 +1,36 @@
 @import "config/colors";
+@import "mixin/section_title";
 @import "./reset";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+
+// あとで消します
+// ここから
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: $sub-font;
+}
+
+body {
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+  word-wrap: break-word;
+}
+
+// ここまで
+
+@import "shared/header";
+@import "shared/footerSecond";
+@import "shared/footerFirst";
+@import "shared/introductionFirst";
+@import "shared/introductionSecond";
+@import "shared/introductionThird";
+@import "shared/introductionFourth";
+@import "shared/pickUp";
+@import "shared/appBanners";
+@import "home/index";
