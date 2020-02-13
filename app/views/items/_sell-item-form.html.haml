@@ -10,6 +10,24 @@
               必須
           %p.si-container__si-box__si-inner__si-picture-box__box-frame__upload-text
             最大10枚までアップロードできます
+          .si-container__si-box__si-inner__si-picture-box__box-frame__upload-box
+            .si-container__si-box__si-inner__si-picture-box__box-frame__upload-box__upload-container
+              .si-container__si-box__si-inner__si-picture-box__box-frame__upload-box__upload-container__si-inner-box
+                .si-container__si-box__si-inner__si-picture-box__box-frame__upload-box__upload-container__si-inner-box__si-inner-container
+                  = f.label :image, id: "drop-zone", class: "image-label" do
+                    = f.file_field :image, accept: "image/png,image/jpeg", autocomplete: "off", multiple: "", style: "display:none", tabindex: "-1", type: "file", class: "hidden-field"
+                    %input{accept: "image/png,image/jpeg", autocomplete: "off", multiple: "", style: "display:none", tabindex: "-1", type: "file"}
+              
+                    .si-big-box
+                      .si-big-box__si-icon-box
+                        %img{alt: "出品する", class: 'camera-icon', src: "/assets/shared/icon_camera.png"}/
+                      .si-big-box__si-text-box  
+                        %p.drag-drop
+                          ドラッグアンドドロップ
+                        %p.drag-drop
+                          またはクリックしてファイルをアップロード
+                    
+                
       %hr.si-container__si-box__si-inner__si-underline
 
       .si-container__si-box__si-inner__si-item-description.perimeter
