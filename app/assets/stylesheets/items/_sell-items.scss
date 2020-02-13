@@ -1,0 +1,29 @@
+.si-container {
+  &__si-box {
+    max-width: 700px;
+    width: 100%;
+    margin: 0px auto;
+    &__si-inner {
+      position: relative;
+      background-color: rgb(255, 255, 255);
+      .perimeter {
+        padding: 40px;
+      }
+      &__si-picture {
+      
+      }
+      &__si-item-description {
+
+      }
+      &__si-detail-description {
+
+      }
+      &__si-shipping-info {
+
+      }
+      &__si-price-info {
+        
+      }
+    }
+  }
+}
