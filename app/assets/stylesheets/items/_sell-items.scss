@@ -18,11 +18,23 @@
         border-top-style: solid;
         margin: 0;
       }
-      &__si-picture {
-      
+      &__si-picture-box {
+        &__box-frame {
+          margin: 0;
+          &__is-photos {
+            margin: 0!important;
+            &__is-label {
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 1.4em;
+            }
+          }
+        }
       }
       &__si-item-description {
-
+        &__box-frame {
+          margin: 0;
+        }
       }
       &__si-detail-description {
 

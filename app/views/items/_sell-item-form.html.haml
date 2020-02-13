@@ -1,12 +1,23 @@
 .si-container__si-box
   .si-container__si-box__si-inner
     = form_with local: true do |f|
-      .si-container__si-box__si-inner__si-picture.perimeter
+      .si-container__si-box__si-inner__si-picture-box.perimeter
+        .si-container__si-box__si-inner__si-picture-box__box-frame
+          .si-container__si-box__si-inner__si-picture-box__box-frame__is-photos{name: "photos"}
+            %label.si-container__si-box__si-inner__si-picture-box__box-frame__is-photos__is-label
+              出品画像
       %hr.si-container__si-box__si-inner__si-underline
+
       .si-container__si-box__si-inner__si-item-description.perimeter
+        .si-container__si-box__si-inner__si-item-description__box-frame
+        .si-container__si-box__si-inner__si-item-description__box-frame
       %hr.si-container__si-box__si-inner__si-underline
+
       .si-container__si-box__si-inner__si-detail-description.perimeter
+        .si-container__si-box__si-inner__si-detail-description__box-frame
       %hr.si-container__si-box__si-inner__si-underline
+
       .si-container__si-box__si-inner__si-shipping-info.perimeter
       %hr.si-container__si-box__si-inner__si-underline
+
       .si-container__si-box__si-inner__si-price-info.perimeter
