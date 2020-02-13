@@ -1,9 +1,9 @@
 .si-container__si-box
   .si-container__si-box__si-inner
     = form_with local: true do |f|
-      .si-container__si-box__si-inner__si-picture-box.perimeter
-        .si-container__si-box__si-inner__si-picture-box__box-frame
-          .si-container__si-box__si-inner__si-picture-box__box-frame__si-photos{name: "photos"}
+      .si-container__si-box__si-picture-box.perimeter
+        .si-container__si-box__box-frame
+          .si-container__si-box__si-photos{name: "photos"}
             %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label
               出品画像
             %span.required-display
@@ -26,20 +26,19 @@
                           ドラッグアンドドロップ
                         %p.drag-drop
                           またはクリックしてファイルをアップロード
-                    
-                
+
       %hr.si-container__si-box__si-inner__si-underline
 
-      .si-container__si-box__si-inner__si-item-description.perimeter
-        .si-container__si-box__si-inner__si-item-description__box-frame
-        .si-container__si-box__si-inner__si-item-description__box-frame
+      .si-container__si-box__si-picture-box.perimeter
+        .si-container__si-box__box-frame
+        .si-container__si-box__box-frame
       %hr.si-container__si-box__si-inner__si-underline
 
-      .si-container__si-box__si-inner__si-detail-description.perimeter
-        .si-container__si-box__si-inner__si-detail-description__box-frame
+      .si-container__si-box__si-picture-box.perimeter
+        .si-container__si-box__box-frame
       %hr.si-container__si-box__si-inner__si-underline
 
-      .si-container__si-box__si-inner__si-shipping-info.perimeter
+      .si-container__si-box__si-picture-box.perimeter
       %hr.si-container__si-box__si-inner__si-underline
 
-      .si-container__si-box__si-inner__si-price-info.perimeter
+      .si-container__si-box__si-picture-box.perimeter
