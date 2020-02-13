@@ -3,11 +3,13 @@
     = form_with local: true do |f|
       .si-container__si-box__si-inner__si-picture-box.perimeter
         .si-container__si-box__si-inner__si-picture-box__box-frame
-          .si-container__si-box__si-inner__si-picture-box__box-frame__is-photos{name: "photos"}
-            %label.si-container__si-box__si-inner__si-picture-box__box-frame__is-photos__is-label
+          .si-container__si-box__si-inner__si-picture-box__box-frame__si-photos{name: "photos"}
+            %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label
               出品画像
             %span.required-display
               必須
+          %p.si-container__si-box__si-inner__si-picture-box__box-frame__upload-text
+            最大10枚までアップロードできます
       %hr.si-container__si-box__si-inner__si-underline
 
       .si-container__si-box__si-inner__si-item-description.perimeter

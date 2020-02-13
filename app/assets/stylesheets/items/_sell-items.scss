@@ -21,14 +21,14 @@
       &__si-picture-box {
         &__box-frame {
           margin: 0;
-          &__is-photos {
+          &__si-photos {
             margin: 0!important;
-            &__is-label {
+            &__si-label {
               font-size: 14px;
               font-weight: 600;
               line-height: 1.4em;
             }
-            .required-display {
+            span.required-display {
               margin-left: 8px;
               font-size: 12px;
               padding: 0 4px;
@@ -40,6 +40,12 @@
               font-weight: 600;
               line-height: 1.4em;
             }
+          }
+          &__upload-text {
+            margin-top: 16px;
+            font-size: 14px;
+            line-height: 1.4em;
+            color: $sub-font;
           }
         }
       }
@@ -61,7 +67,7 @@
   }
 }
 
-.required-display {
+span.required-display {
   margin-left: 8px;
   font-size: 12px;
   padding: 0 4px;
