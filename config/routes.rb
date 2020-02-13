@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  root "users#show"
+  get 'items/new'
+  root "items#new"
+  
+  resources :users, only: [:show]
 end
