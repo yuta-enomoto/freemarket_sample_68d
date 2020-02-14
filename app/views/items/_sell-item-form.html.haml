@@ -62,12 +62,17 @@
             .sell-form-box__select-wrap
               %i.fas.fa-chevron-down
               = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
-            .sell-form-box__select-wrap
+
+            -# ここから（とりあえずでdisplay: noenをかけています。）
+
+            .sell-form-box__select-wrap.none
               %i.fas.fa-chevron-down
               = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
-            .sell-form-box__select-wrap
+            .sell-form-box__select-wrap.none
               %i.fas.fa-chevron-down
               = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
+
+            -# ここまで
 
           .si-container__si-box__box-frame.si-top
             .si-container__si-box__si-photos
@@ -95,8 +100,10 @@
             .sell-form-box__select-wrap
               %i.fas.fa-chevron-down
               = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
+        
+              -# ここから（とりあえずでdisplay: noenをかけています。）
 
-          .si-container__si-box__box-frame.si-top
+          .si-container__si-box__box-frame.si-top.none
             .si-container__si-box__si-photos
               %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label
                 発送の方法
@@ -105,6 +112,8 @@
             .sell-form-box__select-wrap
               %i.fas.fa-chevron-down
               = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
+                 
+            -# ここまで
 
           .si-container__si-box__box-frame.si-top
             .si-container__si-box__si-photos
