@@ -145,7 +145,7 @@
       .si-top {
         margin: 40px 0 0;
       }
-      .sell-sub-head {
+      h3.sell-sub-head {
         float: left;
         color: #888;
         font-size: 14px;
@@ -153,6 +153,11 @@
         .price-sub-head {
           font-size: 13px;
         }
+      }
+      .sell-form-box {
+        float: right;
+        width: 400px;
+        margin: 0;
       }
       &__si-item-description {
         &__box-frame {
