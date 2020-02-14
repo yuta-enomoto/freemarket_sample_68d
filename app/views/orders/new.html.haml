@@ -1,0 +1,51 @@
+= render '/shared/sub_header'
+
+.main-h
+  .main-h__buy
+    .main-h__buy__head
+      %span 購入内容の確認
+    .main-h__buy__item
+      .main-h__buy__item__inner
+        .buy-item
+          .buy-item__image
+          .buy-item__detail
+            .buy-item__name
+              %span ワンピース MーＬサイズ
+            .buy-price
+              %span ¥1,000
+              %span.item-shipping-fee    (税込) 送料込み
+
+    .sub-buy
+      .sub-buy__inner
+        .buy-form
+          .buy-form__price
+            .price-pay
+              %span.price-pay__label 支払い金額
+              %span.price-pay__cell ¥1,000
+
+          .buy-point
+            .buy-point__parent
+              .label
+                %input.send{name: "chkbox1",type: "checkbox",value: "1"}>/
+                %i.fas.fa-square
+                %span.label2 ポイントを使用 (所持ポイント:P0)
+
+          .buy-content
+            .buy-content__inner
+              %span.payment 支払い方法
+              %a{href: "#"}
+                %p.buy_user-info-text
+                  %i.fa.fa-plus-circle
+                  %span.inner-text 登録してください
+
+          .buy-content2
+            .buy-content2__inner2
+              %span.shipping-addres 配送先
+              %a.send{href: "#"}
+                %p.buy_user-info-text2 
+                  %i.fa.fa-plus-circle
+                  %span.inner-text2 登録してください
+          .purchase
+            %button.buy_btn{disabled: "disabled",type: "submit"} 購入する
+
+= render '/shared/sub_footer'
