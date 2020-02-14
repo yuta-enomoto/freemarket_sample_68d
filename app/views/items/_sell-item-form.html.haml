@@ -45,7 +45,9 @@
               商品の説明
             %span.required-display
               必須
-          
+          .si-container__si-box__input-container
+            = f.text_area :ItemDescription, rows: '5', placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。', class:'text-default'
+
       %hr.si-container__si-box__si-inner__si-underline
 
       .si-container__si-box__si-picture-box.perimeter
