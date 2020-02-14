@@ -1,20 +1,10 @@
-.header {
-  width: 100vw;
-  height: 150px;
-  background-color: gray;
-}
-.footer {
-  width: 100vw;
-  height: 150px;
-  background-color: gray;
-
-}
 .mp-container {
   margin: 40px auto 0;
   padding: 0 0 40px;
   width: 1020px;
 
   &__mp-side {
+   
     float: left;
     width: 280px;
     margin: 0 40px 0 0;
@@ -92,6 +82,7 @@
       }
     }
   }
+  @include clearfix();
   &__mp-content {
     float: right;
     width: 700px;
@@ -234,6 +225,7 @@
                   width: 100%;
                 }
               }
+              @include clearfix();
               .mypage-item-body {
                 margin: 0 40px 0 68px;
                 .mypage-item-text {
@@ -355,6 +347,7 @@
               display: block;
               min-height: 80px;
               padding: 16px;
+
               figure {
                 position: relative;
                 overflow: hidden;
@@ -362,6 +355,7 @@
                 width: 48px;
                 height: 48px;
                 margin: 0;
+
                 img {
                   position: absolute;
                   top: 0;
@@ -372,6 +366,7 @@
                   width: 100%;
                 }
               }
+              @include clearfix();
               .mypage-item-body {
                 margin: 0 40px 0 68px;
                 .mypage-item-text {
@@ -437,4 +432,5 @@
       }
     }
   }
+  @include clearfix();
 }
