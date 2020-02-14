@@ -59,6 +59,9 @@
                 カテゴリー
               %span.required-display
                 必須
+            .sell-form-box__select-wrap
+              %i.fas.fa-chevron-down
+              = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
 
           .si-container__si-box__box-frame.si-top
             .si-container__si-box__si-photos
