@@ -129,6 +129,10 @@
         background: #fff;
         line-height: 1.5;
         font-size: 16px;
+        outline: none; 
+      }
+      .input-default:focus {
+        border-color: $lightgreen;
       }
       .text-default {
         margin: 8px 0 0;
@@ -141,6 +145,10 @@
         background: #fff;
         font-size: 16px;
         line-height: 1.5;
+        outline: none; 
+      }
+      .text-default:focus {
+        border-color: $lightgreen;
       }
       .si-top {
         margin: 40px 0 0;
@@ -187,7 +195,7 @@
             outline: none; 
           }
           .selector-category:focus {
-            border-color: skyblue;
+            border-color: $lightgreen;
           }
         }
       }
