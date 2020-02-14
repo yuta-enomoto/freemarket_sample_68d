@@ -36,6 +36,8 @@
               商品名
             %span.required-display
               必須
+          .si-container__si-box__input-container
+            = f.text_field :ItemsName, value: '', placeholder: '商品名（必須 40文字まで)', class:'input-default'
 
         .si-container__si-box__box-frame.si-top
           .si-container__si-box__si-photos
