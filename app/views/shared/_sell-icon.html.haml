@@ -2,5 +2,5 @@
   = link_to new_item_path, class: 'sell-icon__sell-item-btn__sell-link' do
     %span.sell-icon__sell-item-btn__sell-link__text
       出品する
-    %img{alt: "出品する", class: 'sell-icon__sell-item-btn__sell-link__pic', src: "/assets/shared/icon_camera.png"}/
+    = image_tag assets/shared/icon_camera.png alt: "出品する", class: 'sell-icon__sell-item-btn__sell-link__pic'
   
