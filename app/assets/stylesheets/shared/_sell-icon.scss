@@ -9,17 +9,21 @@
     position: fixed;
     padding: 15px;
     &__sell-link {
-      display: block;
+
       &__text {
-        color: $white;
+        color: $wh;
         display: block;
-        font-size: 18px;
-        text-decoration: none;
-        margin-bottom: 5px;
-      }
-      &__pic {
-        width: 60%;
-        vertical-align: bottom;
+        &__text {
+          color: $white;
+          display: block;
+          font-size: 18px;
+          text-decoration: none;
+          margin-bottom: 5px;
+        }
+        &__pic {
+          width: 60%;
+          vertical-align: bottom;
+        }
       }
     }
   }
