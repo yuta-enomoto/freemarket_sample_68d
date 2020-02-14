@@ -144,6 +144,15 @@
       .si-top {
         margin: 40px 0 0;
       }
+      .sell-sub-head {
+        float: left;
+        color: #888;
+        font-size: 14px;
+        font-weight: bold;
+        .price-sub-head {
+          font-size: 13px;
+        }
+      }
       &__si-item-description {
         &__box-frame {
           margin: 0;
