@@ -1,20 +1,10 @@
-.header {
-  width: 100vw;
-  height: 150px;
-  background-color: gray;
-}
-.footer {
-  width: 100vw;
-  height: 150px;
-  background-color: gray;
-
-}
 .mp-container {
   margin: 40px auto 0;
   padding: 0 0 40px;
   width: 1020px;
 
   &__mp-side {
+   
     float: left;
     width: 280px;
     margin: 0 40px 0 0;
@@ -24,7 +14,7 @@
 
       &__mypage-nav-list {
         list-style: none;
-        background-color: $white;
+        background-color: $wh;
         display: block;
         
         li.nav-listmypage-zone{ //後でjsでfitst-childで色と動きの指定をするのでこのクラス名は不要になります。
@@ -92,6 +82,7 @@
       }
     }
   }
+  @include clearfix();
   &__mp-content {
     float: right;
     width: 700px;
@@ -165,16 +156,16 @@
     }
     &__mypage-tab-container-notification-todo {
       margin: 0;
-      background-color: $white;
+      background-color: $wh;
       &__mypage-tabs {
         border: 0;
         background: #eee;
         font-size: 0;
         li.tab-list.is-active {
-          background-color: $white;
+          background-color: $wh;
           h3.tab-content {
             a.tab-link {
-              background-color: $white;
+              background-color: $wh;
               border-top: 2px solid #ea352d;
               position: relative;
             }
@@ -234,6 +225,7 @@
                   width: 100%;
                 }
               }
+              @include clearfix();
               .mypage-item-body {
                 margin: 0 40px 0 68px;
                 .mypage-item-text {
@@ -295,7 +287,7 @@
     }
     &__mypage-tab-container-bottom {
       margin: 40px 0 0;
-      background-color: $white;
+      background-color: $wh;
       &__mypage-tab-head {
         padding: 0 16px;
         background: #fafafa;
@@ -309,10 +301,10 @@
         font-size: 0;
         
         li.tab-list.active-now {
-          background-color: $white;
+          background-color: $wh;
           h3.tab-content {
             a.tab-link-2 {
-              background-color: $white;
+              background-color: $wh;
               border-top: 2px solid #ea352d;
               position: relative;
             }
@@ -355,6 +347,7 @@
               display: block;
               min-height: 80px;
               padding: 16px;
+
               figure {
                 position: relative;
                 overflow: hidden;
@@ -362,6 +355,7 @@
                 width: 48px;
                 height: 48px;
                 margin: 0;
+
                 img {
                   position: absolute;
                   top: 0;
@@ -372,6 +366,7 @@
                   width: 100%;
                 }
               }
+              @include clearfix();
               .mypage-item-body {
                 margin: 0 40px 0 68px;
                 .mypage-item-text {
@@ -437,4 +432,5 @@
       }
     }
   }
+  @include clearfix();
 }
