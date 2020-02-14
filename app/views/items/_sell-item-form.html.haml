@@ -146,15 +146,21 @@
           ?
         .sell-form-box
           %ul.si-container__si-box__sell-price
-            %li.si-container__si-box__si-photos.si-bottom
-              %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label
-                配送料の負担
+            %li.si-container__si-box__si-photos.si-bottom.clearfix
+              %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label-2
+                価格
               %span.required-display
                 必須
+              .sell-form-box__sell-price-input.l-right
+                ¥
+                .sell-form-box__sell-price-input__input-box.l-right
+                  = f.text_field :ItemsPrice, value: '', placeholder: '例）300', class:'input-default input-right'
+
+
             %li.sell-form-box__price-list.clearfix
               .sell-form-box__price-list__l-left
                 販売手数料 (10%)
-              .sell-form-box__price-list__l-right -
+              .l-right -
             %li.sell-form-box__price-list.clearfix.bold
               .sell-form-box__price-list__l-left-2
                 販売利益

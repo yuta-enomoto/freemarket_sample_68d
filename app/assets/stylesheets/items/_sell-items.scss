@@ -28,6 +28,11 @@
               font-weight: 600;
               line-height: 1.4em;
             }
+            &__si-label-2 {
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 55px;
+            }
             span.required-display {
               margin-left: 8px;
               font-size: 12px;
@@ -131,6 +136,10 @@
         font-size: 16px;
         outline: none; 
       }
+      .input-right {
+        text-align: right;
+      }
+      
       .input-default:focus {
         border-color: $lightgreen;
       }
@@ -214,17 +223,24 @@
             border-color: $lightgreen;
           }
         }
+        &__sell-price-input {
+          font-size: 10px;
+          color: $sub-font;
+          display: flex;
+          align-items: center;
+          
+          &__input-box {
+            display: inline-block;
+            width: 80%;
+            margin: 0 0 0 5%;
+          }
+        }
         &__price-list {
           padding: 24px 0;
           border-top: 1px solid #ccc;
 
           &__l-left {
             float: left;
-            font-size: 14px;
-            color: $sub-font;
-          }
-          &__l-right {
-            float: right;
             font-size: 14px;
             color: $sub-font;
           }
@@ -242,6 +258,13 @@
         }
         .none {
           display: none;
+        }
+        .l-right {
+          float: right;
+          font-size: 14px;
+          color: $sub-font;
+          width: 180px;
+          text-align: right;
         }
       }
       &__si-item-description {
