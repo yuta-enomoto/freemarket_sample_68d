@@ -158,8 +158,9 @@
         color: #888;
         font-size: 14px;
         font-weight: bold;
-        .price-sub-head {
+        span.price-sub-head {
           font-size: 13px;
+          margin-right: 2px;
         }
       }
       a.from-question {
