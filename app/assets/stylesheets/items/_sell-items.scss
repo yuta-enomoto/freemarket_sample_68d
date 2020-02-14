@@ -6,6 +6,15 @@
     &__si-inner {
       position: relative;
       background-color: rgb(255, 255, 255);
+
+      h2.single-head {
+        padding: 32px 16px;
+        font-size: 22px;
+        line-height: 1.5;
+        text-align: center;
+        color: $sub-font;
+      }
+
       .perimeter {
         padding: 40px;
       }
