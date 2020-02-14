@@ -176,6 +176,7 @@
         border: 0;
       }
       h3.sell-sub-head {
+        
         float: left;
         color: #888;
         font-size: 14px;
@@ -197,13 +198,14 @@
         text-align: center;
       }
       .sell-form-box {
+        
         float: right;
         width: 400px;
         margin: 0;
         &__select-wrap {
           margin: 8px 0 0;
           position: relative;
-          background: $white;
+          background: $wh;
           i.fa-chevron-down {
             position: absolute;
             right: 16px;
@@ -249,16 +251,20 @@
           border-top: 1px solid #ccc;
 
           &__l-left {
+            
             float: left;
             font-size: 14px;
             color: $sub-font;
           }
+
           &__l-left-2 {
+            
             float: left;
             font-size: 16px;
             color: $sub-font;
           }
           &__l-right-2 {
+            
             float: right;
             font-size: 25px;
             color: $sub-font;
@@ -275,6 +281,7 @@
           width: 180px;
           text-align: right;
         }
+        
       }
       &__si-item-description {
         &__box-frame {
