@@ -21,7 +21,8 @@ server '18.178.190.221', user: 'ec2-user', roles: %w{app db web}
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 
-
+set :rails_env, "production"
+set :unicorn_rack_env, "production"
 
 # Configuration
 # =============
