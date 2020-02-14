@@ -1,0 +1,61 @@
+.introductionSecond {
+  padding: 60px 20px;
+
+  &__title {
+    @include section_title ();
+  }
+
+  &__contentsBox {
+    display: flex;
+    justify-content: center;
+    max-width: 1020px;
+    margin: 0 auto;
+  }
+
+    &__contentBox {
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &--center {
+        margin: 0 5%;
+      }
+    }
+
+      &__imageBox {
+        position: relative;
+        margin-bottom: 20px;
+      }
+
+        &__image {
+          width: 100%;
+        }
+
+        &__number {
+          position: absolute;
+          top: 0;
+          left: 0;
+          font-size: 30px;
+          height: 57px;
+          line-height: 57px;
+          width: 57px;
+          text-align: center;
+          background-color: $lightgreen;
+          color: $wh;
+        }
+
+      &__subTitle {
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 16px;
+
+        > span {
+          color: $lightgreen;
+        }
+      }
+
+      &__text {
+        font-size: 18px;
+      }
+}

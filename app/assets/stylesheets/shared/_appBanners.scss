@@ -1,0 +1,22 @@
+.appBanners {
+  display: flex;
+
+  &__appStore {
+    display: inline-block;
+    height: 54px;
+    margin-right: 10px;
+
+    &:hover {
+      opacity: .5;
+    }
+  }
+
+  &__googlePlay {
+    display: inline-block;
+    height: 54px;
+
+    &:hover {
+      opacity: .5;
+    }
+  }
+}
