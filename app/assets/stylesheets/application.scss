@@ -2,9 +2,12 @@
 @import "./reset";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "shared/sell-icon";
+@import "shared/wrapper";
+@import "users/my-page";
+@import "items/sell-items";
 @import "shared/overall";
 @import "mixin/section_title";
-
 @import "shared/header";
 @import "shared/footerSecond";
 @import "shared/footerFirst";
