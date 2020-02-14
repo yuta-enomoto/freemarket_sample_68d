@@ -139,8 +139,8 @@
         height: 48px;
         padding: 10px 16px 8px;
         border-radius: 4px;
-        border: 1px solid #ccc;
-        background: #fff;
+        border: 1px solid $lightgray;
+        background: $wh;
         line-height: 1.5;
         font-size: 16px;
         outline: none; 
@@ -159,8 +159,8 @@
         max-width: 100%;
         min-height: 104px;
         padding: 10px;
-        border: 1px solid #ccc;
-        background: #fff;
+        border: 1px solid $lightgray;
+        background: $wh;
         font-size: 16px;
         line-height: 1.5;
         outline: none; 
@@ -192,7 +192,7 @@
         height: 14px;
         border-radius: 50%;
         background: #0099e8;
-        color: #fff;
+        color: $wh;
         line-height: 14px;
         font-size: 12px;
         text-align: center;
@@ -222,7 +222,7 @@
             height: 48px;
             padding: 0 16px;
             border-radius: 4px;
-            border: 1px solid #ccc;
+            border: 1px solid $lightgray;
             background: 0;
             font-size: 16px;
             line-height: 1.5;
@@ -248,7 +248,7 @@
         }
         &__price-list {
           padding: 24px 0;
-          border-top: 1px solid #ccc;
+          border-top: 1px solid $lightgray;
 
           &__l-left {
             
@@ -309,7 +309,7 @@ span.required-display {
   font-size: 12px;
   padding: 0 4px;
   background-color: #ff0211;
-  color: #fff;
+  color: $wh;
   border-radius: 2px;
   display: inline-block;
   font-style: normal;
