@@ -74,3 +74,4 @@ gem 'haml-rails'
 gem 'rspec-rails'
 gem 'devise'
 gem 'font-awesome-sass'
+

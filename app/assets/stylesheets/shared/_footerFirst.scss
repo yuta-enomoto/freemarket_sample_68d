@@ -1,0 +1,24 @@
+.footerFirst {
+  background-image: url(/assets/bg-appBanner-pict.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0;
+
+    &__title {
+      font-size: 24px;
+      color: $wh;
+      font-weight: bold;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      margin-bottom: 6px;
+    }
+
+    &__text {
+      font-size: 35px;
+      color: $wh;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      margin-bottom: 20px;
+    }
+}
