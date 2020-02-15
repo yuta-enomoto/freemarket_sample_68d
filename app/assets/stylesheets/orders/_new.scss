@@ -17,7 +17,7 @@ a {
       width: 700px;
       height: 97px;
       font-size: 22px;
-      color: #333333;
+      color: $sub-font;
       text-align: center;
       font-weight: 600;
       padding: 32px;
@@ -60,7 +60,7 @@ a {
             margin-left: 16px;
 
             .buy-item__name{
-              color: #333333;
+              color: $sub-font;
               height: 29px;
               font-size: 14px;
               margin: 0;
@@ -70,7 +70,7 @@ a {
             }
 
             .buy-price{
-              color: #333333;
+              color: $sub-font;
               width: 151.58px;
               height: 15px;
               margin: 0;
@@ -80,7 +80,7 @@ a {
 
 
               .item-shipping-fee{
-                color: #333333;
+                color: $sub-font;
                 width: 96px;
                 height: 12px;
                 display: inline-block;
@@ -119,13 +119,13 @@ a {
               align-items: center;
 
               &__label{
-                color: #333333;
+                color: $sub-font;
                 font-size: 18px;
                 font-weight: 600;
               }
 
               &__cell{
-                color: #333333;
+                color: $sub-font;
                 font-size: 30px;
                 font-weight: 600;
               }
@@ -188,7 +188,7 @@ a {
               height: 43px;
               
               .payment{
-                color: #333333;
+                color: $sub-font;
                 font-size: 14px;
                 font-weight: bold;
               }
