@@ -48,7 +48,7 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false, index: true|
 |description|text|null: false|
-|price|integer|null: false|
+|price|integer|null: false, index: true|
 |stock_status|boolean|null: false, default: true|
 |condition_id|references|null: false, foreign_key: true|
 |shipping_fee_who_id|references|null: false, foreign_key: true|
