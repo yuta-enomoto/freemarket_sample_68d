@@ -283,31 +283,66 @@
           margin: 0;
         }
       }
-      &__si-detail-description {
-
-      }
-      &__si-shipping-info {
-
-      }
-      &__si-price-info {
-        
-      }
       &__sell-price {
         list-style: none;
       }
+      span.required-display {
+        margin-left: 8px;
+        font-size: 12px;
+        padding: 0 4px;
+        background-color: #ff0211;
+        color: $wh;
+        border-radius: 2px;
+        display: inline-block;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 1.4em;
+      }
+      .notes-box {
+         &__lists{
+          line-height: 1.5;
+          font-size: 14px;
+          display: flex;
+
+          &__list {
+            &__j-link {
+              color: #0099e8;
+            }
+            &__j-link:hover {
+              text-decoration: underline;
+              opacity: .7;
+            }
+          }
+        }
+      }
+      .si-sbm-btn {
+        margin: 40px 0 0;
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        border: 1px solid transparent;
+        -webkit-transition: all ease-out .3s;
+        transition: all ease-out .3s;
+        cursor: pointer;
+        text-align: center;
+      }
+      .default-btn {
+        width: 45%;
+        margin: 24px auto 0;
+        background: #aaa;
+        border: 1px solid #aaa;
+        color: #fff;
+        display: block;
+        line-height: 48px;
+        font-size: 14px;
+        transition: all ease-out .3s;
+        cursor: pointer;
+        text-align: center;
+      }
     }
   }
-}
-
-span.required-display {
-  margin-left: 8px;
-  font-size: 12px;
-  padding: 0 4px;
-  background-color: #ff0211;
-  color: $wh;
-  border-radius: 2px;
-  display: inline-block;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 1.4em;
 }
