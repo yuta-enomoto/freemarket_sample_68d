@@ -6,9 +6,12 @@
         %p アカウントをお持ちでない方はこちら
         = link_to "新規会員登録", "#"
       
-    .single-main__login-form
-      = form_with class: "single-main__formbox" do |f|
-        = f.email_field :email, placeholder: "メールアドレス", class: "single-main__email"
-        = f.password_field :password, placeholder: "パスワード",class: "single-main__password"
-        = f.submit "ログイン", class: "single-main__submit"
-
+      .single-main__login-form
+        = form_with class: "single-main__login-form" do |f|
+          .single-main__form-inner  
+            %div
+              = f.email_field :email, placeholder: "メールアドレス", class: "single-main__email"
+            %div
+              = f.password_field :password, placeholder: "パスワード",class: "single-main__password"
+            %div
+              = f.submit "ログイン", class: "single-main__submit"

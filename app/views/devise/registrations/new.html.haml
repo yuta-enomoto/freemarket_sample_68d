@@ -1,273 +1,54 @@
 .main
-  %h2.head.registration 会員情報登録
-  
-  .form-registration
-    .form-group
-      %p.nickname パスワード
-      .form-require 必須
-      = form_with class: "form-group" do |f|
-        = f.text_field :nickname, placeholder: "ニックネーム", class: "form-group__nickname"
-      %p.text ニックネームを入力してください  
+  .main__single-container
+    %h2.main__head-registration 会員情報登録
+    = form_with class: "main__registar-form" do |f|
+      .main__single-content
+        .main__form-group
+          %label.main__nickname ニックネーム
+          %span.main__form-require 必須
+          = f.text_field :nickname, placeholder: "ニックネーム", class: "main__nickname-field" 
 
-    .form-group
-      %p.email メールアドレス
-      .form-require 必須
-      = form_with class: "form-group" do |f|
-        = f.email_field :text, placeholder: "PC携帯どちらでも可",class: "form-group__email"
-      %p.text メールアドレスを入力してください
-
-
-    .form-group
-      %p.password パスワード
-      .form-require 必須
-      = form_with class: "form-group" do |f|
-        = f.password_field :password, placeholder: "７文字以上の半角英数字", class: "form-group__password"
-      %p.text パスワードを入力してください
-      %p.text2 ※英字と数字の両方を含めて設定してください
-      %p.text3 パスワードを表示する
-
-    .form-group
-      ％h3.nete 本人確認
-      %p.nete2 安全安心にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+        .main__form-group
+          %label.main__email メールアドレス
+          %span.main__form-require 必須
+          = f.email_field :email, placeholder: "PC携帯どちらでも可",class: "main__email-field"
         
-    .form-group
-      %p.name  お名前（全角）
-      .form-require 必須
-      = form_with class: "form-group" do |f|
-        = f.name_field :family-name, placeholder: "例）山田", class: "form-group__family-name-kanji"  
-        = f.name_field :first-name, placeholder: "例) 彩", class: "form-group__first-name-kanji"  
-      %p.family-name-text 姓を入力してください  
-      %p.first-name-text 名を入力してください 
-
-      .form-group
-      %p.name  お名前（全角）
-      .form-require 必須
-      = form_with class: "form-group" do |f|
-        = f.name_field :family-name, placeholder: "例）山田", class: "form-group__family-name-kana"  
-        = f.name_field :first-name, placeholder: "例) 彩", class: "form-group__first-name-kana"  
-      %p.family-name-text 姓を入力してください  
-      %p.first-name-text 名を入力してください 
-
-    .form-group
-      %p.birhtday 生年月日
-      .form-require 必須  
+        .main__form-group
+          %label.main__password パスワード
+          %span.main__form-require 必須
+          = f.password_field :password, placeholder: "７文字以上の半角英数字", class: "main__password-field"
+          %p.text2 ※英字と数字の両方を含めて設定してください
           
-      .birthday-input
-        = form_with class: "form-group" do |f|
-        = f.number_field :number, placeholder: "例）1", class: "form-group__birthday-input"  
-        %p.year 年
-        %p.month 月
-        %p.day 日
-        
-        
-        
-        
-        .
-          日
-      .li#has-error#birhtday-error
-        生年月日を入力してください
+        .main__form-group
+          %div
+            %label.main__name  お名前（全角）
+            %span.main__form-require 必須
+          = f.text_field :family_name_kanji, placeholder: "例）山田", class: "main__family-name-kanji"  
+          = f.text_field :first_name_kanji, placeholder: "例) 彩", class: "main__first-name-kanji"  
+           
 
-        
-
-        
-      
-       
-
+        .main__form-group
+          %div
+            %label.main__name  お名前（全角）
+            %span.main__form-require 必須
+          = f.text_field :family_name_kana, placeholder: "例）ヤマダ", class: "main__family-name-kana"  
+          = f.text_field :first_name_kana, placeholder: "例) アヤ", class: "main__first-name-kana"  
           
+        .main__form-group
+          %label.main__birthday 生年月日
+          %span.main__form-require 必須  
+              
+          .main__birthday-input
+            %select.main__number-input
+            %span.main__year 年
+            %select.main__number-input
+            %span.main__month 月
+            %select.main__number-input
+            %span.main__day 日
+            
       
+        .main__single-text
+          = form_with class: "single-move-button" do |f|
+            = f.submit "次へ進む", class: "single-move-button"  
 
-      
-
-       
         
-      
-      
-        
-      
-    
-    
-  
-
-    .form-group
-      .label
-        生年月日
-      .span.form-require
-        必須  
-      .birthday-select-wrap
-        .select.select-default.has-error
-          --v
-        .span
-          年
-        .select.select-default.has-error
-          --v
-        .span
-          月
-        .select.select-default
-          --v
-        .span
-          日
-      .li#has-error#birhtday-error
-        生年月日を入力してください
-
-    .p.form-info-text
-      本人情報は正しく入力してください。
-      会員登録後、修正するにはお時間をいただくことがあります。
-
-  .div.l-single-content
-    .p.l-single-text.text-center
-      「次へ進む」のボタンを押すことにより、
-    .a 利用規約
-      に同意したものとみなします。
-
-      
-    .button.btn-default.btn-red
-      次に進む
-
-    .p
-      .a
-        本人情報の登録について
-    
-    .form-group.recaptha-team
-      .p
-        注意文
-
-
-
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--# %h2 Sign up
--# = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
--#   = render "devise/shared/error_messages", resource: resource
--#   .field
--#     = f.label :email
--#     %br/
--#     = f.email_field :email, autofocus: true, autocomplete: "email"
--#   .field
--#     = f.label :password
--#     - if @minimum_password_length
--#       %em
--#         (#{@minimum_password_length} characters minimum)
--#     %br/
--#     = f.password_field :password, autocomplete: "new-password"
--#   .field
--#     = f.label :password_confirmation
--#     %br/
--#     = f.password_field :password_confirmation, autocomplete: "new-password"
--#   .actions
--#     = f.submit "Sign up"
--# = render "devise/shared/links"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--# ＃.form-group
--#       = f.label '氏名'
--#       = f.text_field :name, class: 'form-control', placeholder: '氏名を入力してください'
--#     .form-group
--#       = f.label 'メールアドレス'
--#       = f.text_field :email, class: 'form-control', placeholder: 'メールアドレスを入力してください'
-
--#       .chat
--#   .header
--#     .header__chat-bin
--#       = link_to '#'do
--#     .header__chat-details
--#       = link_to '#' do
--#           -# = icon('fas','fan',class: '#')
--#     .header__chat-close
--#       = link_to '#'do
-
--#   .side-bar
--#     .header
--#       %div.header__box
--#         %ul.box__user-name
--#           = current_user.name
--#         %ul.box__menu-list
--#           %li.menu-list__new-group 
--#             = link_to new_group_path do
--#               = icon('fa', 'edit')
--#           %li.menu-list__edit-group
--#             = link_to edit_user_path(current_user) do
--#               = icon('fa', 'cog')
--#   .groups
--#     .group__team
--#       チーム名
--#     .group__contents
--#       コメント
--#     .group__member
--#       メンバー名
-
-
-
--#   .message{data: {message: {id: message.id}}}
--#     .message__contents
--#       メッセージ
--#     .message__contents__data
--#         = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-        
--#   .form
--#     = form_for [@group, @message] do |f|
--#       .form__box
--#         = f.text_field :content, class: 'form__box__message', placeholder: 'type a message'
--#         = f.label :image, class: 'form__box__submit' do
-       
--#       .form__post 
--#         = f.submit 'POST', class: 'form__post'
-
