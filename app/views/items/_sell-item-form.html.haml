@@ -53,7 +53,7 @@
 
       %hr.si-container__si-box__si-inner__si-underline
 
-      .si-container__si-box__si-picture-box.perimeter.clearfix
+      .si-container__si-box__si-picture-box.perimeter.display-box
         %h3.sell-sub-head
           商品の詳細
         .sell-form-box 
@@ -89,7 +89,7 @@
               = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
       %hr.si-container__si-box__si-inner__si-underline
 
-      .si-container__si-box__si-picture-box.perimeter.clearfix
+      .si-container__si-box__si-picture-box.perimeter.display-box
         %h3.sell-sub-head
           配送について
           = link_to "#", target: "blank", class: "from-question" do
@@ -141,7 +141,7 @@
 
       %hr.si-container__si-box__si-inner__si-underline
 
-      .si-container__si-box__si-picture-box.perimeter.clearfix
+      .si-container__si-box__si-picture-box.perimeter.display-box
         %h3.sell-sub-head
           販売価格
           %span.price-sub-head
@@ -150,7 +150,7 @@
             ?
         .sell-form-box
           %ul.si-container__si-box__sell-price
-            %li.si-container__si-box__si-photos.si-bottom.clearfix
+            %li.si-container__si-box__si-photos.si-bottom.display-box
               .si-right-box 
                 %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label-2
                   価格
@@ -162,11 +162,11 @@
                   = f.text_field :ItemsPrice, value: '', placeholder: '例）300', class:'input-default input-right'
 
 
-            %li.sell-form-box__price-list.clearfix
+            %li.sell-form-box__price-list.display-box
               .sell-form-box__price-list__l-left
                 販売手数料 (10%)
               .l-right -
-            %li.sell-form-box__price-list.clearfix.bold
+            %li.sell-form-box__price-list.display-box.bold
               .sell-form-box__price-list__l-left-2
                 販売利益
               .sell-form-box__price-list__l-right-2 -
