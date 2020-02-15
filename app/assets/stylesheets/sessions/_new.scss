@@ -1,24 +1,29 @@
 .single-main {
+  height: 100vh;
+  width: 100%;
+  background-color: lightgrey;
+
 
   &__login-panel{
-    display: block;
-    max-width: none;
-    width: 456px;
+    background-color: #fff;
+    height: 100vh;
+    width: 700px;
     margin: 0 auto;
-    background: #fff;
-    padding: 0;
   }
 
     &__login-no-acount {
       text-align: center;
-      padding: 40px 64px;
-
+      padding: 32px;
+      font-size: 22px;
+      border-bottom: 1px solid rgb(223, 223, 223);
+    
       p {
         font-size: 14px;
       }
 
       a {
-        display: block;
+        text-align: center;
+        display: inline-block;
         height: 42px;
         width: 328px;
         color: #FFFFFF;
@@ -26,53 +31,57 @@
         background-color: #0099E8;
         margin: 8px 0px 0px;
         border: 1px solid #0099e8;
-        line-height: 42px;}
+        line-height: 42px;
+        text-decoration: none;
+      }
     }
 
-    &__login-form{
-      padding: 24px 64px 32px;
-      width: 456px;  
-      margin: 0 auto;
+    &____login-form{
+      padding: 40px 40px 64px;
     }
-    
 
-      &__email{
-        height: 50px;
-        width: 328px;
-        padding: 10px 16px 8px;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-        background: #fff;
-        line-height: 48px;
-        font-size: 16px;
-        display: block;
+      &__form-inner{
+        text-align: center;
+        max-width: 343px;
+        margin: 0 auto;
       }
 
-      &__password{
-        height: 50px;
-        width: 328px;
-        padding: 10px 16px 8px;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-        background: #fff;
-        line-height: 48px;
-        font-size: 16px;
-        display: block;
-      }
+        &__email{
+          height: 50px;
+          width: 328px;
+          margin-top: 30px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 50px;
+          font-size: 16px;
+          display: block;
+        }
 
-      &__submit{
-        height: 50px;
-        width: 328px;
-        margin: 24px 0 0;
-        background: #ea352d;
-        border: 1px solid #ea352d;
-        color: #fff;
-        display: block;
-        
-        line-height: 50px;
-        font-size: 14px;
-      }
+        &__password{
+          height: 50px;
+          width: 328px;
+          margin-top: 25px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 50px;
+          font-size: 16px;
+          display: block;
+        }
 
-
-
+        &__submit{
+          height: 50px;
+          width: 328px;
+          margin-top: 150px;
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          color: #fff;
+          display: block;
+          
+          line-height: 50px;
+          font-size: 14px;
+        }
 }
