@@ -33,7 +33,7 @@
           .buy-content
             .buy-content__inner
               %span.payment 支払い方法
-              %a{href: "#"}
+              =link_to '#' do
                 %p.buy_user-info-text
                   %i.fa.fa-plus-circle
                   %span.inner-text 登録してください
@@ -41,7 +41,7 @@
           .buy-content2
             .buy-content2__inner2
               %span.shipping-addres 配送先
-              %a.send{href: "#"}
+              =link_to'#',class:"send" do
                 %p.buy_user-info-text2 
                   %i.fa.fa-plus-circle
                   %span.inner-text2 登録してください
