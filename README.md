@@ -53,7 +53,7 @@ Things you may want to cover:
 |condition_id|references|null: false, foreign_key: true|
 |shipping_fee_who_id|references|null: false, foreign_key: true|
 |prefecture_id|references|null: false, foreign_key: true|
-|days_to_ship_id|references|null: false, foreign_key: true|
+|shipping_days_id|references|null: false, foreign_key: true|
 |user_id|references|null: false, foreign_key: true|
 |brand_id|string|foreign_key: true|
 |category_id|string|null: false, foreign_key: true|
@@ -64,6 +64,10 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :category
 - belongs_to :brand
+- belongs_to_active_hash :condition
+- belongs_to_active_hash :shipping_fee_who
+- belongs_to_active_hash :prefecture
+- belongs_to_active_hash :shipping_days
 
 ---------------------------------------------------------------
 
@@ -137,5 +141,4 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-
----------------------------------------------------------------
+- belongs_to_active_hash :prefecture
