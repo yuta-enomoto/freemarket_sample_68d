@@ -3,6 +3,7 @@
     max-width: 700px;
     width: 100%;
     margin: 0px auto;
+
     &__si-inner {
       position: relative;
       background-color: rgb(255, 255, 255);
@@ -18,6 +19,7 @@
       .perimeter {
         padding: 40px;
       }
+
       &__si-underline {
         border-top-width: 1px;
         border-top-color: #efefef;
@@ -27,21 +29,26 @@
         border-top-style: solid;
         margin: 0;
       }
+
       &__si-picture-box {
         &__box-frame {
           margin: 0;
+
           &__si-photos {
             margin: 0!important;
+
             &__si-label {
               font-size: 14px;
               font-weight: 600;
               line-height: 1.4em;
             }
+
             &__si-label-2 {
               font-size: 14px;
               font-weight: 600;
               line-height: 55px;
             }
+
             span.required-display {
               margin-left: 8px;
               font-size: 12px;
@@ -55,24 +62,29 @@
               line-height: 1.4em;
             }
           }
+
           &__upload-text {
             margin-top: 16px;
             font-size: 14px;
             line-height: 1.4em;
             color: $sub-font;
           }
+
           &__upload-box {
             margin-top: 16px;
             display: block !important;
+
             &__upload-container {
               display: flex;
               flex-wrap: wrap;
               margin: -8px -4px 0px;
+
               &__si-inner-box {
                 height: 150px;
                 margin-top: 8px;
                 flex: 1 1 0%;
                 padding: 0px 4px;
+
                 &__si-inner-container {
                   align-content: center;
                   -webkit-box-align: center;
@@ -90,24 +102,29 @@
                   border-color: rgb(204, 204, 204);
                   border-image: initial;
                   transition: all 0.5s ease-out 0s;
+
                   #drop-zone {
                     width: 100%;
                     height: 100%;
                   }
+
                   label.image-label {
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     width: 100%;
                     height: 100%;
+
                     .hidden-filed {
                       display: none;
                     }
+
                     .si-big-box {
                       &__si-icon-box {
                         display: flex;
                         justify-content: center;
                         align-items: center;
+
                         img.camera-icon {
                           fill: rgb(34, 34, 34);
                           height: 24px;
@@ -116,6 +133,7 @@
                           filter: brightness(0%);    
                         }
                       }
+
                       &__si-text-box {
                         p.drag-drop {
                           color: $sub-font;
@@ -148,7 +166,6 @@
       .input-right {
         text-align: right;
       }
-      
       .input-default:focus {
         border-color: $lightgreen;
       }
@@ -179,6 +196,7 @@
         color: #888;
         font-size: 14px;
         font-weight: bold;
+
         span.price-sub-head {
           font-size: 13px;
           margin-right: 2px;
@@ -200,10 +218,12 @@
       .sell-form-box {
         width: 400px;
         margin: 0;
+
         &__select-wrap {
           margin: 8px 0 0;
           position: relative;
           background: $wh;
+
           i.fa-chevron-down {
             position: absolute;
             right: 16px;
@@ -257,6 +277,7 @@
             font-size: 16px;
             color: $sub-font;
           }
+
           &__l-right-2 {
             font-size: 25px;
             color: $sub-font;
@@ -277,7 +298,6 @@
         display: flex;
         justify-content: space-between;
       }
-       
       &__si-item-description {
         &__box-frame {
           margin: 0;
@@ -303,7 +323,7 @@
           line-height: 1.5;
           font-size: 14px;
           display: flex;
-
+          
           &__list {
             &__j-link {
               color: #0099e8;
@@ -317,9 +337,9 @@
       }
       .si-sbm-btn {
         margin: 40px 0 0;
-        background: #ea352d;
-        border: 1px solid #ea352d;
-        color: #fff;
+        background: $lightred;
+        border: 1px solid $lightred;
+        color: $wh;
         display: block;
         width: 100%;
         line-height: 48px;
@@ -335,7 +355,7 @@
         margin: 24px auto 0;
         background: #aaa;
         border: 1px solid #aaa;
-        color: #fff;
+        color: $wh;
         display: block;
         line-height: 48px;
         font-size: 14px;
