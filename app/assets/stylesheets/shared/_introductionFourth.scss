@@ -1,0 +1,41 @@
+.introductionFourth {
+  padding: 60px 100px;
+
+  &__title {
+    @include section_title ();
+  }
+
+  &__contentsBox {
+    display: flex;
+    justify-content: center;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+    &__contentBox {
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &--center {
+        margin: 0 10%;
+      }
+    }
+
+      &__image {
+        width: 70%;
+        margin-bottom: 38px;
+      }
+
+      &__subTitle {
+        font-weight: bold;
+        font-size: 19px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      &__text {
+        font-size: 17px;
+      }
+}

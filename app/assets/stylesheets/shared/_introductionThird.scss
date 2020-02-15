@@ -1,0 +1,26 @@
+.introductionThird {
+  background-image: url(/assets/bg-topMiddleDl-pict.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 400px;
+  padding: 0 100px;
+
+  &__title {
+    font-size: 27px;
+    font-weight: bold;
+    color: $wh;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 1.5;
+    color: $wh;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    margin-bottom: 30px;
+  }
+}
