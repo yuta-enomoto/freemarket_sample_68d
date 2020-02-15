@@ -176,8 +176,6 @@
         border: 0;
       }
       h3.sell-sub-head {
-        
-        float: left;
         color: #888;
         font-size: 14px;
         font-weight: bold;
@@ -196,10 +194,10 @@
         line-height: 14px;
         font-size: 12px;
         text-align: center;
+        position: relative;
+        bottom: 0.7px;
       }
       .sell-form-box {
-        
-        float: right;
         width: 400px;
         margin: 0;
         &__select-wrap {
@@ -251,21 +249,15 @@
           border-top: 1px solid $lightgray;
 
           &__l-left {
-            
-            float: left;
             font-size: 14px;
             color: $sub-font;
           }
 
           &__l-left-2 {
-            
-            float: left;
             font-size: 16px;
             color: $sub-font;
           }
           &__l-right-2 {
-            
-            float: right;
             font-size: 25px;
             color: $sub-font;
             font-weight: bold;
@@ -275,14 +267,17 @@
           display: none;
         }
         .l-right {
-          float: right;
           font-size: 14px;
           color: $sub-font;
           width: 180px;
           text-align: right;
         }
-        
       }
+      .clearfix {
+        display: flex;
+        justify-content: space-between;
+      }
+       
       &__si-item-description {
         &__box-frame {
           margin: 0;

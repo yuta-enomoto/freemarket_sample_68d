@@ -92,8 +92,8 @@
       .si-container__si-box__si-picture-box.perimeter.clearfix
         %h3.sell-sub-head
           配送について
-        = link_to "#", target: "blank", class: "from-question" do
-          ?
+          = link_to "#", target: "blank", class: "from-question" do
+            ?
         .sell-form-box 
           .si-container__si-box__box-frame
             .si-container__si-box__si-photos
@@ -146,15 +146,16 @@
           販売価格
           %span.price-sub-head
             (300〜9,999,999)
-        = link_to "#", target: "blank", class: "from-question" do
-          ?
+          = link_to "#", target: "blank", class: "from-question" do
+            ?
         .sell-form-box
           %ul.si-container__si-box__sell-price
             %li.si-container__si-box__si-photos.si-bottom.clearfix
-              %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label-2
-                価格
-              %span.required-display
-                必須
+              .si-right-box 
+                %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label-2
+                  価格
+                %span.required-display
+                  必須
               .sell-form-box__sell-price-input.l-right
                 ¥
                 .sell-form-box__sell-price-input__input-box.l-right
