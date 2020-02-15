@@ -21,4 +21,121 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+# DB設計
+
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|first_name|string|null: false|
+|last_name|string|null: false|
+|first_furigana|string|null: false|
+|last_furigana|string|null: false|
+|birthday|integer|null: false|
+|emil|string|null: false, unique: true|
+|password|string|null: false|
+
+### Association
+- has_many :items
+- has_many :orders
+- has_one :credit_card
+- has_one :address
+
+---------------------------------------------------------------
+
+## itemsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, index: true|
+|description|text|null: false|
+|price|integer|null: false|
+|stock_status|boolean|null: false, default: true|
+|condition_id|references|null: false, foreign_key: true|
+|shipping_fee_who_id|references|null: false, foreign_key: true|
+|prefecture_id|references|null: false, foreign_key: true|
+|days_to_ship_id|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|brand_id|string|foreign_key: true|
+|category_id|string|null: false, foreign_key: true|
+
+### Association
+- has_many :item_images
+- has_one :order
+- belongs_to :user
+- belongs_to :category
+- belongs_to :brand
+
+---------------------------------------------------------------
+
+## item_imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|url|string|null: false|
+|item_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :item
+
+---------------------------------------------------------------
+
+## brandsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- has_many :items
+
+---------------------------------------------------------------
+
+## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|ancestry|string|null: false, index: true|
+
+### Association
+- has_many :items
+- has_ancestry
+
+---------------------------------------------------------------
+
+## ordersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :item
+
+---------------------------------------------------------------
+
+## credit_cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|customer_id|string|null: false|
+|card_id|string|null: false|
+|user_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+
+---------------------------------------------------------------
+
+## addressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|postal_code|string|null: false|
+|address1|string|null: false|
+|address2|string|null: false|
+|building_name|string|
+|phone_number|integer|
+|prefecture_id|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+
+---------------------------------------------------------------
