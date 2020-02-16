@@ -50,11 +50,11 @@ Things you may want to cover:
 |description|text|null: false|
 |price|integer|null: false, index: true|
 |stock_status|boolean|null: false, default: true|
-|condition_id|references|null: false, foreign_key: true|
-|shipping_fee_who_id|references|null: false, foreign_key: true|
-|prefecture_id|references|null: false, foreign_key: true|
-|shipping_days_id|references|null: false, foreign_key: true|
-|user_id|references|null: false, foreign_key: true|
+|condition_id|integer|null: false, foreign_key: true|
+|shipping_fee_who_id|integer|null: false, foreign_key: true|
+|prefecture_id|integer|null: false, foreign_key: true|
+|shipping_days_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 |brand_id|string|foreign_key: true|
 |category_id|string|null: false, foreign_key: true|
 
@@ -75,7 +75,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |url|string|null: false|
-|item_id|references|null: false, foreign_key: true|
+|item_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :item
@@ -107,8 +107,8 @@ Things you may want to cover:
 ## ordersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+|item_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -121,7 +121,7 @@ Things you may want to cover:
 |------|----|-------|
 |customer_id|string|null: false|
 |card_id|string|null: false|
-|user_id|references|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -136,8 +136,8 @@ Things you may want to cover:
 |address2|string|null: false|
 |building_name|string|
 |phone_number|integer|
-|prefecture_id|references|null: false, foreign_key: true|
-|user_id|references|null: false, foreign_key: true|
+|prefecture_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
