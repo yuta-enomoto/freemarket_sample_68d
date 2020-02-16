@@ -55,8 +55,8 @@ Things you may want to cover:
 |prefecture_id|integer|null: false, foreign_key: true|
 |shipping_days_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
-|brand_id|string|foreign_key: true|
-|category_id|string|null: false, foreign_key: true|
+|brand_id|integer|foreign_key: true|
+|category_id|integer|null: false, foreign_key: true|
 
 ### Association
 - has_many :item_images
