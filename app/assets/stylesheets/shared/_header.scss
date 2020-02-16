@@ -83,6 +83,7 @@
         }
 
           &__navMenuSecond {
+            z-index: 100;
             position: absolute;
             top: 100%;
             width: 240px;
@@ -97,7 +98,7 @@
               line-height: 40px;
               height: 40px;
               padding-left: 10px;
-
+              
               &:hover > a {
                 color: $orange;
               }
