@@ -69,7 +69,7 @@
           }
         }
       }
-      &__mypage-nav-list {
+      .top-space {
         margin: 8px 0 0;
       }
       &__mypage-nav-head {
@@ -166,7 +166,7 @@
           h3.tab-content {
             a.tab-link {
               background-color: $wh;
-              border-top: 2px solid #ea352d;
+              border-top: 2px solid $lightred;
               position: relative;
             }
             a.tab-link:hover {
@@ -305,7 +305,7 @@
           h3.tab-content {
             a.tab-link-2 {
               background-color: $wh;
-              border-top: 2px solid #ea352d;
+              border-top: 2px solid $lightred;
               position: relative;
             }
             a:hover {
@@ -380,13 +380,13 @@
                   line-height: 1.5;
                 }
                 .mypage-item-status.bold.action-required {
-                  background: #ea352d;
+                  background: $lightred;
                   display: inline-block;
                   margin: 8px 0 0 0;
                   padding: 1px 5px 2px 5px;
                   border-radius: 2px;
                   font-size: 12px;
-                  color: #fff;
+                  color: $wh;
                 }
                 .mypage-item-status.bold.action-required-2 {
                   background: #888;
@@ -395,7 +395,7 @@
                   padding: 1px 5px 2px 5px;
                   border-radius: 2px;
                   font-size: 12px;
-                  color: #fff;
+                  color: $wh;
                 }
                 
               }

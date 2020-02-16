@@ -1,5 +1,9 @@
 .si-container__si-box
   .si-container__si-box__si-inner
+    %h2.single-head.bold
+      商品の情報を入力
+    %hr.si-container__si-box__si-inner__si-underline
+
     = form_with local: true do |f|
       .si-container__si-box__si-picture-box.perimeter
         .si-container__si-box__box-frame
@@ -20,7 +24,7 @@
               
                     .si-big-box
                       .si-big-box__si-icon-box
-                        %img{alt: "出品する", class: 'camera-icon', src: "/assets/shared/icon_camera.png"}/
+                        = image_tag "/assets/shared/icon_camera.png", alt: "出品する", class: 'camera-icon'
                       .si-big-box__si-text-box  
                         %p.drag-drop
                           ドラッグアンドドロップ
@@ -31,14 +35,168 @@
 
       .si-container__si-box__si-picture-box.perimeter
         .si-container__si-box__box-frame
-        .si-container__si-box__box-frame
+          .si-container__si-box__si-photos
+            %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label
+              商品名
+            %span.required-display
+              必須
+          .si-container__si-box__input-container
+            = f.text_field :ItemsName, value: '', placeholder: '商品名（必須 40文字まで)', class:'input-default'
+        .si-container__si-box__box-frame.si-top
+          .si-container__si-box__si-photos
+            %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label
+              商品の説明
+            %span.required-display
+              必須
+          .si-container__si-box__input-container
+            = f.text_area :ItemDescription, rows: '5', placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。', class:'text-default'
+
+      %hr.si-container__si-box__si-inner__si-underline
+
+      .si-container__si-box__si-picture-box.perimeter.display-box
+        %h3.sell-sub-head
+          商品の詳細
+        .sell-form-box 
+          .si-container__si-box__box-frame
+            .si-container__si-box__si-photos
+              %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label
+                カテゴリー
+              %span.required-display
+                必須
+            .sell-form-box__select-wrap
+              %i.fas.fa-chevron-down
+              = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
+
+            -# ここから（とりあえずでdisplay: noenをかけています。）
+
+            .sell-form-box__select-wrap.none
+              %i.fas.fa-chevron-down
+              = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
+            .sell-form-box__select-wrap.none
+              %i.fas.fa-chevron-down
+              = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
+
+            -# ここまで
+
+          .si-container__si-box__box-frame.si-top
+            .si-container__si-box__si-photos
+              %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label
+                商品の状態
+              %span.required-display
+                必須
+            .sell-form-box__select-wrap
+              %i.fas.fa-chevron-down
+              = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
+      %hr.si-container__si-box__si-inner__si-underline
+
+      .si-container__si-box__si-picture-box.perimeter.display-box
+        %h3.sell-sub-head
+          配送について
+          = link_to "#", target: "blank", class: "from-question" do
+            ?
+        .sell-form-box 
+          .si-container__si-box__box-frame
+            .si-container__si-box__si-photos
+              %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label
+                配送料の負担
+              %span.required-display
+                必須
+            .sell-form-box__select-wrap
+              %i.fas.fa-chevron-down
+              = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
+        
+              -# ここから（とりあえずでdisplay: noenをかけています。）
+
+          .si-container__si-box__box-frame.si-top.none
+            .si-container__si-box__si-photos
+              %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label
+                発送の方法
+              %span.required-display
+                必須
+            .sell-form-box__select-wrap
+              %i.fas.fa-chevron-down
+              = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
+                 
+            -# ここまで
+
+          .si-container__si-box__box-frame.si-top
+            .si-container__si-box__si-photos
+              %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label
+                発送元の地域
+              %span.required-display
+                必須
+            .sell-form-box__select-wrap
+              %i.fas.fa-chevron-down
+              = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
+
+          .si-container__si-box__box-frame.si-top
+            .si-container__si-box__si-photos
+              %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label
+                発送までの日数
+              %span.required-display
+                必須
+            .sell-form-box__select-wrap
+              %i.fas.fa-chevron-down
+              = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
+
+      %hr.si-container__si-box__si-inner__si-underline
+
+      .si-container__si-box__si-picture-box.perimeter.display-box
+        %h3.sell-sub-head
+          販売価格
+          %span.price-sub-head
+            (300〜9,999,999)
+          = link_to "#", target: "blank", class: "from-question" do
+            ?
+        .sell-form-box
+          %ul.si-container__si-box__sell-price
+            %li.si-container__si-box__si-photos.si-bottom.display-box
+              .si-right-box 
+                %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label-2
+                  価格
+                %span.required-display
+                  必須
+              .sell-form-box__sell-price-input.l-right
+                ¥
+                .sell-form-box__sell-price-input__input-box.l-right
+                  = f.text_field :ItemsPrice, value: '', placeholder: '例）300', class:'input-default input-right'
+
+
+            %li.sell-form-box__price-list.display-box
+              .sell-form-box__price-list__l-left
+                販売手数料 (10%)
+              .l-right -
+            %li.sell-form-box__price-list.display-box.bold
+              .sell-form-box__price-list__l-left-2
+                販売利益
+              .sell-form-box__price-list__l-right-2 -
       %hr.si-container__si-box__si-inner__si-underline
 
       .si-container__si-box__si-picture-box.perimeter
-        .si-container__si-box__box-frame
-      %hr.si-container__si-box__si-inner__si-underline
-
-      .si-container__si-box__si-picture-box.perimeter
-      %hr.si-container__si-box__si-inner__si-underline
-
-      .si-container__si-box__si-picture-box.perimeter
+        .notes-box
+          %ul.notes-box__lists
+            %li.linotes-box__lists__list
+              = link_to "#", class: "notes-box__lists__list__j-link" do
+                禁止されている出品
+            %li.linotes-box__lists__list
+              、
+            %li.linotes-box__lists__list
+              = link_to "#", class: "notes-box__lists__list__j-link" do
+                行為
+            %li.linotes-box__lists__list
+              を必ずご確認ください。
+          %ul.notes-box__lists
+            %li.linotes-box__lists__list
+              またブランド品でシリアルナンバー等がある場合はご記載ください。
+              = link_to "#", class: "notes-box__lists__list__j-link" do
+                偽ブランドの販売
+              は犯罪であり処罰される可能性があります。
+          %ul.notes-box__lists
+            %li.linotes-box__lists__list
+              また、出品をもちまして
+              = link_to "#", class: "notes-box__lists__list__j-link" do
+                加盟店規約
+              に同意したことになります。
+        = f.submit "出品する", class: 'si-sbm-btn'
+        = link_to :back, class: "default-btn" do 
+          もどる

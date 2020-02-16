@@ -3,11 +3,9 @@
 @import "mixin/section_title";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "shared/overall";
 @import "shared/general";
 @import "shared/sell-icon";
-@import "users/my-page";
-@import "items/sell-items";
-@import "shared/overall";
 @import "shared/header";
 @import "shared/footerSecond";
 @import "shared/footerFirst";
@@ -17,4 +15,5 @@
 @import "shared/introductionFourth";
 @import "shared/pickUp";
 @import "shared/appBanners";
-
+@import "users/my-page";
+@import "items/sell-items";
