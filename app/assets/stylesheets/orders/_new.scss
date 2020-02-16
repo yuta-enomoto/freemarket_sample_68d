@@ -4,14 +4,14 @@ a {
 
 .main-h{
   height: 722px;
-  background-color: $lightgray;
+  background-color: #eeeeee;
   display: flex;
   justify-content: center;  
   
   &__buy{
     width: 700px;
     height: 722px;
-    background-color: white;
+    background-color: $wh;
     
     &__head{
       width: 700px;
@@ -140,7 +140,7 @@ a {
             &__parent{  
               width:343px;
               height: 14px;
-              background-color: white;              
+              background-color: $wh;              
 
               .label{
                 width: 343px;
@@ -151,8 +151,8 @@ a {
                 .send{      
                   position: absolute;                  
                   transform: scale(1.2);
-                  background-color: #ccc;  
-                  color: #ccc;
+                  background-color: $lightgray;  
+                  color: $lightgray;
                   top: 20%;                    
                 }
                 .label2{
@@ -167,8 +167,8 @@ a {
                   width: 15px;
                   height: 15px;
                   transform: scale(1.2);
-                  background-color: #ccc;  
-                  color: #ccc;
+                  background-color:$lightgray;  
+                  color: $lightgray;
                   top: 20%;
                   border-radius: 2px;
                 }
