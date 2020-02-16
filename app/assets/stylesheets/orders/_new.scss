@@ -4,7 +4,7 @@ a {
 
 .main-h{
   height: 722px;
-  background-color: #eeeeee;
+  background-color: $lightgray;
   display: flex;
   justify-content: center;  
   
@@ -255,7 +255,7 @@ a {
               height:50px;
               border: 1px solid #888;
               background: #888;
-              color: #fff;
+              color: $wh;
               background-color: #888888;
               font-size: 14px;
               font-weight: bold;
