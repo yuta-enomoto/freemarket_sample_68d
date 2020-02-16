@@ -3,7 +3,7 @@
   background-color: lightgrey;
 
   &__single-container {
-    background-color: #fff;
+    background-color: $wh;
     width: 700px;
     margin: 0 auto;
   }
@@ -27,7 +27,7 @@
     }
 
       &__form-group{
-        color: #333333;
+        color: $sub-font;
         font-size: 14px;
         margin-bottom: 30px;
       }
@@ -35,7 +35,7 @@
         &__nickname{
           height: 14px;
           width: 83.31px; 
-          color: #333333;
+          color: $sub-font;
           font-size: 14px;
           font-weight: bold;
         }
@@ -43,7 +43,7 @@
         &__form-require{
           height: 19px;
           width: 32px;
-          color: #FFFFFF;
+          color: $sub-font;
           font-size: 12px;
           background-color: #EA352D;
           margin: 0px 0px 0px 9px;
@@ -51,7 +51,7 @@
         }
 
         &__nickname-field{
-          background-color: #FFFFFF;
+          background-color: $wh;
           margin: 8px 0px 0px;
           padding: 10px 16px 8px;
           display: block;
@@ -64,7 +64,7 @@
         &__email{
           height: 14px;
           width: 83.31px; 
-          color: #333333;
+          color: $sub-font;
           font-size: 14px;
           font-weight: bold;
         }
@@ -72,7 +72,7 @@
         &__form-require{
           height: 19px;
           width: 32px;
-          color: #FFFFFF;
+          color: $wh;
           font-size: 12px;
           background-color: #EA352D;
           margin: 0px 0px 0px 9px;
@@ -80,7 +80,7 @@
         }
 
         &__email-field{
-          background-color: #FFFFFF;
+          background-color: $wh;
           margin: 8px 0px 0px;
           padding: 10px 16px 8px;
           display: block;
@@ -93,13 +93,13 @@
         &__password{
           height: 14px;
           width: 83.31px; 
-          color: #333333;
+          color: $sub-font;
           font-size: 14px;
           font-weight: bold;
         }
 
         &__password-field{
-          background-color: #FFFFFF;
+          background-color: $wh;
           margin: 8px 0px 0px;
           padding: 10px 16px 8px;
           display: block;
@@ -120,7 +120,7 @@
         &__name{
           height: 14px;
           width: 70px;
-          color: #333333;
+          color: $sub-font;
           font-size: 14px;
           font-weight: bold;
         }
@@ -128,7 +128,7 @@
         &__form-require{
           height: 19px;
           width: 32px;
-          color: #FFFFFF;
+          color: $wh;
           font-size: 12px;
           background-color: #EA352D;
           margin: 0px 0px 0px 9px;
@@ -141,10 +141,11 @@
           padding: 10px 16px 8px;
           border-radius: 4px;
           border: 1px solid #ccc;
-          background: #fff;
+          background: $wh;
           line-height: 48px;
           font-size: 16px;
           margin-right: 8px;
+          margin-top: 8px
         }
 
         &__first-name-kanji{
@@ -153,7 +154,7 @@
           padding: 10px 16px 8px;
           border-radius: 4px;
           border: 1px solid #ccc;
-          background: #fff;
+          background: $wh;
           line-height: 48px;
           font-size: 16px;
         }
@@ -164,7 +165,7 @@
         &__name{
           height: 14px;
           width: 70px;
-          color: #333333;
+          color: $sub-font;
           font-size: 14px;
           font-weight: bold;
         }
@@ -172,7 +173,7 @@
         &__form-require{
           height: 19px;
           width: 32px;
-          color: #FFFFFF;
+          color: $wh;
           font-size: 12px;
           background-color: #EA352D;
           margin: 0px 0px 0px 8px;
@@ -185,10 +186,11 @@
           padding: 10px 16px 8px;
           border-radius: 4px;
           border: 1px solid #ccc;
-          background: #fff;
+          background: $wh;
           line-height: 48px;
           font-size: 16px;
           margin-right: 8px;
+          margin-top: 8px
         }
 
         &__first-name-kana{
@@ -197,7 +199,7 @@
           padding: 10px 16px 8px;
           border-radius: 4px;
           border: 1px solid #ccc;
-          background: #fff;
+          background: $wh;
           line-height: 48px;
           font-size: 16px;
         }
@@ -207,7 +209,7 @@
         &__birthday{
           height: 14px;
           width: 56px;
-          color: #333333;
+          color: $sub-font;
           font-size: 14px;
           font-weight: bold;
         }
@@ -215,7 +217,7 @@
         &__form-require{
           height: 19px;
           width: 32px;
-          color: #FFFFFF;
+          color:  $wh;
           background-color: #EA352D;
           margin: 0px 0px 0px 8px;
           padding: 2px 4px;
@@ -224,19 +226,21 @@
         &__birthday-input{
           height: 85px;
           width: 343px;
-          color: #333333;
+          color: $sub-font;
           font-size: 14px;
+          margin-top: 8px
         }
           &__nember-input{
             height: 48px;
             width: 76px;
             padding: 0px 10px;
+            
           }
           
           &__year{
             height: 14px;
             width: 18px;
-            color: #333333;
+            color: $sub-font;
             font-size: 14px;
             margin: 0px 2p;
           }
@@ -250,7 +254,7 @@
           &__month{
             height: 14px;
             width: 18px;
-            color: #333333;
+            color: $sub-font;
             font-size: 14px;
             margin: 0px 2p;
           }
@@ -264,7 +268,7 @@
           &__day{
             height: 14px;
             width: 18px;
-            color: #333333;
+            color: $sub-font;
             font-size: 14px;
             margin: 0px 2p;
           
@@ -276,7 +280,7 @@
         margin: 24px 0 0;
         background: #ea352d;
         border: 1px solid #ea352d;
-        color: #fff;
+        color: $wh;
         display: block;
         line-height: 50px;
         font-size: 14px;
@@ -287,7 +291,6 @@
         .single-move-button{
           background: #ea352d;
           border: 1px solid #ea352d;
-          color: #fff;
+          color: $wh;
         }
 }
-        
