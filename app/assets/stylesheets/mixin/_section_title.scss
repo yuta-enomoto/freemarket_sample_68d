@@ -6,7 +6,6 @@
   margin-bottom: 40px;
   padding-bottom: 15px;
 
-
   &:after {
     content: "";
     position: absolute;
@@ -16,13 +15,5 @@
     width: 70px;
     height: 4px;
     background-color: $lightgreen;
-  }
-}
-
-@mixin clearfix() {
-  &:after {
-    content: '';
-    display: block;
-    clear: both;
   }
 }
