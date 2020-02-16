@@ -1,13 +1,12 @@
 @import "config/colors";
 @import "./reset";
+@import "mixin/section_title";
+@import "mixin/clearfix";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "shared/sell-icon";
-@import "shared/wrapper";
-@import "users/my-page";
-@import "items/sell-items";
 @import "shared/overall";
-@import "mixin/section_title";
+@import "shared/general";
+@import "shared/sell-icon";
 @import "shared/header";
 @import "shared/footerSecond";
 @import "shared/footerFirst";
@@ -20,3 +19,5 @@
 @import "shared/breadCrumb";
 @import "home/index";
 @import "items/show";
+@import "users/my-page";
+@import "items/sell-items";
