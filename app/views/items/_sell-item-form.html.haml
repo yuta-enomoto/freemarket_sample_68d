@@ -14,22 +14,24 @@
               必須
           %p.si-container__si-box__si-inner__si-picture-box__box-frame__upload-text
             最大10枚までアップロードできます
-          .si-container__si-box__si-inner__si-picture-box__box-frame__upload-box
-            .si-container__si-box__si-inner__si-picture-box__box-frame__upload-box__upload-container
-              .si-container__si-box__si-inner__si-picture-box__box-frame__upload-box__upload-container__si-inner-box
-                .si-container__si-box__si-inner__si-picture-box__box-frame__upload-box__upload-container__si-inner-box__si-inner-container
-                  = f.label :image, id: "drop-zone", class: "image-label" do
-                    = f.file_field :image, accept: "image/png,image/jpeg", autocomplete: "off", multiple: "", style: "display:none", tabindex: "-1", type: "file", class: "hidden-field"
-                    %input{accept: "image/png,image/jpeg", autocomplete: "off", multiple: "", style: "display:none", tabindex: "-1", type: "file"}
+
+            
+          #image-box-1
+            .item-num-0#image-box__container
+              = f.fields_for :images do |i|
+                .input-area
+                  = i.file_field :image, type: 'file', name: "item[images_attributes][][image_url]", value:"", style: "display:none", id:"img-file"
+                  %label.input{for: "img-file"}
               
                     .si-big-box
                       .si-big-box__si-icon-box
-                        = image_tag "/assets/shared/icon_camera.png", alt: "出品する", class: 'camera-icon'
+                        %i.fas.fa-camera
                       .si-big-box__si-text-box  
                         %p.drag-drop
                           ドラッグアンドドロップ
                         %p.drag-drop
                           またはクリックしてファイルをアップロード
+
 
       %hr.si-container__si-box__si-inner__si-underline
 
