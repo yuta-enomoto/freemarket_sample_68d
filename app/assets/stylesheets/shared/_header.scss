@@ -1,0 +1,204 @@
+.header {
+  width: 100%;
+  max-width: 1040px;
+  min-width: 520px;
+  margin: 0 auto;
+  height: 100px;
+  padding: 0 60px;
+  background-color: $wh;
+
+  &__topContents {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+    &__logo {
+      margin-right: 30px;
+    }
+
+        &__logoImage {
+          display: block;
+        }
+
+    &__searchForm {
+      display: flex;
+      width: 100%;
+    }
+
+      &__searchField {
+        width: 100%;
+        height: 36px;
+        padding-left: 10px;
+        box-shadow: none;
+        font-size: 12px;
+        background-color: $wh;
+
+        &:focus {
+          border: 1px solid $lightgreen;
+          outline: none;
+        }
+      }
+
+      &__searchBtn{
+        background-color: $lightgreen;
+        min-width: 36px;
+        height: 36px;
+        border: none;
+        font-size: 16px;
+        color: $wh;
+        outline: none;
+        transition: all .2s;
+
+        &:hover {
+          background-color: $lightgreen-pale;
+        }
+      }
+
+  &__bottomContents {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+      &__navMenu {
+        display: flex;
+      }
+
+        &__navContent {
+          height: 45px;
+          line-height: 45px;
+          font-size: 14px;
+          margin-right: 46px;
+          position: relative;
+
+          &:hover > a {
+            color: $orange;
+          }
+
+          &:hover > .header__navMenuSecond {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+
+          &__navMenuSecond {
+            z-index: 100;
+            position: absolute;
+            top: 100%;
+            width: 240px;
+            background-color: $wh;
+            visibility: hidden;
+            opacity: 0;
+          }
+
+            &__navContentSecond {
+              border-top: solid 1px $grey;
+              font-size: 14px;
+              line-height: 40px;
+              height: 40px;
+              padding-left: 10px;
+              
+              &:hover > a {
+                color: $orange;
+              }
+
+              &:hover > .header__navMenuThird {
+                visibility: visible;
+                opacity: 1;
+              }
+            }
+
+              &__navMenuThird {
+                position: absolute;
+                top: 0;
+                left: 100%;
+                width: 240px;
+                background-color:  $wh;
+                visibility: hidden;
+                opacity: 0;
+              }
+  
+                &__navContentThird {
+                  border-top: solid 1px $grey;
+                  font-size: 14px;
+                  line-height: 40px;
+                  height: 40px;
+                  padding-left: 10px;
+
+                  &:hover > a {
+                    color: $orange;
+                  }
+      
+                  &:hover > .header__navMenuForth {
+                    visibility: visible;
+                    opacity: 1;
+                  }
+                }
+
+                  &__navMenuForth {
+                    position: absolute;
+                    top: 0;
+                    left: 100%;
+                    width: 240px;
+                    background-color:  $wh;
+                    visibility: hidden;
+                    opacity: 0;
+                  }
+        
+                    &__navContentForth {
+                      border-top: solid 1px $grey;
+                      font-size: 14px;
+                      line-height: 40px;
+                      height: 40px;
+                      padding-left: 10px;
+
+                      &:hover > a {
+                        color: $orange;
+                      }
+                    }
+
+    &__userMenu {
+      position: relative;
+
+      &:hover > .header__userMenuSecond {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+        &__userLink {
+          display: inline-block;
+          font-size: 14px;
+          margin-right: 16px;
+        }
+
+        &__userContent {
+          height: 45px;
+          line-height: 45px;
+          display: inline-block;
+          font-size: 14px;
+        }
+
+        &__userMenuSecond {
+          position: absolute;
+          top: 100%;
+          right: 0;
+          width: 240px;
+          background-color: $wh;
+          visibility: hidden;
+          opacity: 0;
+        }
+
+          &__userContentSecond {
+            border-top: solid 1px $grey;
+            font-size: 14px;
+            line-height: 40px;
+            height: 40px;
+            padding-left: 10px;
+
+            &:hover > a {
+              color: $orange;
+            }
+          }
+}

@@ -1,0 +1,26 @@
+.sell-icon {
+  &__sell-item-btn {
+    width: 120px;
+    background: $lightgreen;
+    text-align: center;
+    border-radius: 4%;
+    bottom: 32px;
+    right: 32px;
+    position: fixed;
+    padding: 15px;
+    &__sell-link {
+      display: block;
+      &__text {
+        color: $wh;
+        display: block;
+        font-size: 18px;
+        text-decoration: none;
+        margin-bottom: 5px;
+      }
+      &__pic {
+        width: 60%;
+        vertical-align: bottom;
+      }
+    }
+  }
+}
