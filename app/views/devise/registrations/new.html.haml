@@ -1,0 +1,53 @@
+.main
+  .main__single-container
+    %h2.main__head-registration 会員情報登録
+    = form_with local: true, class: "main__registar-form" do |f|
+      .main__single-content
+        .main__form-group
+          %label.main__nickname ニックネーム
+          %span.main__form-require 必須
+          = f.text_field :nickname, placeholder: "ニックネーム", class: "main__nickname-field" 
+
+        .main__form-group
+          %label.main__email メールアドレス
+          %span.main__form-require 必須
+          = f.email_field :email, placeholder: "PC携帯どちらでも可",class: "main__email-field"
+        
+        .main__form-group
+          %label.main__password パスワード
+          %span.main__form-require 必須
+          = f.password_field :password, placeholder: "７文字以上の半角英数字", class: "main__password-field"
+          %p.text2 ※英字と数字の両方を含めて設定してください
+          
+        .main__form-group
+          %div
+            %label.main__name  お名前（全角）
+            %span.main__form-require 必須
+          = f.text_field :family_name_kanji, placeholder: "例）山田", class: "main__family-name-kanji"  
+          = f.text_field :first_name_kanji, placeholder: "例) 彩", class: "main__first-name-kanji"  
+           
+
+        .main__form-group
+          %div
+            %label.main__name  お名前（全角）
+            %span.main__form-require 必須
+          = f.text_field :family_name_kana, placeholder: "例）ヤマダ", class: "main__family-name-kana"  
+          = f.text_field :first_name_kana, placeholder: "例) アヤ", class: "main__first-name-kana"  
+          
+        .main__form-group
+          %label.main__birthday 生年月日
+          %span.main__form-require 必須  
+              
+          .main__birthday-input
+            %select.main__number-input
+            %span.main__year 年
+            %select.main__number-input
+            %span.main__month 月
+            %select.main__number-input
+            %span.main__day 日
+            
+      
+        .main__single-text
+          = f.submit "次へ進む", class: "single-move-button"  
+
+        
