@@ -286,17 +286,43 @@
           height: 85px;
           width: 343px;
           color: $sub-font;
-          font-size: 14px;
+          font-size: 17px;
           margin-top: 8px
         }
 
         
           &__number-input{
             height: 48px;
-            width: 76px;
-            padding: 0px 10px;
+            width: 100%;
             outline: none;
-            
+            display: flex;
+            align-items: center;
+            #user_birthday_1i {
+              height: 48px;
+              width: 130px;
+              margin-right: 10px;
+              background-color: $wh;
+              border: 1px solid #ccc;
+              outline: none;
+            }
+            #user_birthday_2i {
+              height: 48px;
+              width: 60px;
+              margin-left: 15px;
+              margin-right: 10px;
+              background-color: $wh;
+              border: 1px solid #ccc;
+              outline: none;
+            }
+            #user_birthday_3i {
+              height: 48px;
+              width: 60px;
+              margin-left: 15px;
+              margin-right: 10px;
+              background-color: $wh;
+              border: 1px solid #ccc;
+              outline: none;
+            }
           }
 
           &__number-input:focus {
@@ -311,12 +337,6 @@
             margin: 0px 2p;
           }
 
-          &__number-input{
-            height: 48px;
-            width: 76px;
-            padding: 0px 10px;
-          }
-          
           &__month{
             height: 14px;
             width: 18px;

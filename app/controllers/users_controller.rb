@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user expect: [:show]
+  before_action :set_user, expect: :show
   def index
 
   end
@@ -22,19 +22,10 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:nickname, :first_name, :last_name, :first_furigana, :last_furigana, :birthday)
+    params.require(:user).permit(:nickname, :first_name, :last_name, :first_furigana, :last_furigana, :birthday, :email)
   end
 
   def set_user
     @user = current_user
   end
 end
-
-t.string :nickname,           null: false
-t.string :first_name,         null: false
-t.string :last_name,          null: false
-t.string :first_furigana,     null: false
-t.string :last_furigana,      null: false
-t.date :birthday,             null: false
-t.string :email,              null: false, default: ""
-t.string :encrypted_password, null: false, default: ""
