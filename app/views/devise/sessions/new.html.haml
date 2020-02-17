@@ -1,5 +1,6 @@
+
 .single-container
-  -# .header
+  = render 'shared/sub_header'
   .single-main
     .single-main__login-panel
       .single-main__login-no-acount
@@ -16,3 +17,4 @@
               = f.password_field :password, placeholder: "パスワード",class: "single-main__password"
             %div
               = f.submit "ログイン", class: "single-main__submit"
+  = render 'shared/sub_footer'
