@@ -1,0 +1,44 @@
+.hooter-h{
+  display: flex;
+  justify-content: center;
+  height: 220px;
+  margin: 0 auto;
+  background-color: #eeeeee;
+  position: relative;
+  right: 0;  
+  left: 0;
+  z-index: 1;
+  padding: 40px 0;
+  text-align: center;
+
+  &__item{
+    width: 456px;
+    height: 12px;
+    text-align: center;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-around;
+
+    .link{
+      text-decoration: none;
+      color:#333;
+
+      &:hover{
+      text-decoration: underline;
+      opacity: 0.6;
+      }
+    }
+  }
+  
+  .hooter-h__logo{
+    display: block;
+    position: absolute;
+    top:100px;
+    height: 40px;
+    width: 90px;
+
+    &:hover{
+    opacity: 0.6;
+    }
+  }
+}
