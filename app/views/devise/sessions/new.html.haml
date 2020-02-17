@@ -3,8 +3,9 @@
   .single-main
     .single-main__login-panel
       .single-main__login-no-acount
-        %p アカウントをお持ちでない方はこちら
+        %p.single-main__notice アカウントをお持ちでない方はこちら
         = link_to "新規会員登録", "#"
+        
       
       .single-main__login-form
         = form_with class: "single-main__login-form" do |f|
