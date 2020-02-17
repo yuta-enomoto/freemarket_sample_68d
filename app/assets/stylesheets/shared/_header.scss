@@ -1,11 +1,10 @@
 .header {
   width: 100%;
-  max-width: 1040px;
   min-width: 520px;
   margin: 0 auto;
   height: 100px;
-  padding: 0 60px;
   background-color: $wh;
+  padding: 0 200px;
 
   &__topContents {
     display: flex;
