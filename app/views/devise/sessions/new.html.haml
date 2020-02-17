@@ -17,4 +17,7 @@
               = f.password_field :password, placeholder: "パスワード",class: "single-main__password"
             %div
               = f.submit "ログイン", class: "single-main__submit"
+            = link_to "#", class: 'password-forget' do
+              パスワードをお忘れの方
+              
   = render 'shared/sub_footer'

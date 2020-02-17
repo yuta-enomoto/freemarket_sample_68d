@@ -54,6 +54,10 @@
           line-height: 50px;
           font-size: 16px;
           display: block;
+          outline: none;
+        }
+        &__email:focus {
+          border-color: $lightgreen;
         }
 
         &__password{
@@ -67,6 +71,10 @@
           line-height: 50px;
           font-size: 16px;
           display: block;
+          outline: none;
+        }
+        &__password:focus {
+          border-color: $lightgreen;
         }
 
         &__submit{
@@ -78,6 +86,14 @@
           color: $wh;
           display: block;
           line-height: 50px;
+          font-size: 14px;
+        }
+
+        a.password-forget {
+          display: block;
+          margin: 40px 152px 0px 0;
+          color: #0099e8;
+          text-decoration: none;
           font-size: 14px;
         }
 }
