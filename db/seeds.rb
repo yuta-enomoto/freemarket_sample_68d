@@ -66,21 +66,13 @@ CSV.foreach('db/sample_data/items.csv', headers: true) do |row|
     description: row['description'],
     price: row['price'],
     stock_status: row['stock_status'],
-    condition_id: row['condirion_id'],
-    shipping_fee_who: row['shipping_fee_who'],
+    condition_id: row['condition_id'],
+    shipping_fee_who_id: row['shipping_fee_who_id'],
     prefecture_id: row['prefecture_id'],
-    shipping_days_id: row['shipping_days'],
-    user_id: row['shipping_days'],
-    brand_id: row['shipping_days'],
+    shipping_days_id: row['shipping_days_id'],
+    user_id: row['user_id'],
+    brand_id: row['brand_id'],
     category_id: row['category_id']
-  )
-end
-
-CSV.foreach('db/sample_data/item_images.csv', headers: true) do |row|
-  ItemImage.create(
-    id: row['id'],
-    url: row['url'],
-    item_id: row['item_id']
   )
 end
 
@@ -88,6 +80,14 @@ CSV.foreach('db/sample_data/orders.csv', headers: true) do |row|
   Order.create(
     id: row['id'],
     user_id: row['user_id:'],
+    item_id: row['item_id']
+  )
+end
+
+CSV.foreach('db/sample_data/item_images.csv', headers: true) do |row|
+  ItemImage.create(
+    id: row['id'],
+    url: row['url'],
     item_id: row['item_id']
   )
 end
