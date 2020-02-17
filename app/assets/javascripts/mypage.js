@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', function(){
+document.addEventListener("turbolinks:load", function() {
   $('.tab-link').on('click', function() {
     $('.mypage-item-list.tab-pane').removeClass("active");
     $($(this).attr("href")).addClass("active");

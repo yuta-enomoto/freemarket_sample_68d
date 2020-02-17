@@ -1,20 +1,10 @@
-.header {
-  width: 100vw;
-  height: 150px;
-  background-color: gray;
-}
-.footer {
-  width: 100vw;
-  height: 150px;
-  background-color: gray;
-
-}
 .mp-container {
   margin: 40px auto 0;
   padding: 0 0 40px;
   width: 1020px;
 
   &__mp-side {
+   
     float: left;
     width: 280px;
     margin: 0 40px 0 0;
@@ -92,6 +82,7 @@
       }
     }
   }
+  @include clearfix();
   &__mp-content {
     float: right;
     width: 700px;
@@ -175,7 +166,7 @@
           h3.tab-content {
             a.tab-link {
               background-color: $wh;
-              border-top: 2px solid #ea352d;
+              border-top: 2px solid $lightred;
               position: relative;
             }
             a.tab-link:hover {
@@ -234,6 +225,7 @@
                   width: 100%;
                 }
               }
+              @include clearfix();
               .mypage-item-body {
                 margin: 0 40px 0 68px;
                 .mypage-item-text {
@@ -313,7 +305,7 @@
           h3.tab-content {
             a.tab-link-2 {
               background-color: $wh;
-              border-top: 2px solid #ea352d;
+              border-top: 2px solid $lightred;
               position: relative;
             }
             a:hover {
@@ -355,6 +347,7 @@
               display: block;
               min-height: 80px;
               padding: 16px;
+
               figure {
                 position: relative;
                 overflow: hidden;
@@ -362,6 +355,7 @@
                 width: 48px;
                 height: 48px;
                 margin: 0;
+
                 img {
                   position: absolute;
                   top: 0;
@@ -372,6 +366,7 @@
                   width: 100%;
                 }
               }
+              @include clearfix();
               .mypage-item-body {
                 margin: 0 40px 0 68px;
                 .mypage-item-text {
@@ -385,13 +380,13 @@
                   line-height: 1.5;
                 }
                 .mypage-item-status.bold.action-required {
-                  background: #ea352d;
+                  background: $lightred;
                   display: inline-block;
                   margin: 8px 0 0 0;
                   padding: 1px 5px 2px 5px;
                   border-radius: 2px;
                   font-size: 12px;
-                  color: #fff;
+                  color: $wh;
                 }
                 .mypage-item-status.bold.action-required-2 {
                   background: #888;
@@ -400,7 +395,7 @@
                   padding: 1px 5px 2px 5px;
                   border-radius: 2px;
                   font-size: 12px;
-                  color: #fff;
+                  color: $wh;
                 }
                 
               }
@@ -437,4 +432,5 @@
       }
     }
   }
+  @include clearfix();
 }
