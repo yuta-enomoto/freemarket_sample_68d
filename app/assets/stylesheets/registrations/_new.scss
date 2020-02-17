@@ -59,6 +59,10 @@
           border-radius: 4px;
           box-shadow: none;
           border: solid 1px rgb(223, 223, 223);
+          outline: none;
+        }
+        &__nickname-field:focus {
+          border-color: $lightgreen;
         }
 
         &__email{
@@ -88,6 +92,11 @@
           border-radius: 4px;
           box-shadow: none;
           border: solid 1px rgb(223, 223, 223);
+          outline: none;
+        }
+
+        &__email-field:focus {
+          border-color: $lightgreen;
         }
 
         &__password{
@@ -107,6 +116,11 @@
           border-radius: 4px;
           box-shadow: none;
           border: solid 1px rgb(223, 223, 223);
+          outline: none;
+        }
+
+        &__password-field:focus {
+          border-color: $lightgreen;
         }
         
         &__text2{
@@ -145,8 +159,17 @@
           line-height: 48px;
           font-size: 16px;
           margin-right: 8px;
-          margin-top: 8px
+          margin-top: 8px;
+          outline: none;
+        
         }
+
+        &__family-name-kanji:focus {
+          border-color: $lightgreen;
+        }
+        
+
+        
 
         &__first-name-kanji{
           height: 48px;
@@ -157,7 +180,14 @@
           background: $wh;
           line-height: 48px;
           font-size: 16px;
+          outline: none;
         }
+
+        &__first-name-kanji:focus {
+          border-color: $lightgreen;
+        }
+
+        
       
 
       
@@ -190,8 +220,15 @@
           line-height: 48px;
           font-size: 16px;
           margin-right: 8px;
-          margin-top: 8px
+          margin-top: 8px;
+          outline: none;
         }
+
+        &__family-name-kana:focus {
+          border-color: $lightgreen;
+        }
+
+
 
         &__first-name-kana{
           height: 48px;
@@ -202,7 +239,13 @@
           background: $wh;
           line-height: 48px;
           font-size: 16px;
+          outline: none;
         }
+
+        &__first-name-kana:focus {
+          border-color: $lightgreen;
+        }
+
       
       
 
@@ -213,6 +256,7 @@
           font-size: 14px;
           font-weight: bold;
         }
+
 
         &__form-require{
           height: 19px;
@@ -230,11 +274,18 @@
           font-size: 14px;
           margin-top: 8px
         }
-          &__nember-input{
+
+        
+          &__number-input{
             height: 48px;
             width: 76px;
             padding: 0px 10px;
+            outline: none;
             
+          }
+
+          &__number-input:focus {
+            border-color: $lightgreen;
           }
           
           &__year{
@@ -264,6 +315,8 @@
             width: 76px;
             padding: 0px 10px;
           }
+
+          
           
           &__day{
             height: 14px;
@@ -275,22 +328,20 @@
         }
       
       &__single-text{
-        height: 50px;
-        width: 328px;
         margin: 24px 0 0;
         background: #ea352d;
         border: 1px solid #ea352d;
-        color: $wh;
+        color: #fff;
         display: block;
-        line-height: 50px;
         font-size: 14px;
         text-align: center;
         
       }
 
         .single-move-button{
-          background: #ea352d;
-          border: 1px solid #ea352d;
-          color: $wh;
+          background: none;
+          border: none;
+          color: #fff;
+          padding: 13px 142px;
         }
 }

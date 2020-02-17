@@ -1,7 +1,7 @@
 .main
   .main__single-container
     %h2.main__head-registration 会員情報登録
-    = form_with class: "main__registar-form" do |f|
+    = form_with local: true, class: "main__registar-form" do |f|
       .main__single-content
         .main__form-group
           %label.main__nickname ニックネーム
@@ -48,7 +48,6 @@
             
       
         .main__single-text
-          = form_with class: "single-move-button" do |f|
-            = f.submit "次へ進む", class: "single-move-button"  
+          = f.submit "次へ進む", class: "single-move-button"  
 
         
