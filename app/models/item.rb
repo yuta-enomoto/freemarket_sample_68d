@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
 
   has_many :item_images
   has_one :order
