@@ -1,5 +1,6 @@
+
 .single-container
-  -# .header
+  = render 'shared/sub_header'
   .single-main
     .single-main__login-panel
       .single-main__login-no-acount
@@ -8,7 +9,7 @@
         
       
       .single-main__login-form
-        = form_with class: "single-main__login-form" do |f|
+        = form_with do |f|
           .single-main__form-inner  
             %div
               = f.email_field :email, placeholder: "メールアドレス", class: "single-main__email"
@@ -16,3 +17,7 @@
               = f.password_field :password, placeholder: "パスワード",class: "single-main__password"
             %div
               = f.submit "ログイン", class: "single-main__submit"
+            = link_to "#", class: 'password-forget' do
+              パスワードをお忘れの方
+              
+  = render 'shared/sub_footer'

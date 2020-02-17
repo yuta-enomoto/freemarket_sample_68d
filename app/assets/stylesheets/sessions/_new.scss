@@ -1,20 +1,17 @@
 .single-main {
-  height: 100vh;
   width: 100%;
-  background-color: lightgrey;
 
 
   &__login-panel{
     background-color: $wh;
-    height: 100vh;
-    width: 700px;
+    width: 456px;
     margin: 0 auto;
   }
 
     &__login-no-acount {
       text-align: center;
       padding: 32px;
-      border-bottom: 1px solid rgb(223, 223, 223);
+      border-bottom: 1px solid #eee;
     }
       &__notice {
         font-size: 14px;
@@ -36,7 +33,7 @@
     
 
     &__login-form{
-      padding: 20px 40px 40px;
+      padding: 24px 64px 32px;
       
     }
 
@@ -57,6 +54,10 @@
           line-height: 50px;
           font-size: 16px;
           display: block;
+          outline: none;
+        }
+        &__email:focus {
+          border-color: $lightgreen;
         }
 
         &__password{
@@ -70,17 +71,29 @@
           line-height: 50px;
           font-size: 16px;
           display: block;
+          outline: none;
+        }
+        &__password:focus {
+          border-color: $lightgreen;
         }
 
         &__submit{
           height: 50px;
           width: 328px;
-          margin-top: 300px;
+          margin-top: 50px;
           background: #ea352d;
           border: 1px solid #ea352d;
           color: $wh;
           display: block;
           line-height: 50px;
+          font-size: 14px;
+        }
+
+        a.password-forget {
+          display: block;
+          margin: 40px 152px 0px 0;
+          color: #0099e8;
+          text-decoration: none;
           font-size: 14px;
         }
 }
