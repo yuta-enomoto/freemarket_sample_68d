@@ -4,6 +4,5 @@ class Category < ApplicationRecord
   has_ancestry
 
   validates :name, presence: true
-  validates :ancestry, presence: true
 
 end
