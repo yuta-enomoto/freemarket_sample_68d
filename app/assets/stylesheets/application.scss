@@ -1,5 +1,8 @@
 @import "config/colors";
 @import "./reset";
+@import "orders/new";
+@import "shared/sub_header";
+@import "shared/sub_footer";
 @import "mixin/section_title";
 @import "mixin/clearfix";
 @import "font-awesome-sprockets";
@@ -20,3 +23,4 @@
 @import "items/show";
 @import "users/my-page";
 @import "items/sell-items";
+
