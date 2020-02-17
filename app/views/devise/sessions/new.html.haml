@@ -9,7 +9,7 @@
         
       
       .single-main__login-form
-        = form_with class: "single-main__login-form" do |f|
+        = form_with do |f|
           .single-main__form-inner  
             %div
               = f.email_field :email, placeholder: "メールアドレス", class: "single-main__email"
