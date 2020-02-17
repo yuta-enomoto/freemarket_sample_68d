@@ -1,7 +1,7 @@
 %header.header
   .header__topContents
     %h1.header__logo
-      = link_to '#' do
+      = link_to '/' do
         = image_tag "logo.png", size: "140x40", alt: "FURIMA", class: "header__logoImage"
     = form_with url: '#', method: :get, local: true, class: "header__searchForm" do |f|
       = f.text_field :keyword, placeholder: "キーワードから探す", autocomplete: "off", class: "header__searchField"
