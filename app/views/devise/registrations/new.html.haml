@@ -1,4 +1,5 @@
 .main
+  = render 'shared/sub_header'
   .main__single-container
     %h2.main__head-registration 会員情報登録
     = form_with local: true, class: "main__registar-form" do |f|
@@ -49,5 +50,4 @@
       
         .main__single-text
           = f.submit "次へ進む", class: "single-move-button"  
-
-        
+  = render 'shared/sub_footer'
