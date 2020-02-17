@@ -22,10 +22,13 @@
     &__single-content{
       max-width: 343px;
       margin: 0 auto;
-      
+      .field_with_errors {
+        display: inline;
+      }
     }
 
       &__form-group{
+        width: 100%;
         color: $sub-font;
         font-size: 14px;
         margin-bottom: 30px;
@@ -53,6 +56,7 @@
         }
 
         &__nickname-field{
+          height: 48px;
           background-color: $wh;
           margin: 8px 0px 0px;
           padding: 10px 16px 8px;
@@ -89,6 +93,7 @@
         }
 
         &__email-field{
+          height: 48px;
           background-color: $wh;
           margin: 8px 0px 0px;
           padding: 10px 16px 8px;
@@ -113,6 +118,7 @@
         }
 
         &__password-field{
+          height: 48px;
           background-color: $wh;
           margin: 8px 0px 0px;
           padding: 10px 16px 8px;

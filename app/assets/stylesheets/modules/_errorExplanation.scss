@@ -1,0 +1,23 @@
+#error_explanation {
+  color: $require-box;
+  padding: 10px;
+  margin-bottom: 20px;
+  h2 {
+    text-align: center;
+    font-size: 18px;
+  }
+  ul {
+    padding: 0 60px;
+    li {
+      padding-left: 4px;
+      font-size: 12px;
+      display: inline;
+    }
+  }
+}
+
+#flash_alert {
+  color: $require-box;
+  text-align: center;
+  padding: 20px 10px 0;
+}

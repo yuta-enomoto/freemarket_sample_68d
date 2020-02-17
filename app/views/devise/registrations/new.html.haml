@@ -20,19 +20,23 @@
           %span.main__form-require 必須
           = f.password_field :password, placeholder: "７文字以上の半角英数字", class: "main__password-field"
           %p.text2 ※英字と数字の両方を含めて設定してください
+        .main__form-group
+          %label.main__password パスワード（確認）
+          %span.main__form-require 必須
+          = f.password_field :password_confirmation, autocomplete: "off", placeholder: "確認のため、もう一度入力してください", class: "main__password-field"
           
         .main__form-group
-          %div
-            %label.main__name  お名前（全角）
-            %span.main__form-require 必須
+          %label.main__name  お名前（全角）
+          %span.main__form-require 必須
+          %br
           = f.text_field :last_name, placeholder: "例）山田", class: "main__family-name-kanji"  
           = f.text_field :first_name, placeholder: "例) 彩", class: "main__first-name-kanji"  
            
 
         .main__form-group
-          %div
-            %label.main__name  お名前（全角）
-            %span.main__form-require 必須
+          %label.main__name  お名前（全角）
+          %span.main__form-require 必須
+          %br
           = f.text_field :last_furigana, placeholder: "例）やまだ", class: "main__family-name-kana"  
           = f.text_field :first_furigana, placeholder: "例) あや", class: "main__first-name-kana"  
           
