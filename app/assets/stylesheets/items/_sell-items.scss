@@ -298,10 +298,71 @@
     }
   }
 
-
-
-
   
+  .item-num-0{
+    width: 618px;
+    height: 162px;
+    
+  }
+
+  .item-num-1{
+    width: 491px;
+    height: 162px;
+    float: left;
+  }
+
+  .item-num-2{
+    width: 363px;
+    height: 162px;
+    float: left;
+  }
+
+  .item-num-3{
+    width: 234px;
+    height: 162px;
+    float: left;
+  }
+
+  .item-num-4{
+    width: 106px;
+    height: 162px;
+    float: left;
+  }
+
+  //下段のfile_field
+  .item-num-5{
+    width: 98%;
+    height: 162px;
+    clear: both;
+    position: relative;
+    top: 18px;
+    margin: 0 0 20px;
+  }
+  .item-num-6{
+    width: 491px;
+    height: 162px;
+    float: left;
+  }
+
+  .item-num-7{
+    width: 363px;
+    height: 162px;
+    float: left;
+  }
+
+  .item-num-8{
+    width: 234px;
+    height: 162px;
+    float: left;
+  }
+
+  .item-num-9{
+    width: 106px;
+    height: 162px;
+    float: left;
+  }
+
+
   .input-area {
     width: 100%;
     height: 100%;
@@ -323,7 +384,7 @@
     font-size: 14px;
 
     label.input {
-      padding: 51px 170px;
+      padding: 51px 50%;
       width: 100%;
       height: 100%;
       .si-big-box {
