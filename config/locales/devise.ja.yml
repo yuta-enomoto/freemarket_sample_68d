@@ -30,6 +30,7 @@ ja:
         last_name: 苗字
         first_furigana: ふりがな（名前）
         last_furigana: ふりがな（苗字）
+        birthday: 生年月日
     models:
       user: ユーザ
   devise:

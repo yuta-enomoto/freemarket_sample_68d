@@ -13,55 +13,92 @@ describe User do
       expect(user.errors[:nickname]).to include("を入力してください。")
     end
 
-    # it "is invalid without a email" do
-    #   user = build(:user, email: nil)
-    #   user.valid?
-    #   expect(user.errors[:email]).to include("を入力してください")
-    # end
+    it "is invalid without a first_name" do
+      user = build(:user, first_name: nil)
+      user.valid?
+      expect(user.errors[:first_name]).to include("を入力してください。")
+    end
 
-    # it "is invalid without a password" do
-    #   user = build(:user, password: nil)
-    #   user.valid?
-    #   expect(user.errors[:password]).to include("を入力してください")
-    # end
+    it "is invalid without a last_name" do
+      user = build(:user, last_name: nil)
+      user.valid?
+      expect(user.errors[:last_name]).to include("を入力してください。")
+    end
 
-    # it "is invalid without a password_confirmation although with a password" do
-    #   user = build(:user, password_confirmation: "")
-    #   user.valid?
-    #   expect(user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません")
-    # end
+    it "is invalid without a first_furigana" do
+      user = build(:user, first_furigana: nil)
+      user.valid?
+      expect(user.errors[:first_furigana]).to include("を入力してください。")
+    end
 
-    # it "is invalid with a name that has more than 13 characters " do
-    #   user = build(:user, name: "aaaaabbbbbccc")
-    #   user.valid?
-    #   expect(user.errors[:name]).to include("は12文字以内で入力してください")
-    # end
+    it "is invalid without a last_furigana" do
+      user = build(:user, last_furigana: nil)
+      user.valid?
+      expect(user.errors[:last_furigana]).to include("を入力してください。")
+    end
 
-    # it "is valid with a name that has less than 12 characters " do
-    #   user = build(:user, name: "aaaaaa")
-    #   expect(user).to be_valid
-    # end
+    it "is invalid without a birthday" do
+      user = build(:user, birthday: nil)
+      user.valid?
+      expect(user.errors[:birthday]).to include("を入力してください。")
+    end
 
-    # # 8. 重複したemailが存在する場合登録できないこと
-    # it "is invalid with a duplicate email address" do
-    #   user = create(:user)
-    #   another_user = build(:user, email: user.email)
-    #   another_user.valid?
-    #   expect(another_user.errors[:email]).to include("はすでに存在します")
-    # end
+    it "is invalid without a email" do
+      user = build(:user, email: nil)
+      user.valid?
+      expect(user.errors[:email]).to include("を入力してください。")
+    end
 
-    # # 9. passwordが6文字以上であれば登録できること
-    # it "is valid with a password that has more than 6 characters " do
-    #   user = build(:user, password: "000000", password_confirmation: "000000")
-    #   user.valid?
-    #   expect(user).to be_valid
-    # end
+    it "is invalid without a password" do
+      user = build(:user, password: nil)
+      user.valid?
+      expect(user.errors[:password]).to include("を入力してください。")
+    end
 
-    # # 10. passwordが5文字以下であれば登録できないこと
-    # it "is invalid with a password that has less than 5 characters " do
-    #   user = build(:user, password: "00000", password_confirmation: "00000")
-    #   user.valid?
-    #   expect(user.errors[:password]).to include("は6文字以上で入力してください")
-    # end
+    it "is invalid without a password_confirmation although with a password" do
+      user = build(:user, password_confirmation: "")
+      user.valid?
+      expect(user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません。")
+    end
+
+    it "is invalid with a password that has more than 7 characters " do
+      user = build(:user, password: "aabbcc", password_confirmation: "aabbcc")
+      user.valid?
+      expect(user.errors[:password]).to include("は7文字以上で入力してください。")
+    end
+
+    it "is valid with a password that has less than 7 characters " do
+      user = build(:user, password: "aabbccd", password_confirmation: "aabbccd")
+      expect(user).to be_valid
+    end
+
+    it "is invalid with a duplicate email address" do
+      user = create(:user)
+      another_user = build(:user, email: user.email)
+      another_user.valid?
+      expect(another_user.errors[:email]).to include("はすでに存在します。")
+    end
+
+    it "first_furigana is invalid except Hiragana " do
+      user = build(:user, first_furigana: "ひらがな")
+      user.valid?
+      expect(user.errors[:first_furigana]).to include("は、全角カタカナのみで入力して下さい。")
+    end
+
+    it "last_furigana is invalid except Hiragana " do
+      user = build(:user, last_furigana: "ひらがな")
+      user.valid?
+      expect(user.errors[:last_furigana]).to include("は、全角カタカナのみで入力して下さい。")
+    end
+
+    it "first_furigana is valid only in Hiragana " do
+      user = build(:user, first_furigana: "カタカナ")
+      expect(user).to be_valid
+    end
+
+    it "last_furigana is valid only in Hiragana " do
+      user = build(:user, last_furigana: "カタカナ")
+      expect(user).to be_valid
+    end
   end
 end

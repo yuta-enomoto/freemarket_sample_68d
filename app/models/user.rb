@@ -15,7 +15,7 @@ class User < ApplicationRecord
   validates :password,  presence: true, length: { minimum: 7 } 
   validates :first_furigana, :last_furigana, presence: true,
                  format: {
-                   with: /\A[\p{hiragana}　ー－&&[^ -~｡-ﾟ]]+\z/,
-                   message: "は、全角ひらがなのみで入力して下さい。"
+                   with: /\A[\p{katakana}　ー－&&[^ -~｡-ﾟ]]+\z/,
+                   message: "は、全角カタカナのみで入力して下さい。"
                  }
 end
