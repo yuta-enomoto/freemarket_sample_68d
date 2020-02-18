@@ -92,7 +92,7 @@
                 必須
             .sell-form-box__select-wrap
               %i.fas.fa-chevron-down
-              = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
+              = f.collection_select :condition_id, Condition.all, :id, :name, {prompt: "--"}, {class: 'selector-category'}
       %hr.si-container__si-box__si-inner__si-underline
 
 
@@ -110,7 +110,7 @@
                 必須
             .sell-form-box__select-wrap
               %i.fas.fa-chevron-down
-              = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
+              = f.collection_select :shipping_fee_who_id, ShippingFeeWho.all, :id, :name, {prompt: "--"}, {class: 'selector-category'}
         
               -# ここから（とりあえずでdisplay: noenをかけています。）
 
@@ -134,7 +134,8 @@
                 必須
             .sell-form-box__select-wrap
               %i.fas.fa-chevron-down
-              = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
+              = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "--"}, {class: 'selector-category'}
+
 
           .si-container__si-box__box-frame.si-top
             .si-container__si-box__si-photos
@@ -144,7 +145,7 @@
                 必須
             .sell-form-box__select-wrap
               %i.fas.fa-chevron-down
-              = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
+              = f.collection_select :shipping_days_id, ShippingDays.all, :id, :name, {prompt: "--"}, {class: 'selector-category'}
 
       %hr.si-container__si-box__si-inner__si-underline
 
