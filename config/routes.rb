@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :items, only: [:show, :new]
   resources :users, only: [:show]
   resources :oders, only: [:new]
+  resources :item_images, only: [:show]
 end
   
