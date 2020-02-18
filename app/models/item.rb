@@ -14,6 +14,6 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_days
 
   validates :name, presence: true
-  # validates :description, presence: true
-  # validates :price, presence: true
+  validates :description, presence: true
+  validates :price, presence: true
 end
