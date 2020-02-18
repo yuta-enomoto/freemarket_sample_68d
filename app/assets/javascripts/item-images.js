@@ -32,9 +32,9 @@ document.addEventListener("turbolinks:load", function() {
                       </div>
                     </div>
 
-                    <div class='operations'>
-                      <a class='operation edit'>編集</a>
-                      <a class='operation delete'>削除</a>
+                    <div class='item-image__operations'>
+                      <a class='item-image__operations__operation edit'>編集</a>
+                      <a class='item-image__operations__operation delete'>削除</a>
                     </div>
 
                   </div>`
