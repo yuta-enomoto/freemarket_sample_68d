@@ -22,13 +22,13 @@ document.addEventListener("turbolinks:load", function() {
       if (num == 10){
         $('#image-box__container').css('display', 'none')   
       }
-      //読み込みが完了すると、srcにfileのURLを格納
+      //読み込みが完了すると、utlにfileのURLを格納
       fileReader.onloadend = function() {
-        var src = fileReader.result
+        var url = fileReader.result
         var html= `<div class='item-image' data-image="${file.name}">
                     <div class=' item-image__content'>
                       <div class='item-image__content--icon'>
-                        <img src=${src} width="114" height="116" >
+                        <img src=${url} width="114" height="116" >
                       </div>
                     </div>
 
