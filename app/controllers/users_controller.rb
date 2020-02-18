@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, expect: :show
+  before_action :move_to_index, only: [:index, :edit]
+
   def index
 
   end
@@ -27,5 +29,9 @@ class UsersController < ApplicationController
 
   def set_user
     @user = current_user
+  end
+
+  def move_to_index
+    redirect_to new_user_session_path unless user_signed_in?
   end
 end
