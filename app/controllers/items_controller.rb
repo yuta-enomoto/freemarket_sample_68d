@@ -8,8 +8,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    # binding.pry
-
     @item = Item.new(item_params)
     if @item.save
       redirect_to root_path
@@ -19,7 +17,7 @@ class ItemsController < ApplicationController
   end
 
   private
-
+  
   def item_params
     params.require(:item).permit(:name, :description, :price, item_images_attributes: [:url])
   end

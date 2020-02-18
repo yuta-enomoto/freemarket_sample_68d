@@ -21,7 +21,13 @@
         height: 44px;
         line-height: 44px;
         text-align: center;
+        cursor: pointer;
+        &:hover{
+          background-color: $grey;
+          color: #1ec2c2;
+        }
       }
+
       .delete {
         border-left: 1px solid #eee;
       }
