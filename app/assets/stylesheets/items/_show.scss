@@ -24,6 +24,10 @@
               height: 346px;
               width: 100%;
               object-fit: cover;
+              .main-photo{
+                width: 560px;
+                height: 346px;
+              }
             }
             li {
               display: flex;

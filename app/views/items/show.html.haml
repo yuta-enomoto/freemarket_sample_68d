@@ -8,7 +8,8 @@
           = @item.name
         .is-main__content__top__item__body
           %ul
-            = @item_image.url class: 'image-main'
+            .image-main
+              = image_tag "#{@item_images[0].url}",class:'main-photo'
             %li
               %ul
                 %li
