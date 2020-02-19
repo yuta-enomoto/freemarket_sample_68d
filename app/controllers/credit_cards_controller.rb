@@ -1,4 +1,4 @@
-class PaymentsController < ApplicationController
+class CreditCardsController < ApplicationController
   def new
   end
 
