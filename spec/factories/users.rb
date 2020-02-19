@@ -8,8 +8,8 @@ FactoryBot.define do
     last_furigana         {"タロウ"}
     birthday              {Date.new(2000, 11, 12)}
     email                 {"kkk@gmail.com"}
-    password              {"0000000"}
-    password_confirmation {"0000000"}
+    password              {"000000a"}
+    password_confirmation {"000000a"}
   end
 
 end

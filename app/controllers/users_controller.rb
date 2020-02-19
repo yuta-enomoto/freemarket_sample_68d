@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, expect: :show
+  before_action :authenticate_user!, only: [:index, :edit, :update]
+
   def index
 
   end
@@ -28,4 +30,5 @@ class UsersController < ApplicationController
   def set_user
     @user = current_user
   end
+
 end

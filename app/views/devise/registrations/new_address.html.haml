@@ -2,8 +2,8 @@
   = render 'shared/sub_header'
   .main__single-container
     %h2.main__single-container__head 住所登録
-    = render "devise/shared/error_messages", resource: @address
-    = form_for @address do |f|
+    = form_for @address, html: { class: "registar-form"} do |f|
+      = render "devise/shared/error_messages", resource: @address
       .registar-form__content
         .registar-form__content__box
           %label.registar-form__content__box__label 郵便番号
@@ -27,13 +27,13 @@
         .registar-form__content__box
           %label.registar-form__content__box__label 建物名
           %span.registar-form__content__box__optional 任意
-          = f.text_field :building_name, placeholder: "例）柳ビル 101", class: "form-building_name" 
-           
+          = f.text_field :building_name, placeholder: "例）柳ビル 101", class: "registar-form__content__box--one-field" 
+          
         .registar-form__content__box
           %label.registar-form__content__box__label  電話番号
           %span.registar-form__content__box__optional 任意
-          = f.number_field :phone_number, placeholder: "例）08012345678", class: "form-phone_number"  
+          = f.number_field :phone_number, placeholder: "例）08012345678", class: "registar-form__content__box--one-field"  
           
-        .main__single-text
+        .registar-form__content__submit
           = f.submit "登録", class: "single-move-button"  
   = render 'shared/sub_footer'
