@@ -1,10 +1,23 @@
-%label 登録クレジットカード情報
-%br
-= "**** **** **** " + @default_card_information.last4
-%br
-- exp_month = @default_card_information.exp_month.to_s
-- exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-= exp_month + " / " + exp_year
-= form_tag(card_delete_path, method: :post, id: 'charge-form',  name: "inputForm") do
-  %input{ type: "hidden", name: "card_id", value: "" }
-  %button 削除する
+.wrapper 
+  = render 'shared/header'
+  .wrapper__main
+    .mp-container
+      = render 'shared/myPageSideBar'
+      .mp-container__mp-content
+        .main__single-container
+          %h2.main__single-container__head 登録クレジットカード情報
+          .registar-form
+            .registar-form__content
+              .registar-form__content__box
+                .registar-form__content__box--one-field
+                  = "**** **** **** " + @default_card_information.last4
+                - exp_month = @default_card_information.exp_month.to_s
+                - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                = exp_month + " / " + exp_year
+                = form_tag(delete_credit_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
+                  %input{ type: "hidden", name: "card_id", value: "" }
+                  %button 削除する
+            = link_to new_item_path, class: 'sell-icon' do
+              = render 'shared/sell-icon'
+  = render "/shared/footerFirst"
+  = render "/shared/footerSecond"

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :items, only: [:show, :new]
   resources :users, only: [:index, :show, :edit, :update]
     resources :addresses, only: [:new, :create, :edit, :update]
-    resources :credit_cards, only: [:new, :create, :edit, :update, :destroy, :show] do
+    resources :credit_cards, only: [:new, :edit, :update, :show] do
       collection do
         post 'show', to: 'credit_cards#show'
         post 'pay', to: 'credit_cards#pay'
