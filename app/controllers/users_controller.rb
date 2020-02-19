@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, expect: :show
-  before_action :authenticate_user!, only: [:index, :edit, :update]
+  # before_action :authenticate_user!, only: [:index, :edit, :update]
 
   def index
 
