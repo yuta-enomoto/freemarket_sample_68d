@@ -30,8 +30,15 @@ ja:
         last_name: 苗字
         first_furigana: ふりがな（名前）
         last_furigana: ふりがな（苗字）
+        birthday: 生年月日
+      address:
+        postal_code: 郵便番号
+        prefecture_id: 都道府県
+        address1: 市区町村
+        address2: 番地
     models:
       user: ユーザ
+      address: 住所
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
