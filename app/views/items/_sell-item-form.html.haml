@@ -1,11 +1,9 @@
--# - @item = Item.new unless @item
-
 .si-container__si-box
   .si-container__si-box__si-inner
     %h2.single-head.bold
       商品の情報を入力
     %hr.si-container__si-box__si-inner__si-underline
-
+    = render "devise/shared/error", model: @item
     = form_with model: @item, local: true do |f|
       .si-container__si-box__si-picture-box.perimeter
         .si-container__si-box__box-frame
@@ -33,7 +31,6 @@
                           ドラッグアンドドロップ
                         %p.drag-drop
                           またはクリックしてファイルをアップロード
-
 
       %hr.si-container__si-box__si-inner__si-underline
 
