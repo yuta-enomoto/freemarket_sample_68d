@@ -9,14 +9,14 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :items, only: [:show, :new]
   resources :users, only: [:index, :show, :edit, :update]
-    resources :addresses, only: [:new, :create, :edit, :update, :destroy]
-    resources :payments, only: [:new, :create, :edit, :update, :destroy, :show] do
+    resources :addresses, only: [:new, :create, :edit, :update]
+    resources :credit_cards, only: [:new, :create, :edit, :update, :destroy, :show] do
       collection do
-        post 'show', to: 'card#show'
-        post 'pay', to: 'card#pay'
-        post 'delete', to: 'card#delete'
+        post 'show', to: 'credit_cards#show'
+        post 'pay', to: 'credit_cards#pay'
+        post 'delete', to: 'credit_cards#delete'
       end
     end
-  resources :oders, only: [:new]
+  resources :orders, only: [:new]
 end
   

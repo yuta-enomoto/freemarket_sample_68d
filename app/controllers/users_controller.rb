@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, expect: :show
-  # before_action :authenticate_user!, only: [:index, :edit, :update]
+  before_action :authenticate_user!, only: [:index, :edit, :update]
 
   def index
 
@@ -15,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update(user_params)
+    if current_user.update(user_params)
       redirect_to root_path
     else
       render :edit
@@ -25,10 +24,6 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:nickname, :first_name, :last_name, :first_furigana, :last_furigana, :birthday, :email)
-  end
-
-  def set_user
-    @user = current_user
   end
 
 end
