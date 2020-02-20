@@ -31,8 +31,25 @@ ja:
         first_furigana: ふりがな（名前）
         last_furigana: ふりがな（苗字）
         birthday: 生年月日
+      address:
+        postal_code: 郵便番号
+        prefecture_id: 都道府県
+        address1: 市区町村
+        address2: 番地
+      item:
+        item_images: 商品の画像
+        name: 商品名
+        description: 商品の説明
+        condition_id: 商品の状態
+        shipping_fee_who_id: 配送料の負担
+        shipping_days_id: 発送までの日数
+        prefecture_id: 都道府県
+        price: 価格
+        category_id: カテゴリー
     models:
       user: ユーザ
+      address: 住所
+      item: 商品
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
