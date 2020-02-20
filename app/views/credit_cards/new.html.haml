@@ -48,14 +48,13 @@
           %span.registar-form__content__box__require 必須
           = text_field_tag "cvc", "", class: "registar-form__content__box--one-field", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
         .registar-form__content__box
-          %label.registar-form__content__box__label 名前
+          %label.registar-form__content__box__label 名義
           %span.registar-form__content__box__require 必須
           = text_field_tag "name", "", class: "registar-form__content__box--one-field", placeholder: "半角英字大文字 " , type: "text", id: "card_name"
         .registar-form__content__select
-          .registar-form__content__select__register
+          .registar-form__content__select__btn
             #card_token
-            = submit_tag "登録する", id: "token_submit", class: "single-move-button"
-          .registar-form__content__select__skip
-            = link_to root_path, class: "single-move-button" do
-              = "スキップ"
+            = submit_tag "登録する", id: "token_submit", class: "register-button"
+          .registar-form__content__select__btn
+            = link_to "スキップ", root_path, class: "skip-button"
     = render 'shared/sub_footer'

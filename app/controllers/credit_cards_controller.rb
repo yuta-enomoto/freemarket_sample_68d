@@ -11,17 +11,16 @@ class CreditCardsController < ApplicationController
   end
 
   def pay #payjpとCardのデータベース作成を実施します。
-    binding.pry
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     if params['payjp-token'].blank?
-      redirect_to action: "new"
+      error_path(params[:keyword])
     else
       customer = Payjp::Customer.create(
       card: params['payjp-token'],
       )
       @card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to action: "show"
+        success_path(params[:keyword])
       else
         redirect_to action: "pay"
       end
@@ -53,6 +52,22 @@ class CreditCardsController < ApplicationController
       @exp_year = default_card_information.exp_year.to_s.slice(2,3)
       @card_name = default_card_information.name.to_s
       @card_brand = card_company(default_card_information.brand)
+    end
+  end
+
+  def error_path(keyword)
+    if keyword == "edit"
+      redirect_to  action: "edit"
+    else
+      redirect_to  action: "new"
+    end
+  end
+
+  def success_path(keyword)
+    if keyword == "edit"
+      redirect_to  action: "show"
+    else
+      redirect_to  root_path
     end
   end
 
