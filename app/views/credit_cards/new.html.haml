@@ -9,12 +9,8 @@
           %span.registar-form__content__box__require 必須
           = text_field_tag "number", "", class: "registar-form__content__box--one-field", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
         .registar-form__content__img
-          = image_tag "credit-card_22@0.5.png" , alt: "Visa"
-          = image_tag "credit-card_28@0.5.png" , alt: "JCB"
-          = image_tag "credit-card_9@0.5.png" , alt: "MasterCard"
-          = image_tag "credit-card_19@0.5.png" , alt: "American Express"
-          = image_tag "credit-card_31@0.5.png" , alt: "Diners Club"
-          = image_tag "credit-card_15@0.5.png" , alt: "Discover"
+          - @card_logo.each do | name, img |
+            = image_tag img, alt: name
         .registar-form__content__box
           %label.registar-form__content__box__label 有効期限
           %span.registar-form__content__box__require 必須

@@ -3,10 +3,12 @@ class CreditCardsController < ApplicationController
 
   def new
     card = CreditCard.where(user_id: current_user.id)
+    @card_logo = card_logo
   end
 
   def edit
     card = CreditCard.where(user_id: current_user.id)
+    @card_logo = card_logo
     redirect_to action: "show" if card.exists?
   end
 
@@ -74,17 +76,27 @@ class CreditCardsController < ApplicationController
   def card_company(brand)
     case brand
     when "Visa"
-      card_brand = "credit-card_22@0.5.png"
+      "credit-card_22@0.5.png"
     when "JCB"
-      card_brand = "credit-card_28@0.5.png"
+      "credit-card_28@0.5.png"
     when "MasterCard"
-      card_brand = "credit-card_9@0.5.png"
+      "credit-card_9@0.5.png"
     when "American Express"
-      card_brand = "credit-card_19@0.5.png"
+      "credit-card_19@0.5.png"
     when "Diners Club"
-      card_brand = "credit-card_31@0.5.png"
+      "credit-card_31@0.5.png"
     when "Discover"
-      card_brand = "credit-card_15@0.5.png"
+      "credit-card_15@0.5.png"
     end
+  end
+
+  def card_logo
+    return {"Visa" => "credit-card_22@0.5.png",
+            "JCB" => "credit-card_28@0.5.png",
+            "MasterCard" => "credit-card_9@0.5.png",
+            "American Express" => "credit-card_19@0.5.png",
+            "Diners Club" => "credit-card_31@0.5.png",
+            "Discover" => "credit-card_15@0.5.png"
+    }
   end
 end
