@@ -1,2 +1,61 @@
-%h1 Payments#edit
-%p Find me in app/views/payments/edit.html.haml
+.wrapper 
+  = render 'shared/header'
+  .wrapper__main
+    .mp-container
+      = render 'shared/myPageSideBar'
+      .mp-container__mp-content
+        .main__single-container
+          %h2.main__single-container__head クレジットカード情報入力
+          = form_tag(pay_credit_cards_path, method: :post, id: 'charge-form',  name: "inputForm", class: "registar-form") do
+            .registar-form__content
+              .registar-form__content__box
+                %label.registar-form__content__box__label カード番号
+                %span.registar-form__content__box__require 必須
+                = text_field_tag "number", "", class: "registar-form__content__box--one-field", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+              .registar-form__content__box
+                %label.registar-form__content__box__label 有効期限
+                %span.registar-form__content__box__require 必須
+                .registar-form__content__box--two-field
+                  %select#exp_month{name: "exp_month", type: "text"}
+                    %option{value: ""} --
+                    %option{value: "1"}01
+                    %option{value: "2"}02
+                    %option{value: "3"}03
+                    %option{value: "4"}04
+                    %option{value: "5"}05
+                    %option{value: "6"}06
+                    %option{value: "7"}07
+                    %option{value: "8"}08
+                    %option{value: "9"}09
+                    %option{value: "10"}10
+                    %option{value: "11"}11
+                    %option{value: "12"}12
+                  %span.text-month
+                    = "月/"
+                  %select#exp_year{name: "exp_year", type: "text"}
+                    %option{value: ""} --
+                    %option{value: "2019"}19
+                    %option{value: "2020"}20
+                    %option{value: "2021"}21
+                    %option{value: "2022"}22
+                    %option{value: "2023"}23
+                    %option{value: "2024"}24
+                    %option{value: "2025"}25
+                    %option{value: "2026"}26
+                    %option{value: "2027"}27
+                    %option{value: "2028"}28
+                    %option{value: "2029"}29
+                  %span.text-year
+                    = "年"
+              .registar-form__content__box
+                %label.registar-form__content__box__label セキュリティコード
+                %span.registar-form__content__box__require 必須
+                = text_field_tag "cvc", "", class: "registar-form__content__box--one-field", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
+              .registar-form__content__box
+                %label.registar-form__content__box__label 名前
+                %span.registar-form__content__box__require 必須
+                = text_field_tag "name", "", class: "registar-form__content__box--one-field", placeholder: "半角英字大文字 " , type: "text", id: "card_name"
+                = hidden_field_tag :keyword, "edit"
+              .registar-form__content__submit
+                #card_token
+                = submit_tag "登録する", id: "token_submit", class: "single-move-button"
