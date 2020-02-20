@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   def show
-    @item = Item.find(4)
+    @item = Item.find(1)
     @item_image = @item.item_images[0]
     @item_images_sub1 = @item.item_images
   end
@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.fnd(params[:id])
+    @item = Item.find(params[:id])
   end
 
   def update
