@@ -1,0 +1,14 @@
+.wrapper 
+  = render 'shared/header'
+  .wrapper__main
+    .del-main
+      .del-main__notification
+        商品を削除しました
+      .del-main__main
+        = link_to root_path do
+          トップページ
+        = link_to users_path do
+          マイページ
+        
+  = render "/shared/footerFirst"
+  = render "/shared/footerSecond"
