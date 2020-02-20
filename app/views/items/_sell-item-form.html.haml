@@ -18,11 +18,11 @@
             
           #image-box-1
             .item-num-0#image-box__container
-              = f.fields_for :item_images do |i|
-                .input-area
-                  = i.file_field :url, name: "item[item_images_attributes][][url]", style: "display:none", id:"img-file"
-                  %label.input{for: "img-file"}
-              
+              .input-area
+                %label.input{for: "img-file"}
+                  = f.fields_for :item_images do |i|
+                    = i.file_field :url, name: "item[item_images_attributes][][url]", style: "display:none", id:"img-file"
+  
                     .si-big-box
                       .si-big-box__si-icon-box
                         %i.fas.fa-camera
@@ -31,6 +31,7 @@
                           ドラッグアンドドロップ
                         %p.drag-drop
                           またはクリックしてファイルをアップロード
+         
 
       %hr.si-container__si-box__si-inner__si-underline
 
@@ -207,3 +208,4 @@
         = f.submit "出品する", type: 'submit', class: 'si-sbm-btn'
         = link_to :back, class: "default-btn" do 
           もどる
+
