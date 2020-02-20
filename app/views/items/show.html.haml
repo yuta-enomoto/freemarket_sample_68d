@@ -7,19 +7,16 @@
         %h2.is-main__content__top__item__name
           = @item.name
         .is-main__content__top__item__body
-          %ul
-            .image-main
-              = image_tag "#{@item_images[0].url}",class:'main-photo'
-            %li
-              %ul
-                %li
-                  = image_tag 'a001.png', class: 'image-sub'
-                %li
-                  = image_tag 'a003.png', class: 'image-sub'
-                %li
-                  = image_tag 'a007.png', class: 'image-sub'
+
+          .image-main
+            = image_tag "#{@item_image.url}",class:'main-photo'
+          %ul.item-image-sub_top
+            = render partial: "/shared/item_show_images", collection: @item_images_sub1, as: "item_image"
+
+
+                
         .is-main__content__top__item__price
-          %span= "¥30000"
+          %span= "¥ #{@item.price}"
           .is-main__content__top__item__price__detail
             %span= "(税込み)"
             %span= "送料込み"
