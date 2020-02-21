@@ -11,6 +11,5 @@ Rails.application.routes.draw do
     resources :addresses, only: [:new, :create, :edit, :update]
     resources :credit_cards, only: [:new, :create, :edit, :update, :destroy]
   resources :oders, only: [:new]
-  resources :item_images, only: [:show]
   resources :items, only: [:show, :new, :create]
 end
