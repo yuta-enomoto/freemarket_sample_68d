@@ -1,4 +1,4 @@
-$(function() {
+jQuery(document).on('turbolinks:load', function(){
 
   // -----関数定義-------------------------------------------------------------------------------------------------------
   function ancestry_check (ignited_html_id) {
@@ -20,7 +20,7 @@ $(function() {
     let html = 
       `<div class="sell-form-box__select-wrap" id= "${ancestry_name}-category-menu-wrap"}>
         <i class="fas fa-chevron-down"></i>
-        <select class="selector-category" id="${ancestry_name}-category-menu" name="item[${ancestry_name}_category_id]">
+        <select class="selector-category" id="${ancestry_name}-category-menu" name="item[category_id]">
           <option value="">---</option>
           ${categoriesHTML}
         </select>
