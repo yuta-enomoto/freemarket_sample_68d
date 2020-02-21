@@ -18,11 +18,11 @@
             
           #image-box-1
             .item-num-0#image-box__container
-              = f.fields_for :item_images do |i|
-                .input-area
-                  = i.file_field :url, name: "item[item_images_attributes][][url]", style: "display:none", id:"img-file"
-                  %label.input{for: "img-file"}
-              
+              .input-area
+                %label.input{for: "img-file"}
+                  = f.fields_for :item_images do |i|
+                    = i.file_field :url, name: "item[item_images_attributes][][url]", style: "display:none", id:"img-file"
+  
                     .si-big-box
                       .si-big-box__si-icon-box
                         %i.fas.fa-camera
@@ -31,6 +31,7 @@
                           ドラッグアンドドロップ
                         %p.drag-drop
                           またはクリックしてファイルをアップロード
+         
 
       %hr.si-container__si-box__si-inner__si-underline
 
@@ -60,26 +61,15 @@
         %h3.sell-sub-head
           商品の詳細
         .sell-form-box 
-          .si-container__si-box__box-frame
+          .si-container__si-box__box-frame#category-menus
             .si-container__si-box__si-photos
               %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label
                 カテゴリー
               %span.required-display
                 必須
-            .sell-form-box__select-wrap
+            .sell-form-box__select-wrap#parent-category-menu-wrap
               %i.fas.fa-chevron-down
-              = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
-
-            -# ここから（とりあえずでdisplay: noenをかけています。）
-
-            .sell-form-box__select-wrap.none
-              %i.fas.fa-chevron-down
-              = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
-            .sell-form-box__select-wrap.none
-              %i.fas.fa-chevron-down
-              = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
-
-            -# ここまで
+              = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: "---"}, {class: "selector-category", id: "parent-category-menu"}
 
           .si-container__si-box__box-frame.si-top
             .si-container__si-box__si-photos
@@ -109,17 +99,17 @@
               %i.fas.fa-chevron-down
               = f.collection_select :shipping_fee_who_id, ShippingFeeWho.all, :id, :name, {prompt: "--"}, {class: 'selector-category'}
         
-              -# ここから（とりあえずでdisplay: noenをかけています。）
+              -# ここから（追加実装用）
 
-          .si-container__si-box__box-frame.si-top.none
-            .si-container__si-box__si-photos
-              %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label
-                発送の方法
-              %span.required-display
-                必須
-            .sell-form-box__select-wrap
-              %i.fas.fa-chevron-down
-              = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
+          -# .si-container__si-box__box-frame.si-top.none
+          -#   .si-container__si-box__si-photos
+          -#     %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label
+          -#       発送の方法
+          -#     %span.required-display
+          -#       必須
+          -#   .sell-form-box__select-wrap
+          -#     %i.fas.fa-chevron-down
+          -#     = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
                  
             -# ここまで
 
@@ -167,15 +157,17 @@
                 .sell-form-box__sell-price-input__input-box.l-right
                   = f.text_field :price, value: '', placeholder: '例）300', class:'input-default input-right'
 
-
-            %li.sell-form-box__price-list.display-box
-              .sell-form-box__price-list__l-left
-                販売手数料 (10%)
-              .l-right -
-            %li.sell-form-box__price-list.display-box.bold
-              .sell-form-box__price-list__l-left-2
-                販売利益
-              .sell-form-box__price-list__l-right-2 -
+          -# ここから（追加実装用）
+            -# %li.sell-form-box__price-list.display-box
+            -#   .sell-form-box__price-list__l-left
+            -#     販売手数料 (10%)
+            -#   .l-right -
+            -# %li.sell-form-box__price-list.display-box.bold
+            -#   .sell-form-box__price-list__l-left-2
+            -#     販売利益
+            -#   .sell-form-box__price-list__l-right-2 -
+          -# ここまで
+          
       %hr.si-container__si-box__si-inner__si-underline
 
 
