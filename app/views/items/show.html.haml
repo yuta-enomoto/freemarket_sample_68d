@@ -5,25 +5,32 @@
     .is-main__content__top
       .is-main__content__top__item
         %h2.is-main__content__top__item__name
-          = "product3"
+          = @item.name
         .is-main__content__top__item__body
-          %ul
-            = image_tag 'a001.png', class: 'image-main'
-            %li
-              %ul
-                %li
-                  = image_tag 'a001.png', class: 'image-sub'
-                %li
-                  = image_tag 'a003.png', class: 'image-sub'
-                %li
-                  = image_tag 'a007.png', class: 'image-sub'
+
+          .image-main
+            = image_tag "#{@item_image}",class:'main-photo'
+          %ul.item-image-sub_top
+            = render partial: "/shared/item_show_images", collection: @item.item_images, as: "item_image"
+        
         .is-main__content__top__item__price
-          %span= "¥30000"
+          %span= "¥ #{@item.price}"
           .is-main__content__top__item__price__detail
             %span= "(税込み)"
             %span= "送料込み"
+
+        - if user_signed_in? && current_user.id == @item.user_id
+          .is-main__content__top__item__edit
+            =link_to "商品の編集", edit_item_path(@item), method: :get
+          .is-main__content__top__item__delete
+            =link_to "この商品を削除する",  item_path(@item), method: :delete
+
+        - else 
+          .is-main__content__top__item__buy
+            =link_to "購入画面に進む", '#'
+
         .is-main__content__top__item__header
-          = "product3"
+          = @item.description
         .is-main__content__top__item__table
           %table
             %tbody
@@ -31,7 +38,7 @@
                 %th
                   = "出品者"
                 %td
-                  = "田中たろう"
+                  = @item.user.nickname
               %tr
                 %th
                   = "カテゴリー"
@@ -45,32 +52,27 @@
                 %th
                   = "ブランド"
                 %td
-                  = ""
-              %tr
-                %th
-                  = "商品のサイズ"
-                %td
-                  = ""
+                  = @item.brand.name
               %tr
                 %th
                   = "商品の状態"
                 %td
-                  = "未使用に近い"
+                  = @item.condition.name
               %tr
                 %th
                   = "配送料の負担"
                 %td
-                  = "送料込み（出品者負担）"
+                  = @item.shipping_fee_who.name
               %tr
                 %th
                   = "発送元の地域"
                 %td
-                  = link_to "青森県", '#'
+                  = link_to @item.prefecture.name , '#'
               %tr
                 %th
-                  = "発送日の目安"
+                  = '発送日の目安'
                 %td
-                  = "4-7日で発送"
+                  = @item.shipping_days.name
         .is-main__content__top__item__option
           %ul
             %li.like-btn
