@@ -45,11 +45,15 @@ ja:
         shipping_days_id: 発送までの日数
         prefecture_id: 都道府県
         price: 価格
-        category_id: カテゴリー
+        category: カテゴリー
+      category:
+        name: カテゴリー名
     models:
       user: ユーザ
       address: 住所
       item: 商品
+      category: カテゴリー
+
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
