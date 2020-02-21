@@ -6,7 +6,6 @@
   &__buy{
     width: 700px;
     background-color: $wh;
-    
     &__head{
       width: 700px;
       height: 97px;
@@ -22,62 +21,47 @@
       height: 145px;
       font-size: 14px;
       text-align: center;
-      padding: 32px 16px;
+      padding: 20px 16px;
       border-top: 1px solid #f5f5f5;
-
       &__inner{
+        height: 100%;
         max-width: 343px;
-        height: 80px;
         margin: 0 auto;
         font-size: 14px;
-
         .buy-item{
           width: 343px;
-          height: 80px;
           display: flex;
-
+          align-items: center;
           &__image{
-            display: flex;
             justify-content: center;
             align-items: center;
             img {
               width: 80px;
               height: 80px;
+              object-fit: cover;
             }
           }
-
           &__detail{            
-            height: 80px;
             margin-left: 16px;
-
             .buy-item__name{
               color: $sub-font;
-              height: 29px;
-              font-size: 14px;
-              margin: 0;
               padding: 0 0 8px;
-              line-height: 1.5;
+              font-weight: bold;
               text-align: left;
+              p {
+                font-size: 16px;
+              }
             }
-
             .buy-price{
-              color: $sub-font;
-              width: 151.58px;
-              height: 15px;
-              margin: 0;
-              text-align: left;
-              font-size: 15px;
-              font-weight: 600;
-
-
-              .item-shipping-fee{
+              width: 100%;
+              text-align: right;
+              padding-left: 60px;
+              p {
                 color: $sub-font;
-                width: 96px;
-                height: 12px;
+                width: 100%;
                 display: inline-block;
-                font-size: 13px;
-                text-align: center;
-                line-height: 12px;
+                font-size: 14px;
+                padding-bottom: 10px;
               }
             }
           }

@@ -15,4 +15,15 @@ module CardsHelper
       "credit-card_15@0.5.png"
     end
   end
+
+  #登録出来るクレジットカート会社のロゴイメージを呼び出すメソッド
+  def card_logo
+    return {"Visa" => "credit-card_22@0.5.png",
+            "JCB" => "credit-card_28@0.5.png",
+            "MasterCard" => "credit-card_9@0.5.png",
+            "American Express" => "credit-card_19@0.5.png",
+            "Diners Club" => "credit-card_31@0.5.png",
+            "Discover" => "credit-card_15@0.5.png"
+    }
+  end
 end

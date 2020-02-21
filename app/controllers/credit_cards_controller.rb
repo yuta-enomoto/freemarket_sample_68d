@@ -3,7 +3,6 @@ class CreditCardsController < ApplicationController
   include CardsHelper
 
   def new
-    card = CreditCard.where(user_id: current_user.id)
     @card_logo = card_logo
   end
 
@@ -16,14 +15,14 @@ class CreditCardsController < ApplicationController
   def pay #payjpとCardのデータベース作成を実施します。
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     if params['payjp-token'].blank?
-      error_path(params[:keyword])
+      error_path(params[:location])
     else
       customer = Payjp::Customer.create(
       card: params['payjp-token'],
       )
       @card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        success_path(params[:keyword])
+        success_path(params[:location])
       else
         redirect_to action: "pay"
       end
@@ -58,29 +57,20 @@ class CreditCardsController < ApplicationController
     end
   end
 
-  def error_path(keyword)
-    if keyword == "edit"
+  private
+  def error_path(location)
+    if location == "edit"
       redirect_to  action: "edit"
     else
       redirect_to  action: "new"
     end
   end
 
-  def success_path(keyword)
-    if keyword == "edit"
+  def success_path(location)
+    if location == "edit"
       redirect_to  action: "show"
     else
       redirect_to  root_path
     end
-  end
-
-  def card_logo
-    return {"Visa" => "credit-card_22@0.5.png",
-            "JCB" => "credit-card_28@0.5.png",
-            "MasterCard" => "credit-card_9@0.5.png",
-            "American Express" => "credit-card_19@0.5.png",
-            "Diners Club" => "credit-card_31@0.5.png",
-            "Discover" => "credit-card_15@0.5.png"
-    }
   end
 end

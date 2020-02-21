@@ -30,24 +30,27 @@ class OrdersController < ApplicationController
       @phone_number = address.phone_number
       #購入商品の画像を変数化
       @item_images = @item.item_images.first
-
     end
   end
 
   def pay
-    card = CreditCard.where(user_id: current_user.id).first
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
-    Payjp::Charge.create(
-      :amount => @item.price, #支払金額を入力
-      :customer => card.customer_id, #顧客ID
-      :currency => 'jpy', #日本円
-    )
-    order = Order.new(item_id: @item.id, user_id: current_user.id)
-    @item.stock_status = false
-    if order.save && @item.save
-      redirect_to action: 'done' 
+    if @item.stock_status
+      card = CreditCard.where(user_id: current_user.id).first
+      Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+      Payjp::Charge.create(
+        :amount => @item.price, #支払金額を入力
+        :customer => card.customer_id, #顧客ID
+        :currency => 'jpy', #日本円
+      )
+      order = Order.new(item_id: @item.id, user_id: current_user.id)
+      @item.stock_status = false
+      if order.save && @item.save
+        redirect_to action: 'done' 
+      else
+        redirect_to action: "pay"
+      end
     else
-      redirect_to action: "pay"
+      redirect_to root_path
     end
   end
 
@@ -55,5 +58,4 @@ class OrdersController < ApplicationController
   def set_item
     @item = Item.find(params[:item_id])
   end
-
 end

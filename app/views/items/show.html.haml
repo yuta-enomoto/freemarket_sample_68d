@@ -27,7 +27,7 @@
 
         - else 
           .is-main__content__top__item__buy
-            =link_to "購入画面に進む", '#'
+            =link_to "購入画面に進む", item_orders_path(@item.id)
 
         .is-main__content__top__item__header
           = @item.description

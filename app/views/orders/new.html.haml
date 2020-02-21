@@ -10,11 +10,11 @@
             = image_tag @item_images.url
           .buy-item__detail
             .buy-item__name
-              %span= @item.name
+              %p= @item.name
             .buy-price
-              %span= "¥ #{@item.price.to_s(:delimited)}"
-              %span.item-shipping-fee
-                = "(税込) 送料込み"
+              %p= "¥ #{@item.price.to_s(:delimited)}"
+              %p.item-shipping-fee
+                = @item.shipping_fee_who.name
 
     .sub-buy
       .sub-buy__inner
