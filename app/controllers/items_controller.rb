@@ -32,15 +32,12 @@ class ItemsController < ApplicationController
   def destroy
     item = Item.find(params[:id])
     item.destroy
-  end
 
-  def edit
-    @item = Item.find(params[:id])
-  end
-
-  def update
-    @item = Item.find(params[:id])
-    item.update(item_params)
+    if current_user && item.destroy
+      render template: "items/destroy"
+    else
+      redirect_back(fallback_location: root_path)
+    end
   end
 
 
