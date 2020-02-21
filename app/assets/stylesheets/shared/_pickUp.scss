@@ -25,7 +25,14 @@
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    
   }
+
+   
+    &__content {
+      max-width: 200px;
+      max-height: 245px;
+    }
 
       &__contentLink {
         display: block;
@@ -36,7 +43,7 @@
       }
 
         &__itemImage {
-          height: 150px;
+          height: 156px;
           width: 220px;
           object-fit: cover;
           vertical-align: bottom;
@@ -50,6 +57,8 @@
           font-size: 16px;
           line-height: 1.5;
           background-color: $wh;
+          width: 220px;
+          height: 120px;
         }
 
             &__taxInfo {
