@@ -27,7 +27,6 @@ document.addEventListener("turbolinks:load", function() {
                       <a class='item-image__operations__operation edit'>編集</a>
                       <a class='item-image__operations__operation delete'>削除</a>
                     </div>
-
                   </div>`
         $('#image-box__container').before(html);
       };
