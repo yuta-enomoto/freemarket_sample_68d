@@ -23,6 +23,7 @@ class ItemsController < ApplicationController
   end
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   def show
   end
 
@@ -42,8 +43,6 @@ class ItemsController < ApplicationController
     @item.update(item_update_params)
   end
 
-=======
->>>>>>> parent of 4cfe456... items controllerを修正
   private
   
   def item_params
