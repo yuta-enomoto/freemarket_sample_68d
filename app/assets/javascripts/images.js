@@ -43,12 +43,17 @@ $(document).on('turbolinks:load', function(){
     //=============================================================================
 
     // ラベルのwidth操作
-    function setLabel() {
-      //プレビューボックスのwidthを取得し、maxから引くことでラベルのwidthを決定
-      var prevContent = $('.label-content').prev();
-      labelWidth = (620 - $(prevContent).css('width').replace(/[^0-9]/g, ''));
-      $('.label-content').css('width', labelWidth);
-    }
+    if (count < 5)
+      function setLabel() {
+        //プレビューボックスのwidthを取得し、maxから引くことでラベルのwidthを決定
+        var prevContent = $('.label-content').prev();
+        labelWidth = (620 - $(prevContent).css('width').replace(/[^0-9]/g, ''));
+        $('.label-content').css('width', labelWidth)
+        // if (count < 6)
+        // var prevContent = $('.label-content').prev();
+        //   labelWidth = (620 - $(prevContent).css('width').replace(/[^0-9]/g, ''));
+        //   $('.label-content').css('width', labelWidth)
+      }
 
     // プレビューの追加
     $(document).on('change', '.hidden-field', function() {
@@ -76,7 +81,7 @@ $(document).on('turbolinks:load', function(){
         //イメージを追加
         $(`#preview-box__${id} img`).attr('src', `${image}`);
         var count = $('.preview-box').length;
-        //プレビューが5個あったらラベルを隠す 
+        //プレビューが10個あったらラベルを隠す 
         if (count == 10) { 
           $('.label-content').hide();
         }
@@ -111,7 +116,7 @@ $(document).on('turbolinks:load', function(){
         //フォームの中身を削除 
         $(`#item_images_attributes_${id}_image`).val("");
         var count = $('.preview-box').length;
-        //5個めが消されたらラベルを表示
+        //10個めが消されたらラベルを表示
         if (count == 9) {
           $('.label-content').show();
         }

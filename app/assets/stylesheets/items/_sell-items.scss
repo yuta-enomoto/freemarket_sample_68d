@@ -399,10 +399,11 @@
     //プレビュー表示欄のCSS
     .prev-content {
       display: flex;
+      flex-wrap: wrap;
       .preview-box {
         height: 162px;
         width: 112px;
-        margin: 0 15px 10px 0;
+        margin: 0px 12px 10px 0;
         .upper-box {
           height: 112px;
           width: 100%;
