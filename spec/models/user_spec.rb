@@ -62,13 +62,13 @@ describe User do
     end
 
     it "is invalid with a password that has more than 7 characters " do
-      user = build(:user, password: "aabbcc", password_confirmation: "aabbcc")
+      user = build(:user, password: "11bbcc", password_confirmation: "11bbcc")
       user.valid?
       expect(user.errors[:password]).to include("は7文字以上で入力してください。")
     end
 
     it "is valid with a password that has less than 7 characters " do
-      user = build(:user, password: "aabbccd", password_confirmation: "aabbccd")
+      user = build(:user, password: "11bbccd", password_confirmation: "11bbccd")
       expect(user).to be_valid
     end
 
@@ -82,13 +82,13 @@ describe User do
     it "first_furigana is invalid except Hiragana " do
       user = build(:user, first_furigana: "ひらがな")
       user.valid?
-      expect(user.errors[:first_furigana]).to include("は、全角カタカナのみで入力して下さい。")
+      expect(user.errors[:first_furigana]).to include("は全角カタカナのみで入力して下さい。")
     end
 
     it "last_furigana is invalid except Hiragana " do
       user = build(:user, last_furigana: "ひらがな")
       user.valid?
-      expect(user.errors[:last_furigana]).to include("は、全角カタカナのみで入力して下さい。")
+      expect(user.errors[:last_furigana]).to include("は全角カタカナのみで入力して下さい。")
     end
 
     it "first_furigana is valid only in Hiragana " do
@@ -99,6 +99,18 @@ describe User do
     it "last_furigana is valid only in Hiragana " do
       user = build(:user, last_furigana: "カタカナ")
       expect(user).to be_valid
+    end
+
+    it "password is invalid unless it contains both letters and numbers " do
+      user = build(:user, password: "1111111", password_confirmation: "1111111")
+      user.valid?
+      expect(user.errors[:password]).to include("は英字と数字の両方を含めて下さい。")
+    end
+
+    it "email is invalid if the domain is incorrect " do
+      user = build(:user, email: "111@1111")
+      user.valid?
+      expect(user.errors[:email]).to include("は正しく入力してください。")
     end
   end
 end

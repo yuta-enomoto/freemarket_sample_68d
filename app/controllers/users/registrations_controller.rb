@@ -10,7 +10,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     @user = User.new(sign_up_params)
-    unless @user.valid?
+    if @user.invalid?
       flash.now[:alert] = @user.errors.full_messages
       render :new and return
     end
@@ -23,7 +23,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create_address
     @user = User.new(session["devise.regist_data"]["user"])
     @address = Address.new(address_params)
-    unless @address.valid?
+    if @address.invalid?
       flash.now[:alert] = @address.errors.full_messages
       render :new_address and return
     end
@@ -32,21 +32,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     sign_in(:user, @user)
     redirect_to root_path
   end
-
-  # GET /resource/edit
-  # def edit
-  #   super
-  # end
-
-  # PUT /resource
-  # def update
-  #   super
-  # end
-
-  # DELETE /resource
-  # def destroy
-  #   super
-  # end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
