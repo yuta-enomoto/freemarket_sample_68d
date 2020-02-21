@@ -1,20 +1,28 @@
 class ItemsController < ApplicationController
-  def show
-  end
 
   def new
     @item = Item.new
     @item.item_images.new
+    @parent_categories = Category.where(ancestry: nil)
+
+    respond_to do |format|
+      format.html
+      format.json {@child_categories = Category.find(params[:category_id]).children}
+    end
   end
 
   def create
     @item = Item.new(item_params)
+
     if @item.save
       redirect_to root_path
     else
       @item.item_images.new
       render :new
     end
+  end
+
+  def show
   end
 
   def destroy
@@ -32,7 +40,6 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @item.update(item_update_params)
   end
-
 
   private
   
