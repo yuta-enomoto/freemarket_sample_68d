@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
-  
   before_action :authenticate_user!, expect: [:show]
+  before_action :set_item, only: [:destroy]
   
   def show
     @item = Item.find(params[:id]) 
@@ -30,7 +30,6 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item = Item.find(params[:id])
     if current_user.id == @item.user_id && item.destroy
       render template: "items/destroy"
     else
@@ -43,5 +42,9 @@ class ItemsController < ApplicationController
   
   def item_params
     params.require(:item).permit(:name, :description, :category_id, :price, :condition_id , :shipping_fee_who_id, :prefecture_id, :shipping_days_id, item_images_attributes: [:url] ).merge(user_id: current_user.id)
+  end
+
+  def set_item
+    item = Item.find(params[:id])
   end
 end
