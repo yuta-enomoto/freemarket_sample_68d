@@ -1,9 +1,8 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, expect: [:show]
-  before_action :set_item, only: [:destroy]
-  
+  before_action :set_item, only: [:show ,:destroy]
+
   def show
-    @item = Item.find(params[:id]) 
     @item_image = @item.item_images[0].url
   end
 
@@ -30,7 +29,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if current_user.id == @item.user_id && item.destroy
+    if current_user.id == @item.user_id && @item.destroy
       render template: "items/destroy"
     else
       redirect_back(fallback_location: root_path)
@@ -45,6 +44,6 @@ class ItemsController < ApplicationController
   end
 
   def set_item
-    item = Item.find(params[:id])
+    @item = Item.find(params[:id])
   end
 end
