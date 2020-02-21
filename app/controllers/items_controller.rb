@@ -1,10 +1,10 @@
 class ItemsController < ApplicationController
+  
   before_action :authenticate_user!, expect: [:show]
-
+  
   def show
-    @item = Item.find(4)
-    @item_image = @item.item_images[0]
-    @item_images_sub1 = @item.item_images
+    @item = Item.find(params[:id]) 
+    @item_image = @item.item_images[0].url
   end
 
   def new
