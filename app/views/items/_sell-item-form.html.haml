@@ -16,20 +16,27 @@
             最大10枚までアップロードできます
 
             
-          #image-box-1
-            .item-num-0#image-box__container
-              .input-area
-                %label.input{for: "img-file"}
-                  .si-big-box
-                    .si-big-box__si-icon-box
-                      %i.fas.fa-camera
-                    .si-big-box__si-text-box  
-                      %p.drag-drop
-                        ドラッグアンドドロップ
-                      %p.drag-drop
-                        またはクリックしてファイルをアップロード
-                  = f.fields_for :item_images do |i|
-                    = i.file_field :url, name: "item[item_images_attributes][][url]", style: "display:none", id:"img-file"
+          .post__drop__box__container
+            .prev-content
+            .label-content
+              %label{for: "item_images_attributes_0_image", class: "label-box", id: "label-box--0"}
+                %pre.label-box__text-visible クリックしてファイルをアップロード
+              .hidden-content
+                = f.fields_for :item_images do |i|
+                  = i.file_field :url, class: "hidden-field"
+                  %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_0_image" }
+                  %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
+                  %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
+                  %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
+                  %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
+                  %input{class:"hidden-field", type: "file", name: "item[images_attributes][5][image]", id: "item_images_attributes_5_image" }
+                  %input{class:"hidden-field", type: "file", name: "item[images_attributes][6][image]", id: "item_images_attributes_6_image" }
+                  %input{class:"hidden-field", type: "file", name: "item[images_attributes][7][image]", id: "item_images_attributes_7_image" }
+                  %input{class:"hidden-field", type: "file", name: "item[images_attributes][8][image]", id: "item_images_attributes_8_image" }
+                  %input{class:"hidden-field", type: "file", name: "item[images_attributes][9][image]", id: "item_images_attributes_9_image" }
+                  %input{class:"hidden-field", type: "file", name: "item[images_attributes][10][image]", id: "item_images_attributes_10_image" }
+
+
 
       %hr.si-container__si-box__si-inner__si-underline
 

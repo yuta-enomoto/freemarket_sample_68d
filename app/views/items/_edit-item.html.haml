@@ -17,15 +17,6 @@
 
             
           #image-box-1
-            - @item.item_images.each do |image|
-            .item-image{"data-image" => "${file.name}"}
-              .item-image__content
-                .item-image__content--icon
-                  %img{:height => "116", :src => "${url}", :width => "114"}/
-              .item-image__operations
-                %a.item-image__operations__operation.edit 編集
-                %a.item-image__operations__operation.delete 削除
-
             .item-num-0#image-box__container
               .input-area
                 %label.input{for: "img-file"}
