@@ -72,11 +72,11 @@
       設定
     %ul.mp-container__mp-side__mypage-nav__mypage-nav-list.top-space
       %li 
-        = link_to '#' do
+        = link_to edit_user_path(current_user.id) do
           プロフィール
           %i.fas.fa-chevron-right
       %li 
-        = link_to '#' do
+        = link_to edit_address_path(current_user.id) do
           発送元・お届け先住所変更
           %i.fas.fa-chevron-right
       %li 

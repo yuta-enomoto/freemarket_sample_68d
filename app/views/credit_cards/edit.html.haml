@@ -56,9 +56,14 @@
                 = text_field_tag "cvc", "", class: "registar-form__content__box--one-field", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
               .registar-form__content__box
                 %label.registar-form__content__box__label 名前
-                %span.registar-form__content__box__require 必須
+                %span.registar-form__content__box__optional 任意
                 = text_field_tag "name", "", class: "registar-form__content__box--one-field", placeholder: "半角英字大文字 " , type: "text", id: "card_name"
                 = hidden_field_tag :keyword, "edit"
               .registar-form__content__submit
                 #card_token
                 = submit_tag "登録する", id: "token_submit", class: "single-move-button"
+    = link_to new_item_path, class: 'sell-icon' do
+      = render 'shared/sell-icon'
+
+  = render "/shared/footerFirst"
+  = render "/shared/footerSecond"

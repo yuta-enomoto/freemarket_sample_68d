@@ -7,7 +7,15 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end
   root 'home#index'
-  resources :items, only: [:show, :new]
+  resources :items, only: [:show, :new] do
+    resources :orders, only: :new do
+      collection do
+        get 'new', to: 'orders#new'
+        post 'pay', to: 'orders#pay'
+        get 'done', to: 'orders#done'
+      end
+    end
+  end
   resources :users, only: [:index, :show, :edit, :update]
     resources :addresses, only: [:new, :create, :edit, :update]
     resources :credit_cards, only: [:new, :show] do
@@ -18,6 +26,5 @@ Rails.application.routes.draw do
         post 'delete', to: 'credit_cards#delete'
       end
     end
-  resources :orders, only: [:new]
 end
   
