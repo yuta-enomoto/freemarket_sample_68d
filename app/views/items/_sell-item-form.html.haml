@@ -59,15 +59,26 @@
         %h3.sell-sub-head
           商品の詳細
         .sell-form-box 
-          .si-container__si-box__box-frame#category-menus
+          .si-container__si-box__box-frame
             .si-container__si-box__si-photos
               %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label
                 カテゴリー
               %span.required-display
                 必須
-            .sell-form-box__select-wrap#parent-category-menu-wrap
+            .sell-form-box__select-wrap
               %i.fas.fa-chevron-down
-              = f.collection_select :parent_category_id, @parent_categories, :id, :name, {prompt: "---"}, {class: "selector-category", id: "parent-category-menu"}
+              = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
+
+            -# ここから（とりあえずでdisplay: noenをかけています。）
+
+            .sell-form-box__select-wrap.none
+              %i.fas.fa-chevron-down
+              = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
+            .sell-form-box__select-wrap.none
+              %i.fas.fa-chevron-down
+              = f.select :category, [["---", "1"]],{}, {class: 'selector-category'}
+
+            -# ここまで
 
           .si-container__si-box__box-frame.si-top
             .si-container__si-box__si-photos
