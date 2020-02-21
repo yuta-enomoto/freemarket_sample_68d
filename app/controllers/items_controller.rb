@@ -19,6 +19,7 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       @item.item_images.new
+
       render :new
     end
   end
