@@ -18,12 +18,11 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      @item.item_images.new
-
       render :new
     end
   end
 
+<<<<<<< HEAD
   def show
   end
 
@@ -43,6 +42,8 @@ class ItemsController < ApplicationController
     @item.update(item_update_params)
   end
 
+=======
+>>>>>>> parent of 4cfe456... items controllerを修正
   private
   
   def item_params
