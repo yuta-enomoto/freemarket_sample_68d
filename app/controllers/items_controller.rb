@@ -12,9 +12,28 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
+      @item.item_images.new
+
       render :new
     end
   end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+  end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    item = Item.find(params[:id])
+    item.update(item_params)
+    @item = Item.find(params[:id])
+    @item.update(item_update_params)
+  end
+
 
   private
   
