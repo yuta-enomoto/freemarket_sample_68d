@@ -20,18 +20,16 @@
             .item-num-0#image-box__container
               .input-area
                 %label.input{for: "img-file"}
+                  .si-big-box
+                    .si-big-box__si-icon-box
+                      %i.fas.fa-camera
+                    .si-big-box__si-text-box  
+                      %p.drag-drop
+                        ドラッグアンドドロップ
+                      %p.drag-drop
+                        またはクリックしてファイルをアップロード
                   = f.fields_for :item_images do |i|
                     = i.file_field :url, name: "item[item_images_attributes][][url]", style: "display:none", id:"img-file"
-  
-                    .si-big-box
-                      .si-big-box__si-icon-box
-                        %i.fas.fa-camera
-                      .si-big-box__si-text-box  
-                        %p.drag-drop
-                          ドラッグアンドドロップ
-                        %p.drag-drop
-                          またはクリックしてファイルをアップロード
-         
 
       %hr.si-container__si-box__si-inner__si-underline
 
