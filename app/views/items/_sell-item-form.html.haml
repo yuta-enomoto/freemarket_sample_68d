@@ -71,7 +71,7 @@
                 必須
             .sell-form-box__select-wrap#parent-category-menu-wrap
               %i.fas.fa-chevron-down
-              = f.collection_select :parent_category_id, @parent_categories, :id, :name, {prompt: "---"}, {class: "selector-category", id: "parent-category-menu"}
+              = f.collection_select :parent_category_id, Category.where(ancestry: nil), :id, :name, {prompt: "---"}, {class: "selector-category", id: "parent-category-menu"}
 
           .si-container__si-box__box-frame.si-top
             .si-container__si-box__si-photos
