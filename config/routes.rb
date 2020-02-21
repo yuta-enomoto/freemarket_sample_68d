@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   
   root 'home#index'
   resources :users, only: [:index, :show, :edit, :update]
-  resources :addresses, only: [:new, :create, :edit, :update]
-  resources :credit_cards, only: [:new, :create, :edit, :update, :destroy]
+  resources :addresses, only: [:new, :create, :edit, :update, :destroy]
+  resources :payments, only: [:new, :create, :edit, :update, :destroy]
   resources :orders, only: [:new]
   resources :items, only: [:show, :new, :create]
 
