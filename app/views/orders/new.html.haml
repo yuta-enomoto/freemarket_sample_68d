@@ -7,7 +7,7 @@
       .main-h__buy__item__inner
         .buy-item
           .buy-item__image
-            = image_tag @item_images.url
+            = image_tag @item_images[:url]
           .buy-item__detail
             .buy-item__name
               %p= @item.name
