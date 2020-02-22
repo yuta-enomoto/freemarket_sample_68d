@@ -2,11 +2,11 @@ class CreditCardsController < ApplicationController
   require "payjp"
   include CardsHelper
 
-  def new
+  def new #新規登録画面でアドレス登録後にページ遷移。スキップ可。
     @card_logo = card_logo
   end
 
-  def edit
+  def edit #既にcard登録していた場合、マイページの編集ページに遷移
     card = CreditCard.where(user_id: current_user.id)
     @card_logo = card_logo
     redirect_to action: "show" if card.exists?
@@ -57,6 +57,7 @@ class CreditCardsController < ApplicationController
   end
 
   private
+  #マイページと新規登録画面で、エラー時のリダイレクト先を分岐
   def error_path(location)
     if location == "edit"
       redirect_to  action: "edit"
@@ -65,6 +66,7 @@ class CreditCardsController < ApplicationController
     end
   end
 
+  #マイページと新規登録画面で、登録完了時のリダイレクト先を分岐
   def success_path(location)
     if location == "edit"
       redirect_to  action: "show"

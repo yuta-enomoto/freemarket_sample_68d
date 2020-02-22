@@ -33,7 +33,7 @@ class OrdersController < ApplicationController
     end
   end
 
-  def pay
+  def pay #購入処理
     if @item.stock_status
       card = CreditCard.where(user_id: current_user.id).first
       Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']

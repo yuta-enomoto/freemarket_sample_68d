@@ -28,6 +28,4 @@ module CardsHelper
       "Discover" => "credit-card_15@0.5.png"
     }
   end
-
-
 end

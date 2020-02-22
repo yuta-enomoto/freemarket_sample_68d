@@ -1,4 +1,5 @@
 module ApplicationHelper
+  #viewのselect_tagに使用。CardsHelperではうまく読み込めなかったので、ApplicationHelperに記述。
   def card_month
     month = [*1..12]
     exp_month = []
