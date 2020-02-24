@@ -1,56 +1,144 @@
-document.addEventListener("turbolinks:load", function() {
-  var dataBox = new DataTransfer();
-  var file_field = document.querySelector('input[type=file]')
-  $('#img-file').change(function(){
-    var files = $('input[type="file"]').prop('files')[0];
-    $.each(this.files, function(i, file){
-      var fileReader = new FileReader();
+$(document).on('turbolinks:load', function(){
+  $(function(){
 
-      dataBox.items.add(file)
-      file_field.files = dataBox.files
-
-      var num = $('.item-image').length + 1 + i
-      fileReader.readAsDataURL(file);
-      if (num == 10){
-        $('#image-box__container').css('display', 'none')   
-      }
-      fileReader.onloadend = function() {
-        var url = fileReader.result
-        var html= `<div class='item-image' data-image="${file.name}">
-                    <div class=' item-image__content'>
-                      <div class='item-image__content--icon'>
-                        <img src=${url} width="114" height="116" >
+    function buildHTML(count) {
+      var html = `<div class="preview-box" id="preview-box__${count}">
+                    <div class="upper-box">
+                      <img src="" alt="preview">
+                    </div>
+                    <div class="lower-box">
+                      <div class="update-box">
+                        <span class="edit_btn">編集</span>
+                      </div>
+                      <div class="delete-box" id="delete_btn_${count}">
+                        <span>削除</span>
                       </div>
                     </div>
-
-                    <div class='item-image__operations'>
-                      <a class='item-image__operations__operation edit'>編集</a>
-                      <a class='item-image__operations__operation delete'>削除</a>
-                    </div>
-
                   </div>`
-        $('#image-box__container').before(html);
-      };
-      $('#image-box__container').attr('class', `item-num-${num}`)
+      return html;
+    }
+
+    // 投稿編集時
+    if (window.location.href.match(/\/items\/\d+\/edit/)){
+      var prevContent = $('.label-content').prev();
+      labelWidth = (620 - $(prevContent).css('width').replace(/[^0-9]/g, ''));
+      $('.label-content').css('width', labelWidth);
+      $('.preview-box').each(function(index, box){
+        $(box).attr('id', `preview-box__${index}`);
+      })
+      $('.delete-box').each(function(index, box){
+        $(box).attr('id', `delete_btn_${index}`);
+      })
+      var count = $('.preview-box').length;
+      if (count == 10) {
+        $('.label-content').hide();
+      }
+    }
+    //=============================================================================
+
+    // ラベルのwidth操作
+    function setLabel() {
+
+      var count = $('.preview-box').length;
+      if (count == 0) {
+        $('.label-content').css('width', 620)
+      }
+      if (count == 1) {
+        $('.label-content').css('width', 496 )
+      }
+      if (count == 2) {
+        $('.label-content').css('width', 372 )
+      }
+      if (count == 3) {
+        $('.label-content').css('width', 248 )
+      }
+      if (count == 4) {
+        $('.label-content').css('width', 124)
+      }
+      if (count == 5) {
+        $('.label-content').css('width', 620)
+      }
+      if (count == 6) {
+        $('.label-content').css('width', 496)
+      }
+      if (count == 7) {
+        $('.label-content').css('width', 372 )
+      }
+      if (count == 8) {
+        $('.label-content').css('width', 248 )
+      }
+      if (count == 9) {
+        $('.label-content').css('width', 124)
+      }
+    }
+    
+
+    $(document).on('change', '.hidden-field', function() {
+      setLabel();
+      var id = $(this).attr('id').replace(/[^0-9]/g, '');
+      $('.label-box').attr({id: `label-box--${id}`,for: `item_images_attributes_${id}_image`});
+      var file = this.files[0];
+      var reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = function() {
+        var image = this.result;
+        if ($(`#preview-box__${id}`).length == 0) {
+          var count = $('.preview-box').length;
+          var html = buildHTML(id);
+          $('.label-content').before(html);
+        }
+        $(`#preview-box__${id} img`).attr('src', `${image}`);
+        var count = $('.preview-box').length;
+        if (count == 10) { 
+          $('.label-content').hide();
+        }
+
+        if ($(`#item_images_attributes_${id}__destroy`)){
+          $(`#item_images_attributes_${id}__destroy`).prop('checked',false);
+        } 
+        //=============================================================================
+
+        setLabel();
+        if(count < 10){
+          $('.label-box').attr({id: `label-box--${count}`,for: `item_images_attributes_${count}_image`});
+        }
+      }
+    });
+
+    $(document).on('click', '.delete-box', function() {
+      var count = $('.preview-box').length;
+      setLabel(count);
+      var id = $(this).attr('id').replace(/[^0-9]/g, '');
+      $(`#preview-box__${id}`).remove();
+
+      //新規登録時と編集時の場合分け==========================================================
+
+      //新規投稿時
+      if ($(`#item_images_attributes_${id}__destroy`).length == 0) {
+        $(`#item_images_attributes_${id}_image`).val("");
+        var count = $('.preview-box').length;
+        if (count == 9) {
+          $('.label-content').show();
+        }
+        setLabel(count);
+        if(id < 10){
+          $('.label-box').attr({id: `label-box--${id}`,for: `item_images_attributes_${id}_image`});
+
+        }
+      } else {
+
+        //投稿編集時
+        $(`#item_images_attributes_${id}__destroy`).prop('checked',true);
+        if (count == 10) {
+          $('.label-content').show();
+        }
+
+        setLabel();
+        if(id < 10){
+          $('.label-box').attr({id: `label-box--${id}`,for: `item_images_attributes_${id}_image`});
+        }
+      }
+      //=============================================================================
     });
   });
-  $(document).on("click", '.delete', function(){
-    var target_image = $(this).parent().parent()
-    var target_name = $(target_image).data('image')
-    if(file_field.files.length==1){
-      $('input[type=file]').val(null)
-      dataBox.clearData();
-    }else{
-      $.each(file_field.files, function(i,input){
-        if(input.name==target_name){
-          dataBox.items.remove(i) 
-        }
-      })
-      file_field.files = dataBox.files
-    }
-    target_image.remove()
-    var num = $('.item-image').length
-    $('#image-box__container').show()
-    $('#image-box__container').attr('class', `item-num-${num}`)
-  })
 });
