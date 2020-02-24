@@ -18,16 +18,8 @@
           .is-main__content__top__item__price__detail
             %span= "(税込み)"
             %span= "送料込み"
-
-        - if user_signed_in? && current_user.id == @item.user_id
-          .is-main__content__top__item__edit
-            =link_to "商品の編集", edit_item_path(@item), method: :get
-          .is-main__content__top__item__delete
-            =link_to "この商品を削除する",  item_path(@item), method: :delete
-
-        - else 
-          .is-main__content__top__item__buy
-            =link_to "購入画面に進む", '#'
+        .is-main__content__top__item__buy
+          =link_to "購入画面に進む", '#'
 
         .is-main__content__top__item__header
           = @item.description
