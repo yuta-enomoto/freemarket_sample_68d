@@ -7,9 +7,8 @@
         %h2.is-main__content__top__item__name
           = @item.name
         .is-main__content__top__item__body
-
           .image-main
-            = image_tag "#{@item_image}",class:'main-photo'
+            = image_tag @item_image, class:'main-photo'
           %ul.item-image-sub_top
             = render partial: "/shared/item_show_images", collection: @item.item_images, as: "item_image"
         
@@ -52,7 +51,7 @@
                 %th
                   = "ブランド"
                 %td
-                  = @item.brand.name
+                  = @item.brand.name rescue ""
               %tr
                 %th
                   = "商品の状態"

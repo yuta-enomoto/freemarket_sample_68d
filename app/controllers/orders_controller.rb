@@ -29,7 +29,7 @@ class OrdersController < ApplicationController
       @address = Prefecture.find(address.prefecture_id).name + address.address1 + address.address2 + address.building_name
       @phone_number = address.phone_number
       #購入商品の画像を変数化
-      @item_images = @item.item_images.first
+      @item_images = @item.item_images[0].url.url
     end
   end
 

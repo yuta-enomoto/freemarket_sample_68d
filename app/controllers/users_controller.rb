@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:index, :edit, :update]
 
   def index
-
   end
 
   def show

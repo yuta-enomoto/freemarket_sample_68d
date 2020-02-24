@@ -13,7 +13,7 @@
         .mp-container__mp-content__mypage-user-icon__mypage-number__exhibit
           出品数
           %span.bold
-            0
+            = current_user.items.length
   %section.mp-container__mp-content__mypage-tab-container-notification-todo
     %ul.mp-container__mp-content__mypage-tab-container-notification-todo__mypage-tabs
       %li.tab-list.is-active
