@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, expect: [:show]
-  before_action :set_item, only: [:show ,:destroy]
+  before_action :set_item, only: [:show ,:destroy, :edit, :update]
 
   def show
     @item_image = @item.item_images[0].url
@@ -36,6 +36,19 @@ class ItemsController < ApplicationController
       redirect_back(fallback_location: root_path)
     end
   end
+
+  def edit
+  end
+
+  def update
+    binding.pry
+    if current_user.id == @item.user_id && @item.update(item_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
 
 
   private
