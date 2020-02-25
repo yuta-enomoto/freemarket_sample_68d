@@ -6,13 +6,18 @@ crumb :mypage do
   link "マイページ", users_path
 end
 
+crumb :profile do
+  link "プロフィール編集", edit_user_path(current_user.id)
+  parent :mypage
+end
+
 crumb :credit_card do
   link "クレジットカード登録", edit_credit_cards_path
   parent :mypage
 end
 
 crumb :address do |project|
-  link "住所登録", edit_address_path
+  link "住所変更", edit_address_path
   parent :mypage
 end
 
