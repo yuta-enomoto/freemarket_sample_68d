@@ -20,9 +20,7 @@
             - @item.item_images.each do |url|
               .preview-box
                 .upper-box
-                  = image_tag "#{@item.item_images}", width: "112", height: "112", alt: "preview"
-
-
+                  = image_tag "#{url.url}", width: "112", height: "112", alt: "preview"
                 .lower-box
                   .update-box
                     %span.edit_btn 編集
@@ -30,23 +28,22 @@
                     %span 削除
 
             .label-content
-              %label{for: "item_images_attributes_0_image", class: "label-box", id: "label-box--0"}
+              %label{for: "item_images_attributes_#{@item.item_images.length}_image", class: "label-box", id: "label-box--#{@item.item_images.length}"}
+             
                 %pre.label-box__text-visible クリックしてファイルをアップロード
-              .hidden-content
-                = f.fields_for :item_images do |i|
-                  = i.file_field :url, name: "item[item_images_attributes][][url]", style: "display:none", class: "hidden-field", id: "img"
-                  %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][0][url]", id: "item_images_attributes_0_image" }
-                  %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][1][url]", id: "item_images_attributes_1_image" }
-                  %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][2][url]", id: "item_images_attributes_2_image" }
-                  %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][3][url]", id: "item_images_attributes_3_image" }
-                  %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][4][url]", id: "item_images_attributes_4_image" }
-                  %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][5][url]", id: "item_images_attributes_5_image" }
-                  %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][6][url]", id: "item_images_attributes_6_image" }
-                  %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][7][url]", id: "item_images_attributes_7_image" }
-                  %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][8][url]", id: "item_images_attributes_8_image" }
-                  %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][9][url]", id: "item_images_attributes_9_image" }
-                  %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][10][url]", id: "item_images_attributes_10_image" }
-  
+            .hidden-content
+              = f.fields_for :item_images do |i|
+
+                //プレビューが出ている分のfile_fieldとdelete用のチェックボックスを設置
+                = i.file_field :url, class: "hidden-field"
+                = i.check_box:_destroy, class: "hidden-checkbox"
+
+                //5つのfile_fieldを準備するに当たって、足りない分を表示
+              - @item.item_images.length.upto(9) do |i|
+                %input{name: "item[item_images_attributes][#{i}][url]", id: "item_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
+
+
+
 
       %hr.si-container__si-box__si-inner__si-underline
 

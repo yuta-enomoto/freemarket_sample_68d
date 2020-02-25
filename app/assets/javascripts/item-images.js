@@ -10,7 +10,7 @@ $(document).on('turbolinks:load', function(){
                       <div class="update-box">
                         <span class="edit_btn">編集</span>
                       </div>
-                      <div class="delete-box" id="delete_btn_${count}">
+                      <div class="delete-box", id="delete_btn_${count}" "item_item_images_attributes_${count}__destroy"}>
                         <span>削除</span>
                       </div>
                     </div>
@@ -20,23 +20,55 @@ $(document).on('turbolinks:load', function(){
 
     // 投稿編集時
     if (window.location.href.match(/\/items\/\d+\/edit/)){
-      var prevContent = $('.label-content').prev();
-      labelWidth = (620 - $(prevContent).css('width').replace(/[^0-9]/g, ''));
-      $('.label-content').css('width', labelWidth);
+      var prevCount = $('.preview-box').length
+      if (prevCount == 1) {
+        $('.label-content').css('width', 496)
+      }
+      if (prevCount == 2) {
+        $('.label-content').css('width', 372 )
+      }
+      if (prevCount == 3) {
+        $('.label-content').css('width', 248 )
+      }
+      if (prevCount == 4) {
+        $('.label-content').css('width', 124 )
+      }
+      if (prevCount == 5) {
+        $('.label-content').css('width', 620)
+      }
+      if (prevCount == 6) {
+        $('.label-content').css('width', 496)
+      }
+      if (prevCount == 7) {
+        $('.label-content').css('width', 372)
+      }
+      if (prevCount == 8) {
+        $('.label-content').css('width', 248 )
+      }
+      if (prevCount == 9) {
+        $('.label-content').css('width', 124 )
+      }
+
       $('.preview-box').each(function(index, box){
         $(box).attr('id', `preview-box__${index}`);
       })
       $('.delete-box').each(function(index, box){
-        $(box).attr('id', `delete_btn_${index}`);
+        $(box).attr('id', `item_item_images_attributes_${index}__destroy`);
       })
       var count = $('.preview-box').length;
       if (count == 10) {
         $('.label-content').hide();
       }
+
+      $(document).on('click', '.delete-box', function() {
+        var delId = $(this).attr('id')
+        $(`input#${delId}`).prop('checked', true);        
+      })
     }
+
+
     //=============================================================================
 
-    // ラベルのwidth操作
     function setLabel() {
 
       var count = $('.preview-box').length;
@@ -104,6 +136,8 @@ $(document).on('turbolinks:load', function(){
         }
       }
     });
+
+
 
     $(document).on('click', '.delete-box', function() {
       var count = $('.preview-box').length;
