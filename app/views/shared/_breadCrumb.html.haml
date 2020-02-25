@@ -1,17 +1,2 @@
 %nav.breadCrumbs
-  %ul
-    %li
-      = link_to 'FURIMA', '#'
-      %i= icon('fa', 'angle-right', class: "right-icon")
-    %li
-      = link_to 'メンズ', '#'
-      %i= icon('fa', 'angle-right', class: "right-icon")
-    %li
-      = link_to 'ジャケット/アウター', '#'
-      %i= icon('fa', 'angle-right', class: "right-icon")
-    %li
-      = link_to 'ノーカラージャケット', '#'
-      %i= icon('fa', 'angle-right', class: "right-icon")
-    %li
-      = link_to 'product3', '#'
-      %i= icon('fa', 'angle-right', class: "right-icon")
+  = breadcrumbs pretext: "",separator: icon('fa', 'angle-right'), class: "breadCrumbs__list"
