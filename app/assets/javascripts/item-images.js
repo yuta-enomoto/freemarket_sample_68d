@@ -70,7 +70,6 @@ $(document).on('turbolinks:load', function(){
         var delId = $(this).attr('id')
         $(`input#${delId}`).prop('checked', true);        
       })
-
     }
 
 
@@ -115,7 +114,7 @@ $(document).on('turbolinks:load', function(){
     $(document).on('change', '.hidden-field', function() {
       setLabel();
       var id = $(this).attr('id').replace(/[^0-9]/g, '');
-      $('.label-box').attr({id: `label-box--${id}`,for: `item_images_attributes_${id}_image`});
+      $('.label-box').attr({id: `label-box--${id}`,for: `item_item_images_attributes_${id}_url`});
       var file = this.files[0];
       var reader = new FileReader();
       reader.readAsDataURL(file);
@@ -155,7 +154,7 @@ $(document).on('turbolinks:load', function(){
       //新規登録時と編集時の場合分け==========================================================
 
       //新規投稿時
-      if ($(`#item_images_attributes_${id}__destroy`).length == 0) {
+      if ($(`#item_item_images_attributes_${id}__destroy`).length == 0) {
         $(`#item_images_attributes_${id}_image`).val("");
         var count = $('.preview-box').length;
         if (count == 9) {
@@ -170,13 +169,13 @@ $(document).on('turbolinks:load', function(){
 
         //投稿編集時
         $(`#item_images_attributes_${id}__destroy`).prop('checked',true);
-        if (count == 10) {
+        if (count == 9) {
           $('.label-content').show();
         }
 
         setLabel();
         if(id < 10){
-          $('.label-box').attr({id: `label-box--${id}`,for: `item_images_attributes_${id}_image`});
+          $('.label-box').attr({id: `label-box--${id}`,for: `item_item_images_attributes_${id}_url`});
         }
       }
       //=============================================================================

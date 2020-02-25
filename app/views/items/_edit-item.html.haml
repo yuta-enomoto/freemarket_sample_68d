@@ -28,19 +28,19 @@
                     %span 削除
 
             .label-content
-              %label{for: "item_images_attributes_#{@item.item_images.length}_image", class: "label-box", id: "label-box--#{@item.item_images.length}"}
+              %label{for: "item_item_images_attributes_#{@item.item_images.length}_url", class: "label-box", id: "label-box--#{@item.item_images.length}"}
              
                 %pre.label-box__text-visible クリックしてファイルをアップロード
-            .hidden-content
+            .hidden-conten
               = f.fields_for :item_images do |i|
 
                 //プレビューが出ている分のfile_fieldとdelete用のチェックボックスを設置
                 = i.file_field :url, class: "hidden-field"
                 = i.check_box:_destroy, class: "hidden-checkbox"
 
-                //5つのfile_fieldを準備するに当たって、足りない分を表示
+                //10個のfile_fieldを準備するに当たって、足りない分を表示
               - @item.item_images.length.upto(9) do |i|
-                %input{name: "item[item_images_attributes][#{i}][url]", id: "item_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
+                %input{name: "item[item_images_attributes][#{i}][url]", id: "item_item_images_attributes_#{i}_url", class:"hidden-field", type:"file"}
 
 
 
