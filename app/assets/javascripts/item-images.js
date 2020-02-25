@@ -52,6 +52,9 @@ $(document).on('turbolinks:load', function(){
       $('.preview-box').each(function(index, box){
         $(box).attr('id', `preview-box__${index}`);
       })
+      $('.update-box').each(function(index, box){
+        $(box).attr('id', `item_item_images_attributes_${index}_url`);
+      })
       $('.delete-box').each(function(index, box){
         $(box).attr('id', `item_item_images_attributes_${index}__destroy`);
       })
@@ -59,11 +62,15 @@ $(document).on('turbolinks:load', function(){
       if (count == 10) {
         $('.label-content').hide();
       }
-
+      $(document).on('click', '.update-box', function() {
+        var updId = $(this).attr('id')
+        $(`input#${updId}`).trigger('click');      
+      })
       $(document).on('click', '.delete-box', function() {
         var delId = $(this).attr('id')
         $(`input#${delId}`).prop('checked', true);        
       })
+
     }
 
 
