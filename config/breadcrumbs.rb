@@ -12,12 +12,12 @@ crumb :profile do
 end
 
 crumb :credit_card do
-  link "クレジットカード登録", edit_credit_cards_path
+  link "支払い方法", edit_credit_cards_path
   parent :mypage
 end
 
 crumb :address do |project|
-  link "住所変更", edit_address_path
+  link "発送元・お届け先住所変更", edit_address_path
   parent :mypage
 end
 
