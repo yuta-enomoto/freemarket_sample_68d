@@ -51,10 +51,31 @@ $(document).on('turbolinks:load', function(){
         $('.label-content').css('width', 124)
 			}
 		}
-		
+
 		// 投稿編集時=============================================================================
 		if (window.location.href.match(/\/items\/\d+\/edit/)){
       setLabel();
+			$('.preview-box').each(function(index, box){
+				$(box).attr('id', `preview-box__${index}`);
+			})
+			$('.update-box').each(function(index, box){
+				$(box).attr('id', `item_item_images_attributes_${index}_url`);
+			})
+			$('.delete-box').each(function(index, box){
+				$(box).attr('id', `item_item_images_attributes_${index}__destroy`);
+			})
+			var count = $('.preview-box').length;
+			if (count == 10) {
+				$('.label-content').hide();
+			}
+			$(document).on('click', '.delete-box', function() {
+				var delId = $(this).attr('id')
+				$(`input#${delId}`).prop('checked', true);        
+			})
+		}
+		// エラーメッセージの画面でURLが変わるので、それに対応
+		if (window.location.href.match(/\/items\/\d+/)){
+			setLabel();
 			$('.preview-box').each(function(index, box){
 				$(box).attr('id', `preview-box__${index}`);
 			})
