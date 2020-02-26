@@ -18,4 +18,6 @@ class Item < ApplicationRecord
   validates :prefecture_id, :condition_id, :shipping_fee_who_id, :shipping_days_id, :item_images, presence: true
   validates :price, presence: true, numericality: {only_integer: true, greater_than: 300, less_than: 9999999}
 
+
+  scope :date_desc, -> {order(created_at: :desc)}
 end

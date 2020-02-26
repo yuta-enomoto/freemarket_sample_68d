@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
   
   root 'home#index'
-  resources :items, except: [:index] do
+  resources :items do
     resources :orders, only: :new do
       collection do
         get 'new', to: 'orders#new'
@@ -19,7 +19,11 @@ Rails.application.routes.draw do
       end
     end
   end
-  resources :users, only: [:index, :show, :edit, :update]
+  resources :users, only: [:index, :show, :edit, :update] do
+    member do
+      get 'seller', to: 'users#seller'
+    end
+  end
   resources :addresses, only: [:new, :create, :edit, :update]
   resources :credit_cards, only: [:new, :show] do
     collection do

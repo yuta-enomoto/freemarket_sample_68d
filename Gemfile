@@ -84,4 +84,5 @@ gem 'jquery-rails'
 gem 'payjp'
 gem 'dotenv-rails'
 gem 'meta_request'
+gem 'kaminari'
 gem "gretel"
