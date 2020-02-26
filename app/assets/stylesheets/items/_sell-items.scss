@@ -203,6 +203,13 @@
             color: $sub-font;
             font-weight: bold;
           }
+          .fee-alert {
+            color: $lightred;
+            font-size: 14px;
+          }
+          .profit-value {
+            font-size: 20px;
+          }
         }
 
         .l-right {

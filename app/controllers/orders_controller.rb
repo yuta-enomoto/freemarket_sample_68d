@@ -43,8 +43,10 @@ class OrdersController < ApplicationController
         :currency => 'jpy', #日本円
       )
       order = Order.new(item_id: @item.id, user_id: current_user.id)
+      profit = @item.price * 0.9
+      sele = Sele.new(item_id: order.item_id, user_id: order.item_id, revenue: @item.price, profit: profit)
       @item.stock_status = false
-      if order.save && @item.save
+      if order.save && @item.save && sele.save
         redirect_to action: 'done' 
       else
         redirect_to action: "pay"

@@ -142,3 +142,19 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belongs_to_active_hash :prefecture
+
+---------------------------------------------------------------
+
+## selesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|revenue|integer|null: false|
+|profit|integer|null: false|
+|deposit|boolean|null: false, default: false|
+|user_id|integer|null: false, foreign_key: true|
+|item_id|integer|null: false, foreign_key: true|
+|order_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :item

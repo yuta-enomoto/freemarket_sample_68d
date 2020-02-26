@@ -159,16 +159,12 @@
                 .sell-form-box__sell-price-input__input-box.l-right
                   = f.text_field :price, placeholder: '例）300', class:'input-default input-right'
 
-          -# ここから（追加実装用）
-            -# %li.sell-form-box__price-list.display-box
-            -#   .sell-form-box__price-list__l-left
-            -#     販売手数料 (10%)
-            -#   .l-right -
-            -# %li.sell-form-box__price-list.display-box.bold
-            -#   .sell-form-box__price-list__l-left-2
-            -#     販売利益
-            -#   .sell-form-box__price-list__l-right-2 -
-          -# ここまで
+            %li.sell-form-box__price-list.display-box#sell-fee-calc
+              .sell-form-box__price-list__l-left
+                販売手数料 (10%)
+            %li.sell-form-box__price-list.display-box.bold#sell-profit-calc
+              .sell-form-box__price-list__l-left-2
+                販売利益
           
       %hr.si-container__si-box__si-inner__si-underline
 
