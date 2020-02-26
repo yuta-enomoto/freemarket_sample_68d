@@ -141,21 +141,17 @@ $(document).on('turbolinks:load', function(){
         } 
         //=============================================================================
 
-        setLabel();
-        // if(count < 10){
-        //   $('.label-box').attr({id: `label-box--${count}`,for: `item_item_images_attributes_${count}_url`});
-				// }
-				
-				var id = [];
+        setLabel();				
+				var id_add = [];
 				$('.preview-box').each(function(index, box){
-					id[index] = $(box).attr('id').replace(/[^0-9]/g, '');
+					id_add[index] = $(box).attr('id').replace(/[^0-9]/g, '');
 				});
 
 				var x = $('.preview-box').length
 				for(var index=0; index<x+1; index++){
 					var y = 0
 
-					id.map(function(num){
+					id_add.map(function(num){
 						if (index == num) {
 							y = 1
 							return false;
@@ -181,28 +177,16 @@ $(document).on('turbolinks:load', function(){
       //新規登録時と編集時の場合分け==========================================================
 
       //新規投稿時
-      if ($(`#item_images_attributes_${id}__destroy`).length == 0) {
-        // $(`#item_item_images_attributes_${id}_url`).val("");
-        // var count = $('.preview-box').length;
-        // if (count == 9) {
-        //   $('.label-content').show();
-        // }
-        // setLabel(count);
-        // if(id < 10){
-        //   $('.label-box').attr({id: `label-box--${id}`,for: `item_item_images_attributes_${id}_url`});
-
-				// }
-
-				
-				var id = [];
+      if ($(`#item_images_attributes_${id}__destroy`).length == 0) {		
+				var id_add2 = [];
 				$('.preview-box').each(function(index, box){
-					id[index] = $(box).attr('id').replace(/[^0-9]/g, '');
+					id_add2[index] = $(box).attr('id').replace(/[^0-9]/g, '');
 				});
 
 				$('.preview-box').each(function(index){
 					var y = 0
 
-					id.forEach(function(num){
+					id_add2.forEach(function(num){
 						if (index == num) {
 							y = 1
 							return false;
@@ -214,7 +198,6 @@ $(document).on('turbolinks:load', function(){
 						return false;
 					}
 				});
-				console.log(id)
 
       } else {
 
