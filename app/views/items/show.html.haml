@@ -37,7 +37,12 @@
                 %th
                   = "出品者"
                 %td
-                  = @item.user.nickname
+                  - if current_user.id == @item.user_id
+                    = link_to user_path(current_user.id) do
+                      = @item.user.nickname
+                  - else
+                    = link_to seller_user_path(@item.user_id) do
+                      = @item.user.nickname
               %tr
                 %th
                   = "カテゴリー"
