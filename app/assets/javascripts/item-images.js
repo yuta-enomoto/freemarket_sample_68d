@@ -17,61 +17,8 @@ $(document).on('turbolinks:load', function(){
                   </div>`
       return html;
     }
-
-    // 投稿編集時=============================================================================
-    if (window.location.href.match(/\/items\/\d+\/edit/)){
-      var prevCount = $('.preview-box').length
-      if (prevCount == 1) {
-        $('.label-content').css('width', 496)
-      }
-      if (prevCount == 2) {
-        $('.label-content').css('width', 372 )
-      }
-      if (prevCount == 3) {
-        $('.label-content').css('width', 248 )
-      }
-      if (prevCount == 4) {
-        $('.label-content').css('width', 124 )
-      }
-      if (prevCount == 5) {
-        $('.label-content').css('width', 620)
-      }
-      if (prevCount == 6) {
-        $('.label-content').css('width', 496)
-      }
-      if (prevCount == 7) {
-        $('.label-content').css('width', 372)
-      }
-      if (prevCount == 8) {
-        $('.label-content').css('width', 248 )
-      }
-      if (prevCount == 9) {
-        $('.label-content').css('width', 124 )
-      }
-
-      $('.preview-box').each(function(index, box){
-        $(box).attr('id', `preview-box__${index}`);
-      })
-      $('.update-box').each(function(index, box){
-        $(box).attr('id', `item_item_images_attributes_${index}_url`);
-      })
-      $('.delete-box').each(function(index, box){
-        $(box).attr('id', `item_item_images_attributes_${index}__destroy`);
-      })
-      var count = $('.preview-box').length;
-      if (count == 10) {
-        $('.label-content').hide();
-      }
-      $(document).on('click', '.delete-box', function() {
-        var delId = $(this).attr('id')
-        $(`input#${delId}`).prop('checked', true);        
-			})
-    }
-
-    //新規出品時のラベルwidth=============================================================================
-
+    //ラベルwidth=============================================================================
     function setLabel() {
-
       var count = $('.preview-box').length;
       if (count == 0) {
         $('.label-content').css('width', 620)
@@ -102,8 +49,31 @@ $(document).on('turbolinks:load', function(){
       }
       if (count == 9) {
         $('.label-content').css('width', 124)
-      }
+			}
 		}
+		
+		// 投稿編集時=============================================================================
+		if (window.location.href.match(/\/items\/\d+\/edit/)){
+      setLabel();
+			$('.preview-box').each(function(index, box){
+				$(box).attr('id', `preview-box__${index}`);
+			})
+			$('.update-box').each(function(index, box){
+				$(box).attr('id', `item_item_images_attributes_${index}_url`);
+			})
+			$('.delete-box').each(function(index, box){
+				$(box).attr('id', `item_item_images_attributes_${index}__destroy`);
+			})
+			var count = $('.preview-box').length;
+			if (count == 10) {
+				$('.label-content').hide();
+			}
+			$(document).on('click', '.delete-box', function() {
+				var delId = $(this).attr('id')
+				$(`input#${delId}`).prop('checked', true);        
+			})
+		}
+
 		//画像を差し替える時=============================================================================
 		$(document).on('click', '.update-box', function() {
 			var updId = $(this).attr('id')
@@ -159,6 +129,7 @@ $(document).on('turbolinks:load', function(){
 		
   //削除ボタンを押した時=============================================================================
     $(document).on('click', '.delete-box', function() {
+			setLabel();
       var id = $(this).attr('id').replace(/[^0-9]/g, '');
       $(`#preview-box__${id}`).remove();
 
@@ -182,6 +153,16 @@ $(document).on('turbolinks:load', function(){
 					return false;
 				}
 			});
+
+			//削除ボタンを押した時ファイルフィールドの中身を消す===============================
+			$(`#item_item_images_attributes_${id}_url`).val("");
+			var count = $('.preview-box').length;
+
+			//10個めが消されたらラベルを表示===============================================
+			setLabel();
+			if (count == 9) {
+				$('.label-content').show();
+			};
     });
   });
 });
