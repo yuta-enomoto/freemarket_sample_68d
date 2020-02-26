@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def seller
     @user = User.find(params[:id])
+    redirect_to users_path if current_user == @user
     @items = @user.items.includes(:item_images).date_desc.page(params[:page]).per(9)
   end
 
