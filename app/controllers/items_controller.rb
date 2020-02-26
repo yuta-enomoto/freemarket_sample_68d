@@ -41,7 +41,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    # binding.pry
     if current_user.id == @item.user_id && @item.update(item_params)
       redirect_to item_path(params[:id])
     else
