@@ -11,8 +11,10 @@
             .my-items-container__contents__list.is-active
               %ul.my-items-container__contents__list__items
                 = render partial: "my-items", collection: @items, as: :item
-            .page
-              = paginate(@items)
+            .page-number
+              = @items.current_page
+          .my-pagenate
+            = paginate(@items)
     = link_to new_item_path, class: 'sell-icon' do
       = render 'shared/sell-icon'
 

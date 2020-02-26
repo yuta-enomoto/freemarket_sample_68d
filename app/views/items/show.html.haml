@@ -94,11 +94,11 @@
   .is-main__other
     %ul.is-main__other__links
       %li.is-main__other__links__left
-        = link_to '#' do
+        = link_to item_path(@prev_id) do
           %i= icon('fas', 'angle-left', class: "left-icon")
           %span= "前の商品"
       %li.is-main__other__links__right
-        = link_to '#' do
+        = link_to item_path(@next_id) do
           %span= "次の商品"
           %i= icon('fas', 'angle-right', class: "right-icon")
     .is-main__other__related

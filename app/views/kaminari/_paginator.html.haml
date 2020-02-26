@@ -8,19 +8,17 @@
 = paginator.render do
   %nav.pagination
     .pagination__left
-      .icon
-        = first_page_tag unless current_page.first?
-      .icon
-        = prev_page_tag unless current_page.first?
+      -# .icon
+      -#   = first_page_tag unless current_page.first?
+      = prev_page_tag unless current_page.first?
     -# - each_page do |page|
     -#   - if page.display_tag?
     -#     = page_tag page
     -#   - elsif !page.was_truncated?
     -#     = gap_tag
-    .page-center
-      = current_page
+    -# .page-center
+    -#   = current_page
     .pagination__right
-      .icon
-        = next_page_tag unless current_page.last?
-      .icon
-        = last_page_tag unless current_page.last?
+      = next_page_tag unless current_page.last?
+      -# .icon
+      -#   = last_page_tag unless current_page.last?
