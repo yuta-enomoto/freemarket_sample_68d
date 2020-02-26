@@ -3,7 +3,7 @@
     %h2.single-head.bold
       商品の情報を入力
     %hr.si-container__si-box__si-inner__si-underline
-    -# = render "devise/shared/error", model: @item
+    = render "devise/shared/error", model: @item
     = form_with model: @item, local: true do |f|
       .si-container__si-box__si-picture-box.perimeter
         .si-container__si-box__box-frame
@@ -208,6 +208,6 @@
               = link_to "#", class: "notes-box__lists__list__j-link" do
                 加盟店規約
               に同意したことになります。
-        = f.submit "出品する", type: 'submit', class: 'si-sbm-btn'
+        = f.submit "変更する", type: 'submit', class: 'si-sbm-btn'
         = link_to :back, class: "default-btn" do 
-          もどる
+          キャンセル
