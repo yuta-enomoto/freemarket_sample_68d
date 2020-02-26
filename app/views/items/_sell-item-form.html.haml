@@ -20,7 +20,7 @@
             .label-content
               %label{for: "item_item_images_attributes_0_url", class: "label-box", id: "label-box--0"}
                 %pre.label-box__text-visible クリックしてファイルをアップロード
-              .hidden-conten
+              .hidden-content
                 = f.fields_for :item_images do |i|
                   = i.file_field :url, name: "item[item_images_attributes][][url]", style: "display:none", class: "hidden-field", id: "img"
                   %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][0][url]", id: "item_item_images_attributes_0_url" }

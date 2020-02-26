@@ -113,15 +113,16 @@ $(document).on('turbolinks:load', function(){
 		//画像を追加する時=============================================================================
     $(document).on('change', '.hidden-field', function() {
       setLabel();
-      var id = $(this).attr('id').replace(/[^0-9]/g, '');
-      $('.label-box').attr({id: `label-box--${id}`,for: `item_item_images_attributes_${id}_url`});
+			var id = $(this).attr('id').replace(/[^0-9]/g, '');
+			$(`input#item_item_images_attributes_${id}__destroy`).prop('checked', false);
+
       var file = this.files[0];
       var reader = new FileReader();
-      reader.readAsDataURL(file);
+			reader.readAsDataURL(file);
+			
       reader.onload = function() {
         var image = this.result;
         if ($(`#preview-box__${id}`).length == 0) {
-          var count = $('.preview-box').length;
           var html = buildHTML(id);
           $('.label-content').before(html);
         }
@@ -130,10 +131,6 @@ $(document).on('turbolinks:load', function(){
         if (count == 10) { 
           $('.label-content').hide();
         }
-
-        if ($(`#item_images_attributes_${id}__destroy`)){
-          $(`#item_images_attributes_${id}__destroy`).prop('checked',false);
-				} 
 
         setLabel();				
 				var id_add = [];
@@ -162,8 +159,6 @@ $(document).on('turbolinks:load', function(){
 		
   //削除ボタンを押した時=============================================================================
     $(document).on('click', '.delete-box', function() {
-      var count = $('.preview-box').length;
-      setLabel(count);
       var id = $(this).attr('id').replace(/[^0-9]/g, '');
       $(`#preview-box__${id}`).remove();
 

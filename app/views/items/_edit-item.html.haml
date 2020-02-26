@@ -31,7 +31,7 @@
               %label{for: "item_item_images_attributes_#{@item.item_images.length}_url", class: "label-box", id: "label-box--#{@item.item_images.length}"}
              
                 %pre.label-box__text-visible クリックしてファイルをアップロード
-            .hidden-conten
+            .hidden-content
               = f.fields_for :item_images do |i|
 
                 //プレビューが出ている分のfile_fieldとdelete用のチェックボックスを設置
