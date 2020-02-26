@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def seller
     @user = User.find(params[:id])
-    @items = @user.items.includes(:item_images).date_desc.page(params[:page]).per(3)
+    @items = @user.items.includes(:item_images).date_desc.page(params[:page]).per(9)
   end
 
   def edit
