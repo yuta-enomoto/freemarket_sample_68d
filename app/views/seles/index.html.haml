@@ -11,6 +11,9 @@
           .profits-title-bar
             = "現在の販売利益合計"
             %span= "¥ #{@profits.to_s(:delimited)}"
+          .profits-title-bar.sub-profits-yet
+            = " 内 振込未申請の販売利益合計"
+            %span= "¥ #{@profit_yet.to_s(:delimited)}"
         %section.my-items-container
           %ul.mp-container__mp-side__mypage-nav__mypage-nav-list
             %li

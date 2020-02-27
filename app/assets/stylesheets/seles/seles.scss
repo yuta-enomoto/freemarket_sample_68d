@@ -10,6 +10,33 @@
   }
 }
 
+.sub-profits-yet {
+  font-size: 14px;
+  border-top: solid 1px #f5f5f5;
+  color: $sub-font;
+  span {
+    font-size: 18px;
+  }
+}
+
+.csv-footer {
+  height: 48px;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  .csv-btn {
+    border-radius: 5px;
+    background-color: $lightgreen;
+    color: $wh;
+    font-size: 15px;
+    padding: 3px 5px;
+    &:hover {
+      opacity: .5;
+    }
+  }
+}
+
 .seles-item {
   padding: 10px 20px;
   width: calc(100% - 150px);
