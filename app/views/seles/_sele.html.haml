@@ -1,0 +1,25 @@
+= link_to item_path(sele.item_id) do
+  %li.my-items-container__contents__list__items__row
+    .my-items-container__contents__list__items__row__image
+      - item = Item.find(sele.item_id)
+      = image_tag item.item_images[0].url.url
+    .seles-item
+      .seles-item__top
+        .seles-item__top__name
+          = "売上日時：#{sele.created_at.strftime("%Y/%m/%d  %H:%M")}"
+        .seles-item__top__info
+          - if sele.deposit
+            .seles-item__top__info__true
+              = "振込申請済"
+          - else
+            = link_to '#' do
+              .seles-item__top__info__false
+                = "振込未申請"
+      .seles-item__mid
+        .seles-item__mid__category
+          %a= "カテゴリ：#{sele.category}"
+      .seles-item__bottom
+        %span= "販売利益"
+        %span= "¥ #{sele.profit.to_s(:delimited)}"
+    .my-items-container__contents__list__items__row__right
+      %i.fas.fa-chevron-right

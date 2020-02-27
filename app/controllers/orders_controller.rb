@@ -65,19 +65,16 @@ class OrdersController < ApplicationController
   def sele_create(order)
     profit = @item.price.to_i * 0.9
     category_data = Category.find(@item.category_id)
-    subsubcategory = category_data.name
-    subcategory = category_data.parent.name
-    category = category_data.parent.parent.name
     @item.brand_id.present? ? brand = Brand.find(@item.brand_id) : brand = ""
     Sele.new(
       order_id: order.id,
       item_id: order.item_id,
-      user_id: order.user_id,
+      user_id: @item.user_id,
       revenue: @item.price.to_i,
       profit: profit.round,
-      category: category,
-      subcategory: subcategory,
-      subsubcategory: subsubcategory,
+      category: category_data.parent.parent.name,
+      subcategory: category_data.parent.name,
+      subsubcategory: category_data.name,
       brand: brand
     )
   end

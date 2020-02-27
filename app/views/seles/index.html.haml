@@ -1,2 +1,32 @@
-%h1 Seles#index
-%p Find me in app/views/seles/index.html.haml
+.wrapper 
+  = render 'shared/header'
+  - breadcrumb :seles
+  = render "/shared/breadCrumb"
+  .wrapper__main
+    .mp-container
+      = render 'shared/myPageSideBar'
+      .mp-container__mp-content
+        .main__single-container
+          %h2.main__single-container__head 売上・振込申請
+          .profits-title-bar
+            = "現在の販売利益合計"
+            %span= "¥ #{@profits.to_s(:delimited)}"
+        %section.my-items-container
+          %ul.mp-container__mp-side__mypage-nav__mypage-nav-list
+            %li
+              = link_to history_seles_path do
+                = "売上履歴"
+                %i.fas.fa-chevron-right
+            %li
+              = link_to '#' do
+                = "振込申請して現金を受け取る"
+                %i.fas.fa-chevron-right
+            %li
+              = link_to '#' do
+                = "振込申請履歴"
+                %i.fas.fa-chevron-right
+    = link_to new_item_path, class: 'sell-icon' do
+      = render 'shared/sell-icon'
+
+  = render "/shared/footerFirst"
+  = render "/shared/footerSecond"

@@ -1,0 +1,50 @@
+.profits-title-bar {
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  align-items: center;
+  span {
+    display: inline-block;
+    font-size: 20px;
+  }
+}
+
+.seles-item {
+  padding: 10px 20px;
+  width: calc(100% - 150px);
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    &__info {
+      background-color: $wh;
+      &__true {
+        padding: 3px;
+        font-size: 12px;
+        color: $lightgreen;
+        border: solid 1px $lightgreen;
+        border-radius: 5px;
+      }
+      &__false {
+        padding: 3px;
+        font-size: 12px;
+        color: $lightred;
+        border: solid 1px $lightred;
+        border-radius: 5px;
+        &:hover {
+          opacity: .5;
+        }
+      }
+    }
+  }
+  &__mid {
+
+  }
+  &__bottom {
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5px;
+  }
+}

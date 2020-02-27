@@ -11,6 +11,16 @@ crumb :my_items do
   parent :mypage
 end
 
+crumb :seles do
+  link "売上・振込申請", seles_path
+  parent :mypage
+end
+
+crumb :history do
+  link "売上履歴", history_seles_path
+  parent :seles
+end
+
 crumb :profile do
   link "プロフィール編集", edit_user_path(current_user.id)
   parent :mypage
