@@ -7,38 +7,18 @@ $(document).on('turbolinks:load', function(){
                       <img src="" alt="preview">
                     </div>
                     <div class="lower-box">
-                      <div class="update-box">
+                      <div class="update-box", id ="item_item_images_attributes_${count}_url">
                         <span class="edit_btn">編集</span>
                       </div>
-                      <div class="delete-box" id="delete_btn_${count}">
+                      <div class="delete-box", id="delete_btn_${count}" "item_item_images_attributes_${count}__destroy"}>
                         <span>削除</span>
                       </div>
                     </div>
                   </div>`
       return html;
     }
-
-    // 投稿編集時
-    if (window.location.href.match(/\/items\/\d+\/edit/)){
-      var prevContent = $('.label-content').prev();
-      labelWidth = (620 - $(prevContent).css('width').replace(/[^0-9]/g, ''));
-      $('.label-content').css('width', labelWidth);
-      $('.preview-box').each(function(index, box){
-        $(box).attr('id', `preview-box__${index}`);
-      })
-      $('.delete-box').each(function(index, box){
-        $(box).attr('id', `delete_btn_${index}`);
-      })
-      var count = $('.preview-box').length;
-      if (count == 10) {
-        $('.label-content').hide();
-      }
-    }
-    //=============================================================================
-
-    // ラベルのwidth操作
+    //ラベルwidth=============================================================================
     function setLabel() {
-
       var count = $('.preview-box').length;
       if (count == 0) {
         $('.label-content').css('width', 620)
@@ -71,19 +51,57 @@ $(document).on('turbolinks:load', function(){
         $('.label-content').css('width', 124)
       }
     }
-    
+    //商品画像編集フォーム===========================================================================
+    function editForm() {
+      $('.preview-box').each(function(index, box){
+        $(box).attr('id', `preview-box__${index}`);
+      })
+      $('.update-box').each(function(index, box){
+        $(box).attr('id', `item_item_images_attributes_${index}_url`);
+      })
+      $('.delete-box').each(function(index, box){
+        $(box).attr('id', `item_item_images_attributes_${index}__destroy`);
+      })
+      var count = $('.preview-box').length;
+      if (count == 10) {
+        $('.label-content').hide();
+      }
+      $(document).on('click', '.delete-box', function() {
+        var delId = $(this).attr('id')
+        $(`input#${delId}`).prop('checked', true);        
+      })
+    }
 
+    // 投稿編集時=============================================================================
+    if (window.location.href.match(/\/items\/\d+\/edit/)){
+      setLabel();
+      editForm();
+    }
+    // エラーメッセージの画面でURLが変わるので、それに対応===========================================
+    if (window.location.href.match(/\/items\/\d+/)){
+      setLabel();
+      editForm();
+    }
+
+    //画像を差し替える時=============================================================================
+    $(document).on('click', '.update-box', function() {
+      var updId = $(this).attr('id')
+      $(`input#${updId}`).trigger('click');      
+    })
+    
+    //画像を追加する時=============================================================================
     $(document).on('change', '.hidden-field', function() {
       setLabel();
       var id = $(this).attr('id').replace(/[^0-9]/g, '');
-      $('.label-box').attr({id: `label-box--${id}`,for: `item_images_attributes_${id}_image`});
+      $(`input#item_item_images_attributes_${id}__destroy`).prop('checked', false);
+
       var file = this.files[0];
       var reader = new FileReader();
       reader.readAsDataURL(file);
+    
       reader.onload = function() {
         var image = this.result;
         if ($(`#preview-box__${id}`).length == 0) {
-          var count = $('.preview-box').length;
           var html = buildHTML(id);
           $('.label-content').before(html);
         }
@@ -93,52 +111,67 @@ $(document).on('turbolinks:load', function(){
           $('.label-content').hide();
         }
 
-        if ($(`#item_images_attributes_${id}__destroy`)){
-          $(`#item_images_attributes_${id}__destroy`).prop('checked',false);
-        } 
-        //=============================================================================
+        setLabel();				
+        var id_add = [];
+        $('.preview-box').each(function(index, box){
+          id_add[index] = $(box).attr('id').replace(/[^0-9]/g, '');
+        });
 
-        setLabel();
-        if(count < 10){
-          $('.label-box').attr({id: `label-box--${count}`,for: `item_images_attributes_${count}_image`});
+        var x = $('.preview-box').length
+        for(var index=0; index<x+1; index++){
+          var y = 0
+
+          id_add.map(function(num){
+            if (index == num) {
+              y = 1
+              return false;
+            }
+          });
+
+          if (y==0){
+            $('.label-box').attr({id: `label-box--${index}`,for: `item_item_images_attributes_${index}_url`});
+            return false;
+          }
         }
       }
     });
 
+  //削除ボタンを押した時=============================================================================
     $(document).on('click', '.delete-box', function() {
-      var count = $('.preview-box').length;
-      setLabel(count);
+      setLabel();
       var id = $(this).attr('id').replace(/[^0-9]/g, '');
       $(`#preview-box__${id}`).remove();
 
-      //新規登録時と編集時の場合分け==========================================================
+      var id_add2 = [];
+      $('.preview-box').each(function(index, box){
+        id_add2[index] = $(box).attr('id').replace(/[^0-9]/g, '');
+      });
 
-      //新規投稿時
-      if ($(`#item_images_attributes_${id}__destroy`).length == 0) {
-        $(`#item_images_attributes_${id}_image`).val("");
-        var count = $('.preview-box').length;
-        if (count == 9) {
-          $('.label-content').show();
-        }
-        setLabel(count);
-        if(id < 10){
-          $('.label-box').attr({id: `label-box--${id}`,for: `item_images_attributes_${id}_image`});
+      $('.preview-box').each(function(index){
+        var y = 0
 
-        }
-      } else {
+        id_add2.forEach(function(num){
+          if (index == num) {
+            y = 1
+            return false;
+          }
+        });
 
-        //投稿編集時
-        $(`#item_images_attributes_${id}__destroy`).prop('checked',true);
-        if (count == 10) {
-          $('.label-content').show();
+        if (y==0){
+          $('.label-box').attr({id: `label-box--${index}`,for: `item_item_images_attributes_${index}_url`});
+          return false;
         }
+      });
 
-        setLabel();
-        if(id < 10){
-          $('.label-box').attr({id: `label-box--${id}`,for: `item_images_attributes_${id}_image`});
-        }
-      }
-      //=============================================================================
+      //削除ボタンを押した時ファイルフィールドの中身を消す===============================
+      $(`#item_item_images_attributes_${id}_url`).val("");
+      var count = $('.preview-box').length;
+
+      //10個めが消されたらラベルを表示===============================================
+      setLabel();
+      if (count == 9) {
+        $('.label-content').show();
+      };
     });
   });
 });
