@@ -1,13 +1,20 @@
-.profits-title-bar {
-  height: 48px;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 20px;
-  align-items: center;
-  span {
-    display: inline-block;
-    font-size: 20px;
+.profits-title {
+  padding: 10px 0 20px;
+  &__bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+    align-items: center;
+    span {
+      display: inline-block;
+      font-size: 30px;
+    }
   }
+}
+
+#myChart {
+  padding: 10px 0 20px;
+  position: relative;
 }
 
 .sub-profits-yet {
@@ -15,7 +22,7 @@
   border-top: solid 1px #f5f5f5;
   color: $sub-font;
   span {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 

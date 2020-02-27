@@ -1,8 +1,10 @@
 class SelesController < ApplicationController
   before_action :set_seles
   before_action :set_profits, only: :index
+  include ChartHelper
 
   def index
+    gon.category, gon.profit = category_profit(@seles) if @seles.present?
   end
 
   def history
