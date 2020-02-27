@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
 
   def show
     @item_image = @item.item_images[0].url.url
+    
   end
 
   def new

@@ -111,17 +111,24 @@
         padding: 8px 24px;
         border-bottom: 1px solid #f5f5f5;
         
+        
       }
     }
     .like-list{
       width: 700px;
       height: 81px;
       
+      
       &__content{
         width: 700px;
         height: 81px;
         padding: 16px;
         position: relative;
+        &:hover {
+          background-color: #fafafa;
+
+        }
+        
         
         
         &__images{
@@ -137,6 +144,7 @@
           
           margin: 0 40px 0 68px;
           position: relative;
+          
         }  
         &__text{
           width: 560px;
@@ -181,6 +189,9 @@
           border: 1px solid #ccc;
           font-size: 14px;
           line-height: 42px;
+          &:hover {
+            opacity: 0.5;
+          }
         }
         
         i.fas.fa-chevron-right{
@@ -195,6 +206,9 @@
           border: 1px solid #ccc;
           font-size: 14px;
           line-height: 42px;
+          &:hover {
+            opacity: 0.5;
+          }
 
         }
         
@@ -202,4 +216,6 @@
     }
   }
   @include clearfix();
+
+  
 }
