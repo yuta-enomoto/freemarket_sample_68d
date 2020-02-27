@@ -3,8 +3,9 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show ,:destroy]
 
   def show
-    @item_image = @item.item_images[0].url.url
-    
+    @item_image = @item.item_images[0].url.ur
+    @next_id = set_page(@item.id + 1)
+    @prev_id = set_page(@item.id - 1)
   end
 
   def new
@@ -47,5 +48,10 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def set_page(item_id)
+    next_id = Item.where("user_id = ? and id = ?", @item.user_id, item_id)
+    next_id.present? ? next_id[0].id : @item.id
   end
 end

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
   
   root 'home#index'
-  resources :items, except: [:index] do
+  resources :items do
     resources :likes, only: [:create, :destroy]
     resources :orders, only: :new do
       collection do
@@ -21,14 +21,18 @@ Rails.application.routes.draw do
       
     end
   end
-  resources :users, only: [:index, :show, :edit, :update]
-    resources :addresses, only: [:new, :create, :edit, :update]
-    resources :credit_cards, only: [:new, :show] do
-      collection do
-        get 'edit', to: 'credit_cards#edit'
-        post 'show', to: 'credit_cards#show'
-        post 'pay', to: 'credit_cards#pay'
-        post 'delete', to: 'credit_cards#delete'
-      end
+  resources :users, only: [:index, :show, :edit, :update] do
+    member do
+      get 'seller', to: 'users#seller'
     end
+  end
+  resources :addresses, only: [:new, :create, :edit, :update]
+  resources :credit_cards, only: [:new, :show] do
+    collection do
+      get 'edit', to: 'credit_cards#edit'
+      post 'show', to: 'credit_cards#show'
+      post 'pay', to: 'credit_cards#pay'
+      post 'delete', to: 'credit_cards#delete'
+    end
+  end
 end
