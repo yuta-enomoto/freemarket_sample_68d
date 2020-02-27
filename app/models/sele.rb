@@ -3,5 +3,5 @@ class Sele < ApplicationRecord
   belongs_to :item
   belongs_to :order
 
-  validates :revenue, :profit, :deposit, presence: true
+  validates :revenue, :profit, presence: true
 end

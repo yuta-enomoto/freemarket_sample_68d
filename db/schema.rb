@@ -90,6 +90,10 @@ ActiveRecord::Schema.define(version: 2020_02_26_110050) do
     t.integer "revenue", null: false
     t.integer "profit", null: false
     t.boolean "deposit", default: false, null: false
+    t.string "category"
+    t.string "subcategory"
+    t.string "subsubcategory"
+    t.string "brand"
     t.bigint "user_id", null: false
     t.bigint "item_id", null: false
     t.bigint "order_id", null: false

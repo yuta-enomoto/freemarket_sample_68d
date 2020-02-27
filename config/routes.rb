@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'seles/index'
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
@@ -33,4 +34,5 @@ Rails.application.routes.draw do
       post 'delete', to: 'credit_cards#delete'
     end
   end
+  resources :seles, only: :index
 end

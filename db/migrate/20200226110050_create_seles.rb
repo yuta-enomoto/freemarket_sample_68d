@@ -4,6 +4,10 @@ class CreateSeles < ActiveRecord::Migration[5.2]
       t.integer :revenue,                   null: false
       t.integer :profit,                    null: false
       t.boolean :deposit,                   null: false, default: false
+      t.string  :category
+      t.string  :subcategory
+      t.string  :subsubcategory
+      t.string  :brand
       t.references :user,                   null: false, foreign_key: true
       t.references :item,                   null: false, foreign_key: true
       t.references :order,                  null: false, foreign_key: true

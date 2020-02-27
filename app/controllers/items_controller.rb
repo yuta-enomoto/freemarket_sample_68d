@@ -51,7 +51,7 @@ class ItemsController < ApplicationController
   end
 
   def set_page(item_id)
-    next_id = Item.where("user_id = ? and id = ?", @item.user_id, item_id)
-    next_id.present? ? next_id[0].id : @item.id
+    page_id = Item.where("user_id = ? and id = ?", @item.user_id, item_id)
+    page_id.present? ? page_id[0].id : @item.id
   end
 end

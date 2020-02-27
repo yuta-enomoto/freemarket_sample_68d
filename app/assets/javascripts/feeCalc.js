@@ -1,8 +1,8 @@
 document.addEventListener("turbolinks:load", function() {
   function update_field(){
-    let fee = Math.round($('#item_price').val() * 0.1);
-    let profit = $('#item_price').val() - fee;
-    if(isNaN(fee)) {
+    let profit = Math.round($('#item_price').val() * 0.9);
+    let fee = $('#item_price').val() - profit;
+    if(isNaN(profit)) {
       var innerHTMLfee = `<div class= "fee-alert seles-calc"> 価格は半角数値のみで入力してください </div>`
       var innerHTMLprofit = ``
     } else {
