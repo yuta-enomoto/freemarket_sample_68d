@@ -4,8 +4,7 @@ class ItemsController < ApplicationController
 
   def show
     @item_image = @item.item_images[0].url.url
-    @next_id = set_page(@item.id + 1)
-    @prev_id = set_page(@item.id - 1)
+    @next_id, @prev_id = set_page(@item)
   end
 
   def new
@@ -50,8 +49,11 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  def set_page(item_id)
-    page_id = Item.where("user_id = ? and id = ?", @item.user_id, item_id)
-    page_id.present? ? page_id[0].id : @item.id
+  def set_page(item)
+    next_id = Item.find_by("user_id = ? and id > ?", item.user_id, item.id)
+    prev_id = Item.where("user_id = ? and id < ?", item.user_id, item.id).last
+    next_id = item.id if next_id.blank?
+    prev_id = item.id if prev_id.blank?
+    return next_id, prev_id
   end
 end

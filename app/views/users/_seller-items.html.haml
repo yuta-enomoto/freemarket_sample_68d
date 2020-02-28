@@ -1,6 +1,10 @@
 = link_to item_path(item.id) do
   %li.up-items__list__content
     .up-items__list__content__image
+      - unless item.stock_status
+        .item-sold
+          .item-sold__inner
+            = "SOLD"
       = image_tag item.item_images[0].url.url
     .up-items__list__content__box
       .up-items__list__content__box__name
