@@ -27,17 +27,17 @@
 }
 
 .csv-footer {
-  height: 48px;
+  height: 60px;
   padding: 10px 30px;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
+  align-items: center;
   .csv-btn {
     border-radius: 5px;
     background-color: $lightgreen;
     color: $wh;
     font-size: 15px;
-    padding: 3px 5px;
+    padding: 5px 8px;
     &:hover {
       opacity: .5;
     }

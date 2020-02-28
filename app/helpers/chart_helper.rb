@@ -1,17 +1,13 @@
 module ChartHelper
   def category_profit(seles)
-    category_names =[]
     profits =[]
-
-    seles.each do |sele|
-      category_name = sele.category
-      profit = sele.profit
+    categorys = @seles.group_by{|x| x[:category] }.keys
+    categorys.map do |category|
+      profit = seles.where(category: category).sum(:profit)
       if profit.present?
-        category_names << category_name
         profits << profit
       end
     end
-
-    return category_names, profits
+    return categorys, profits
   end
 end
