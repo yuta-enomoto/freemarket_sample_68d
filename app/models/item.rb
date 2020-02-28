@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
-  has_many :item_images
+  has_many :item_images, dependent: :destroy
   has_one :order
   has_one :sele
   accepts_nested_attributes_for :item_images, allow_destroy: true
