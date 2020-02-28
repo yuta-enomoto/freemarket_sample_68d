@@ -14,7 +14,7 @@
 
 #myChart {
   padding: 10px 0 20px;
-  position: relative;
+  margin: 0 auto;
 }
 
 .sub-profits-yet {
@@ -44,41 +44,84 @@
   }
 }
 
-.seles-item {
-  padding: 10px 20px;
-  width: calc(100% - 150px);
-  &__top {
-    display: flex;
-    justify-content: space-between;
-    &__info {
-      background-color: $wh;
-      &__true {
-        padding: 3px;
-        font-size: 12px;
-        color: $lightgreen;
-        border: solid 1px $lightgreen;
-        border-radius: 5px;
+.sh-seles {
+  display: flex;
+  height: 100px;
+  border-bottom: 1px solid #f5f5f5;
+  &__image {
+    img {
+      object-fit: cover;
+      width: 100px;
+      height: 100px;
+    }
+  }
+  &__item {
+    display: block;
+    padding: 10px 20px;
+    height: 100%;
+    width: calc(100% - 150px);
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      &__name {
+
       }
-      &__false {
-        padding: 3px;
-        font-size: 12px;
-        color: $lightred;
-        border: solid 1px $lightred;
-        border-radius: 5px;
-        &:hover {
-          opacity: .5;
+      &__info {
+        background-color: $wh;
+        &__true {
+          padding: 3px;
+          font-size: 12px;
+          color: $lightgreen;
+          border: solid 1px $lightgreen;
+          border-radius: 5px;
+        }
+        &__false {
+          padding: 3px;
+          font-size: 12px;
+          color: $lightred;
+          border: solid 1px $lightred;
+          border-radius: 5px;
+          &:hover {
+            opacity: .5;
+          }
         }
       }
     }
+    &__mid {
+      display: flex;
+      &__category {
+        color: $sub-font;
+        padding-left: 10px;
+      }
+    }
+    &__bottom {
+      font-size: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 5px;
+    }
   }
-  &__mid {
-
-  }
-  &__bottom {
-    font-size: 18px;
-    display: flex;
-    justify-content: space-between;
+  &__right {
+    font-size: 24px;
+    width: 50px;
     align-items: center;
-    padding-top: 5px;
+    padding-top: 3px;
+    display: flex;
+    .fa-chevron-right {
+      display: block;
+      width: 100%;
+      text-align: center;
+      color: $lightgray;
+      -webkit-transition: all ease-out .2s;
+    }
+  }
+  &:hover {
+    background-color: #f5f5f5;
+    border: 1px solid #f5f5f5;
+    .fa-chevron-right {
+      transform: translate(5px,0);
+      color: $sub-font;
+    }
   }
 }

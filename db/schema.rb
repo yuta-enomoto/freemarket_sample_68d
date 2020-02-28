@@ -90,7 +90,8 @@ ActiveRecord::Schema.define(version: 2020_02_26_110050) do
     t.integer "revenue", null: false
     t.integer "profit", null: false
     t.boolean "deposit", default: false, null: false
-    t.string "category"
+    t.string "name", null: false
+    t.string "category", null: false
     t.string "subcategory"
     t.string "subsubcategory"
     t.string "brand"

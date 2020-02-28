@@ -6,7 +6,8 @@
     .mp-container
       = render 'shared/myPageSideBar'
       .mp-container__mp-content
-        %canvas#myChart
+        - if @seles.present?
+          %canvas#myChart{width: "500px", height: "500px"}
         .profits-title
           .profits-title__bar
             = "現在の販売利益合計"
@@ -23,11 +24,7 @@
                 = "売上履歴"
                 %i.fas.fa-chevron-right
             %li
-              = link_to '#' do
-                = "振込申請して現金を受け取る"
-                %i.fas.fa-chevron-right
-            %li
-              = link_to '#' do
+              = link_to deposit_list_seles_path do
                 = "振込申請履歴"
                 %i.fas.fa-chevron-right
     = link_to new_item_path, class: 'sell-icon' do

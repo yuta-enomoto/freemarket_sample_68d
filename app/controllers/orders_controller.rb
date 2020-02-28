@@ -46,8 +46,7 @@ class OrdersController < ApplicationController
       @item.stock_status = false
       if order.save
         @item.save
-        sele = sele_create(order)
-        sele.save
+        sele_create(order).save
         redirect_to action: 'done' 
       else
         redirect_to action: "pay"
@@ -72,6 +71,7 @@ class OrdersController < ApplicationController
       user_id: @item.user_id,
       revenue: @item.price.to_i,
       profit: profit.round,
+      name: @item.name,
       category: category_data.parent.parent.name,
       subcategory: category_data.parent.name,
       subsubcategory: category_data.name,

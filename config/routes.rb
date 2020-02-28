@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-  get 'seles/index'
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
@@ -37,6 +35,13 @@ Rails.application.routes.draw do
   resources :seles, only: :index do
     collection do
       get 'history', to: 'seles#history'
+      get 'deposit_list', to: 'seles#deposit_list'
+      post 'request_all', to: 'seles#request_all'
+      post 'cancel_all', to: 'seles#cancel_all'
+    end
+    member do
+      post 'request_one', to: 'seles#request_one'
+      post 'cancel_one', to: 'seles#cancel_one'
     end
   end
 end

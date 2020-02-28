@@ -21,6 +21,11 @@ crumb :history do
   parent :seles
 end
 
+crumb :deposit do
+  link "振込申請履歴", deposit_list_seles_path
+  parent :seles
+end
+
 crumb :profile do
   link "プロフィール編集", edit_user_path(current_user.id)
   parent :mypage

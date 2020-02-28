@@ -5,7 +5,7 @@ CSV.generate do |csv|
   csv << csv_column_names
   @seles.each do |sele|
     csv_column_values = [
-      Item.find(sele.item_id).name,
+      sele.name,
       sele.category,
       sele.subcategory,
       sele.subsubcategory,
