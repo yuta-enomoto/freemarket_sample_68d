@@ -1,6 +1,5 @@
 document.addEventListener("turbolinks:load", function() {
   var ctx = document.getElementById('myChart');
-                  '#ff5890',
   check = function(obj) {
     if (obj) {
       new Chart(ctx, {
