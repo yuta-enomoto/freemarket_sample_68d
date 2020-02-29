@@ -1,0 +1,10 @@
+.snsAuth
+  = link_to user_slack_omniauth_authorize_path, method: :post, class: "snsAuth__slackLink" do
+    %i.fab.fa-slack.snsAuth__icon
+    %span.snsAuth__text 
+      = "slackで#{str}" 
+
+  = link_to user_facebook_omniauth_authorize_path, method: :post, class: "snsAuth__facebookLink" do
+    %i.fab.fa-facebook-f.snsAuth__icon
+    %span.snsAuth__text
+      = "facebookで#{str}"
