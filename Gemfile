@@ -88,3 +88,6 @@ gem 'omniauth-slack', '~> 2.3.0'
 gem 'omniauth-facebook'
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-oauth2'
+gem 'kaminari'
+gem "gretel"
+

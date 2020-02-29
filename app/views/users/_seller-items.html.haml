@@ -1,0 +1,14 @@
+= link_to item_path(item.id) do
+  %li.up-items__list__content
+    .up-items__list__content__image
+      = image_tag item.item_images[0].url.url
+    .up-items__list__content__box
+      .up-items__list__content__box__name
+        %p= item.name.truncate(21, omission: '…')
+      .up-items__list__content__box__bottom
+        %span.up-items__list__content__box__bottom__price
+          = "¥ #{item.price.to_s(:delimited)}"
+        .up-items__list__content__box__bottom__like
+          %i.fas.fa-heart
+          %span.up-items__list__content__box__bottom__like__value
+            = "0"
