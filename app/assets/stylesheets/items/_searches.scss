@@ -1,0 +1,89 @@
+.search {
+  margin: 40px auto 0;
+  width: 1020px;
+  display: flex;
+
+  .search-left{
+    width: 280px;
+    margin: 0 40px 0 0;
+    background-color: white;
+  }
+  .search-right {
+    width: 776px;
+
+    &__container {
+      &__head {
+        &__text {
+          font-size: 18px;
+          font-weight: 400;
+          margin: 0px 0px 0px 4px;
+
+        }
+      }
+      &__number {
+        margin: 16px 0px;
+        font-size: 12px;
+        color: rgb(136, 136, 136);
+      }
+      &__contents {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+          list-style: none;
+          width: 160px;
+          margin: 0 20px 20px 0;
+
+          a {
+            width: 160px;
+
+            img {
+              width: 160px;
+            }
+          }
+
+          .pickUp__details {
+            width: 160px;
+            position: relative;
+            height: 58px;
+            padding: 8px 12px;
+
+            .pickUp__itemDetails {
+
+              .pickUp__name {
+
+                font-size: 14px;
+              }
+
+              .pickUp__price {
+                z-index: 2;
+                position: absolute;
+                top: -37px;
+                left: 0;
+                padding: 4px 12px 4px 8px;
+                border-radius: 0 16px 16px 0;
+                font-weight: 600;
+                color: $wh;
+                background-color: rgba(0,0,0,0.3);
+              }
+
+              .pickUp__taxInfo {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+      &__description {
+        margin: 16px 0 40px;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      &__nil {
+        font-weight: bold;
+        font-size: 22px;
+        margin: 0 0 16px;
+      }
+    } 
+  }
+}

@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   
   root 'home#index'
   resources :items do
+    collection do
+      get 'search'
+    end
     resources :orders, only: :new do
       collection do
         get 'new', to: 'orders#new'

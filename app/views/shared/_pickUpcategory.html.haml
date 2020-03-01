@@ -4,5 +4,5 @@
   = link_to subtitle, link, class: "pickUp__subTitle"
   %ul.pickUp__contentsList
     .pickUp__contentsList__product-list
-      = render partial: 'shared/item', collection: @items_category.first(3)
+      partial: 'shared/item', collection: @items_category.first(3)
           

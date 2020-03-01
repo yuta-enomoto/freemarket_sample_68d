@@ -50,7 +50,10 @@ class ItemsController < ApplicationController
     end
   end
 
-
+  def search
+    @items = Item.search(params[:keyword]).date_desc
+    @items_all = Item.all.date_desc
+  end
 
   private
   
@@ -66,4 +69,5 @@ class ItemsController < ApplicationController
     next_id = Item.where("user_id = ? and id = ?", @item.user_id, item_id)
     next_id.present? ? next_id[0].id : @item.id
   end
+
 end
