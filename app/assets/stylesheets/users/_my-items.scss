@@ -1,0 +1,114 @@
+.my-items-container {
+  width: 700px;
+  &__contents {
+    background-color: $wh;
+    &__list {
+      padding-bottom: 5px;
+      height: 400px;
+      &__items {
+        &__row {
+          display: flex;
+          height: 100px;
+          border-bottom: 1px solid #f5f5f5;
+          &__image {
+            img {
+              object-fit: cover;
+              width: 100px;
+              height: 100%;
+            }
+          }
+          .item-main {
+            padding: 10px 20px;
+            width: calc(100% - 150px);
+            &__top {
+              &__name {
+                font-size: 20px;
+                text-align: left;
+              }
+              &__mid {
+                padding-top: 3px;
+                display: flex;
+                justify-content: space-between;
+                font-size: 20px;
+                span {
+                  padding-left: 5px;
+                  text-align: left;
+                  font-size: 14px;
+                  color: $sub-font;
+                }
+              }
+            }
+            &__bottom {
+              display: flex;
+              font-size: 20px;
+              padding-top: 5px;
+              i {
+                padding-right: 10px;
+              }
+              .count {
+                font-size: 14px;
+                color: $sub-font;
+                padding-right: 10px;
+              }
+            }
+          }
+          &__right {
+            font-size: 24px;
+            width: 50px;
+            align-items: center;
+            padding-top: 3px;
+            display: flex;
+            .fa-chevron-right {
+              display: block;
+              width: 100%;
+              text-align: center;
+              color: $lightgray;
+              -webkit-transition: all ease-out .2s;
+            }
+          }
+          &:hover {
+            background-color: #f5f5f5;
+            border: 1px solid #f5f5f5;
+            .fa-chevron-right {
+              transform: translate(5px,0);
+              color: $sub-font;
+            }
+          }
+        }
+      }
+    }
+    .page-number {
+      border-top: solid 1px #f5f5f5;
+      height: 60px;
+      padding: 20px;
+      text-align: center;
+    }
+  }
+  .my-pagenate {
+    height: 100px;
+    padding: 20px 0;
+    .pagination {
+      display: flex;
+      justify-content: space-between;
+      &__right {
+        height: 100%;
+      }
+      &__left {
+        height: 100%;
+      }
+      .fas {
+        display: inline-block;
+        text-align: center;
+        background-color: $wh;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        border-radius: 5px;
+        font-size: 24px;
+        &:hover {
+          opacity: .6;
+        }
+      }
+    }
+  }
+}
