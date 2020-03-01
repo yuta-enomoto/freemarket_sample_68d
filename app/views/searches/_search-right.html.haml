@@ -2,16 +2,21 @@
   %section.search-right__container
     -if @items.present?
       %h2.search-right__container__head
-        =  @items
+        = @search
         %span.search-right__container__head__text
           の検索結果
       .search-right__container__number
         ="1-#{@items.count}件表示"
       .search-right__container__contents
         = render partial: 'shared/item', collection: @items
+        
+    -elsif @items_nil.present?
+      .search-right__container__contents
+        = render partial: 'shared/item', collection: @items
+
     -else
       %h2.search-right__container__head
-        = @items
+        = @search
         %span.search-right__container__head__text
           の検索結果
       .search-right__container__description

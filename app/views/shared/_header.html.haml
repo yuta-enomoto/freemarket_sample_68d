@@ -4,9 +4,9 @@
       = link_to '/' do
         = image_tag "logo.png", size: "140x40", alt: "FURIMA", class: "header__logoImage"
 
-    = form_with(url: search_items_path, local: true, method: :get, local: true, class: "header__searchForm") do |f|
+    = form_with(url:searches_path, local: true, method: :get, local: true, class: "header__searchForm") do |f|
       = f.text_field :keyword, placeholder: "キーワードから探す", autocomplete: "off", class: "header__searchField"
-      = button_tag type: "submit", class: "header__searchBtn" do
+      = button_tag 'search', name: nil, type: "submit", class: "header__searchBtn" do
         %i.fas.fa-search
 
   .header__bottomContents

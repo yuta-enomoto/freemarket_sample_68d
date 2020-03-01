@@ -11,9 +11,6 @@ Rails.application.routes.draw do
   
   root 'home#index'
   resources :items do
-    collection do
-      get 'search'
-    end
     resources :orders, only: :new do
       collection do
         get 'new', to: 'orders#new'
@@ -36,4 +33,5 @@ Rails.application.routes.draw do
       post 'delete', to: 'credit_cards#delete'
     end
   end
+  resources :searches,only:[:index]
 end

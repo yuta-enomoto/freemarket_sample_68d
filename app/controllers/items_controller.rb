@@ -50,11 +50,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  def search
-    @items = Item.search(params[:keyword]).date_desc
-    @items_all = Item.all.date_desc
-  end
-
   private
   
   def item_params
