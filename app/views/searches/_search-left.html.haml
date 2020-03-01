@@ -17,9 +17,9 @@
           %i.fas.fa-coins
           %span 価格
         .search-left__form__group__forms
-          = f.search_field :price_gteq, placeholder: "¥ Min", class: 'price-input'
+          = f.search_field :price_gteq, placeholder: "¥ Min",type: 'number', class: 'price-input'
           %p 〜
-          = f.search_field :price_lteq, placeholder: "¥ Max", class: 'price-input'
+          = f.search_field :price_lteq, placeholder: "¥ Max",type: 'number',  class: 'price-input'
 
 
       -# .search-left__form__group
