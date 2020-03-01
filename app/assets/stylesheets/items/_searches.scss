@@ -122,12 +122,14 @@
           color: #fff;
         }
         .comp-btn {
+          cursor: pointer;
           margin: 0 0 0 19px;
           width: 45%;
           height: 50px;
           background: #ea352d;
           border: 1px solid #ea352d;
-          color: #fff;
+          color: $wh;
+          outline: none;
         }
       }
     }

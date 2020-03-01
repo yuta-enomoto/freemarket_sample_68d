@@ -10,6 +10,12 @@
       .search-right__container__contents
         = render partial: 'shared/item', collection: @items
 
+    -elsif params[:q][:name_cont].empty?
+      %h3.search-right__container__nil
+        新着商品
+      .search-right__container__contents
+        = render partial: 'shared/item', collection: @items_all
+  
     -else
       %h2.search-right__container__head
         = @search
