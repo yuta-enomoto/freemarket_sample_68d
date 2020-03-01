@@ -1,1 +1,49 @@
 .search-left
+  = search_form_for(@q,url: detail_search_searches_path) do |f|
+    .search-left__sort
+      %i.fas.fa-chevron-down
+      = f.select( :sorts, { '並び替え': 'id desc', '価格の安い順': 'price asc', '価格の高い順': 'price desc', '出品の古い順': 'updated_at asc', '出品の新しい順': 'updated_at desc' } , { onchange: 'this.form.submit()'}, class: "sort-selector" )
+
+    .search-left__form
+      %h3.search-left__form__title 詳細検索
+      .search-left__form__group
+        .search-left__form__group__label
+          %i.fas.fa-plus
+          %span キーワードを追加する
+        = f.search_field :name_cont, placeholder: "例）値下げ", class: 'input-default'
+
+      .search-left__form__group
+        .search-left__form__group__label
+          %i.fas.fa-coins
+          %span 価格
+        .search-left__form__group__forms
+          = f.search_field :price_gteq, placeholder: "¥ Min", class: 'price-input'
+          %p 〜
+          = f.search_field :price_lteq, placeholder: "¥ Max", class: 'price-input'
+
+
+    //後に実装予定
+
+      -# .search-left__form__group
+      -#   .search-left__form__group__label
+      -#     %i.fas.fa-plus
+      -#     %p 商品の状態
+      -#   .search-left__form__group__checkbox
+      -#     %label
+      -#       %input{type: "checkbox"}
+      -#       = 'すべて'
+        -# .detail_search__group--checkbox
+        -#   %label{for:"item_condition_id[1]"}
+        -#     = f.check_box{:id => "item_condition_id[1]", :name => "item_condition_id[1]", :type => "checkbox", :value => "1"}
+        -#     = '新品、未使用'
+        -# .detail_search__group--checkbox
+        -#   %label
+        -#     -# = f.check_box :condition, '2', nil
+        -#     = '未使用に近い'
+
+   //
+
+      .search-left__form__btns
+        .search-left__form__btn--grey
+          = link_to "クリア", "/searches",type: "button", class: "clear-btn"
+          = f.submit "完了", class: "comp-btn"

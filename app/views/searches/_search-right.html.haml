@@ -10,10 +10,6 @@
       .search-right__container__contents
         = render partial: 'shared/item', collection: @items
         
-    -elsif @items_nil.present?
-      .search-right__container__contents
-        = render partial: 'shared/item', collection: @items
-
     -else
       %h2.search-right__container__head
         = @search

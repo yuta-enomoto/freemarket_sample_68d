@@ -1,0 +1,11 @@
+.wrapper 
+  = render 'shared/header'
+
+  .search
+    = render "search-left"
+    = render "search-right"
+    = link_to new_item_path, class: 'sell-icon' do
+      = render 'shared/sell-icon'
+
+= render "/shared/footerFirst"
+= render "/shared/footerSecond"
