@@ -9,7 +9,7 @@
         ="1-#{@items.count}件表示"
       .search-right__container__contents
         = render partial: 'shared/item', collection: @items
-        
+
     -else
       %h2.search-right__container__head
         = @search

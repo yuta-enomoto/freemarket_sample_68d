@@ -33,7 +33,7 @@ Rails.application.routes.draw do
       post 'delete', to: 'credit_cards#delete'
     end
   end
-  resources :searches,only:[:index] do 
+  resources :searches do 
     collection do 
       get 'detail_search' 
     end
