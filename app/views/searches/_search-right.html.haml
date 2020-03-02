@@ -1,0 +1,30 @@
+.search-right
+  %section.search-right__container
+    -if @items.present?
+      %h2.search-right__container__head
+        = @search
+        %span.search-right__container__head__text
+          の検索結果
+      .search-right__container__number
+        ="1-#{@items.count}件表示"
+      .search-right__container__contents
+        = render partial: 'shared/item', collection: @items
+
+    -elsif params[:q][:name_cont].empty?
+      %h3.search-right__container__nil
+        新着商品
+      .search-right__container__contents
+        = render partial: 'shared/item', collection: @items_all
+  
+    -else
+      %h2.search-right__container__head
+        = @search
+        %span.search-right__container__head__text
+          の検索結果
+      .search-right__container__description
+        該当する商品が見つかりません。検索条件を変えて、再度お試しください。
+      %h3.search-right__container__nil
+        新着商品
+      .search-right__container__contents
+        = render partial: 'shared/item', collection: @items_all
+  

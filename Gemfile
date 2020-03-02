@@ -86,3 +86,4 @@ gem 'dotenv-rails'
 gem 'meta_request'
 gem 'kaminari'
 gem "gretel"
+gem 'ransack'
