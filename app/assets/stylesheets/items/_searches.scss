@@ -34,7 +34,7 @@
 
     &__form {
       background-color: $wh;
-      margin: 40px 0 0;
+      margin: 40px 0 100px 0;
       position: static;
       display: block;
       -webkit-box-shadow: none;
@@ -62,6 +62,9 @@
             color: #888;
             font-size: 16px;
             vertical-align: middle;
+          }
+          .fa-truck {
+            transform: scale(-1, 1);
           }
           span {
             font-size: 14px;
@@ -110,13 +113,46 @@
             outline: none;
           }
         }
+        &__box {
+          display: flex;
+          flex-wrap: wrap;
+          &__checkbox {
+            margin: 16px 0 0;
+            display: inline-block;
+            width: 48%;
+            vertical-align: middle;
+            word-break: break-word;
+            &__lbl {
+              color: #333;
+              font-size: 14px;
+              font-weight: 400;
+              cursor: pointer;
+              display: inline-block;
+              vertical-align: middle;
+              word-break: break-word;
+            }
+            input {
+              padding: 0 0 0 28px;
+              transition: all ease-out .3s;
+              transform: translate(0, -50%);
+              transform:		scale(1.6);
+              margin: 0 4px 0 0;
+            }
+            n {
+              margin: 0 0 0 20px;
+            }
+          }
+          .mar {
+            margin: 16px 0 0 4%;
+          }
+        }
       }
       &__btns {
         height: 90px;
         padding: 40px 0 0;
 
         .clear-btn {
-          padding: 15px 31px;
+          padding: 15px 31.4px;
           background: #aaa;
           border: 1px solid #aaa;
           color: #fff;
