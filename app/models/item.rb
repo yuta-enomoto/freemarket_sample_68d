@@ -20,4 +20,9 @@ class Item < ApplicationRecord
 
 
   scope :date_desc, -> {order(created_at: :desc)}
+
+  def self.search(search)
+    return Item.all unless search
+    Item.where('name LIKE(?)', "%#{search}%")
+  end
 end

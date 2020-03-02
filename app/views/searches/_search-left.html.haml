@@ -1,0 +1,112 @@
+.search-left
+  = search_form_for(@q,url: detail_search_searches_path) do |f|
+    .search-left__sort
+      %i.fas.fa-chevron-down
+      = f.select( :sorts, { '並び替え': 'id desc', '価格の安い順': 'price asc', '価格の高い順': 'price desc', '出品の古い順': 'updated_at asc', '出品の新しい順': 'updated_at desc' } , { selected: params[:q][:sorts] }, { onchange: 'this.form.submit()', class: "sort-selector" })
+    .search-left__form
+      %h3.search-left__form__title 詳細検索
+      .search-left__form__group
+        .search-left__form__group__label
+          %i.fas.fa-plus
+          %span キーワードを追加する
+        = f.search_field :name_cont, placeholder: "例）値下げ", class: 'input-default'
+
+        
+      .search-left__form__group
+        .search-left__form__group__label
+          %i.fas.fa-tag
+          %span ブランド名から探す
+        = f.collection_select :brand_id_eq, Brand.all, :id, :name, include_blank: 'すべて'
+
+
+      .search-left__form__group
+        .search-left__form__group__label
+          %i.fas.fa-coins
+          %span 価格
+        .search-left__form__group__forms
+          = f.search_field :price_gteq, placeholder: "¥ Min",type: 'number', class: 'price-input'
+          %p 〜
+          = f.search_field :price_lteq, placeholder: "¥ Max",type: 'number',  class: 'price-input'
+
+
+      .search-left__form__group
+        .search-left__form__group__label
+          %i.fas.fa-star
+          %span 商品の状態
+        .search-left__form__group__box
+          .search-left__form__group__box__checkbox
+            %label.search-left__form__group__box__checkbox__lbl.lbl-all
+              %input{type: "checkbox", id:'chk-box'}
+              = 'すべて'
+          .search-left__form__group__box__checkbox.mar
+            %label.search-left__form__group__box__checkbox__lbl
+              %input{type:'checkbox', value: "1", type: "checkbox", name: "q[condition_id_in]", id: "q_condition_id_in"}
+              = '新品、未使用'
+          .search-left__form__group__box__checkbox
+            %label.search-left__form__group__box__checkbox__lbl
+              %input{type:'checkbox', value: "2", type: "checkbox", name: "q[condition_id_in]", id: "q_condition_id_in"}
+              = '未使用に近い'
+          .search-left__form__group__box__checkbox.mar
+            %label.search-left__form__group__box__checkbox__lbl
+              %input{type:'checkbox', value: "3", type: "checkbox", name: "q[condition_id_in]", id: "q_condition_id_in"}
+              目立った傷や
+              %n 汚れなし
+          .search-left__form__group__box__checkbox
+            %label.search-left__form__group__box__checkbox__lbl
+              %input{type:'checkbox', value: "4", type: "checkbox", name: "q[condition_id_in]", id: "q_condition_id_in"}
+              やや傷や汚れ
+              %n あり
+          .search-left__form__group__box__checkbox.mar
+            %label.search-left__form__group__box__checkbox__lbl
+              %input{type:'checkbox', value: "5", type: "checkbox", name: "q[condition_id_in]", id: "q_condition_id_in"}
+              = '傷や汚れあり'       
+          .search-left__form__group__box__checkbox
+            %label.search-left__form__group__box__checkbox__lbl
+              %input{type:'checkbox', value: "6", type: "checkbox", name: "q[condition_id_in]", id: "q_condition_id_in"}
+              全体的に状態が
+              %n 悪い
+
+
+      .search-left__form__group
+        .search-left__form__group__label
+          %i.fas.fa-truck
+          %span 配送料の負担
+        .search-left__form__group__box
+          .search-left__form__group__box__checkbox
+            %label.search-left__form__group__box__checkbox__lbl
+              %input{type: "checkbox", id: "chk-box2"}
+              = 'すべて'
+          .search-left__form__group__box__checkbox.mar
+            %label.search-left__form__group__box__checkbox__lbl
+              %input{type:'checkbox', value: "1", type: "checkbox", name: "q[shipping_fee_who_id_in]", id: "q_shipping_fee_who_id_in"}
+              送料込み（出品
+              %n 者負担
+          .search-left__form__group__box__checkbox
+            %label.search-left__form__group__box__checkbox__lbl
+              %input{type:'checkbox', value: "2", type: "checkbox", name: "q[shipping_fee_who_id_in]", id: "q_shipping_fee_who_id_in"}
+              着払い（購入者
+              %n 負担
+
+
+      .search-left__form__group
+        .search-left__form__group__label
+          %i.fas.fa-shopping-cart
+          %span 販売状況
+        .search-left__form__group__box
+          .search-left__form__group__box__checkbox
+            %label.search-left__form__group__box__checkbox__lbl
+              %input{type: "checkbox", id: 'chk-box3'}
+              = 'すべて'
+          .search-left__form__group__box__checkbox
+            %label.search-left__form__group__box__checkbox__lbl
+              %input{type:'checkbox', value: "1", type: "checkbox", name: "q[stock_status_in]", id: "q_stock_status_in"}
+              販売中
+          .search-left__form__group__box__checkbox
+            %label.search-left__form__group__box__checkbox__lbl
+              %input{type:'checkbox', value: "0", type: "checkbox", name: "q[stock_status_in]", id: "q_stock_status_in"}
+              売り切れ
+
+
+      .search-left__form__btns
+        = f.submit "クリア", type: :reset, class: "clear-btn"
+        = f.submit "完了", class: "comp-btn"

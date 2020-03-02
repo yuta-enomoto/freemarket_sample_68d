@@ -50,8 +50,6 @@ class ItemsController < ApplicationController
     end
   end
 
-
-
   private
   
   def item_params
@@ -66,4 +64,5 @@ class ItemsController < ApplicationController
     next_id = Item.where("user_id = ? and id = ?", @item.user_id, item_id)
     next_id.present? ? next_id[0].id : @item.id
   end
+
 end

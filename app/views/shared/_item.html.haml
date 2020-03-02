@@ -4,7 +4,9 @@
   .pickUp__details
     .pickUp__itemDetails
       %h3.pickUp__name= item.name
-      %p.pickUp__price= item.price
+      %p.pickUp__price 
+        ¥
+        = item.price
       %p.pickUp__taxInfo (税込)
     .pickUp__favBox
       %i.fa.fa-star
