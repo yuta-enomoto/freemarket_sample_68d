@@ -49,7 +49,7 @@
               line-height: 55px;
             }
 
-            span.required-display {
+            .required-display {
               margin-left: 8px;
               font-size: 12px;
               padding: 0 4px;
@@ -374,5 +374,17 @@
         display: none;
       }
     }
+  }
+  .upto-display {
+    margin-left: 8px;
+    font-size: 12px;
+    padding: 0 4px;
+    background-color: #bfbfbf;
+    color: $wh;
+    border-radius: 2px;
+    display: inline-block;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.4em;
   }
 }
