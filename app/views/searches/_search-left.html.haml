@@ -11,6 +11,14 @@
           %span キーワードを追加する
         = f.search_field :name_cont, placeholder: "例）値下げ", class: 'input-default'
 
+        
+      .search-left__form__group
+        .search-left__form__group__label
+          %i.fas.fa-tag
+          %span ブランド名から探す
+        = f.collection_select :brand_id_eq, Brand.all, :id, :name, include_blank: 'すべて'
+
+
       .search-left__form__group
         .search-left__form__group__label
           %i.fas.fa-coins

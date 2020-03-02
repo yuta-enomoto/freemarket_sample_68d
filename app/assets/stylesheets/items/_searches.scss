@@ -52,13 +52,14 @@
         font-size: 0;
 
         &__label {
+          display: flex;
+          align-items: center;
           position: relative;
           top: -1px;
           font-weight: 600;
-          display: flex;
 
           i {
-            margin: 0 4px 0 0;
+            margin: 0 4px 2px 0;
             color: #888;
             font-size: 16px;
             vertical-align: middle;
@@ -70,6 +71,20 @@
             font-size: 14px;
             vertical-align: middle;
           }
+        }
+        select {
+          margin: 8px 0 0;
+          height: 48px;
+          width: 100%;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 15px;
+          cursor: pointer;
+          -webkit-appearance: none;
+          outline: none;
         }
 
         .input-default {
