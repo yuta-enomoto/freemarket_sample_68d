@@ -20,4 +20,9 @@ class Item < ApplicationRecord
   validates :price, presence: true, numericality: {only_integer: true, greater_than: 300, less_than: 9999999}
 
   scope :date_desc, -> {order(created_at: :desc)}
+
+  def self.search(search)
+    return Item.all unless search
+    Item.where('name LIKE(?)', "%#{search}%")
+  end
 end

@@ -49,8 +49,6 @@ class ItemsController < ApplicationController
     end
   end
 
-
-
   private
   
   def item_params
@@ -68,4 +66,5 @@ class ItemsController < ApplicationController
     prev_id = item.id if prev_id.blank?
     return next_id, prev_id
   end
+
 end
