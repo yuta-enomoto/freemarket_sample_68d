@@ -108,6 +108,5 @@
 
 
       .search-left__form__btns
-        .clear-btn
-          クリア
+        = f.submit "クリア", type: :reset, class: "clear-btn"
         = f.submit "完了", class: "comp-btn"
