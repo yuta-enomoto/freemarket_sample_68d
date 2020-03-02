@@ -29,10 +29,7 @@
               %label{for: "item_item_images_attributes_#{@item.item_images.length}_url", class: "label-box", id: "label-box--#{@item.item_images.length}"}
              
                 %pre.label-box__text-visible クリックしてファイルをアップロード
-            - if @item.errors.any?
-              %ul.error-msg
-                - @item.errors.full_messages_for(:item_images).each do |message|
-                  %li= message
+            = render partial: 'devise/shared/error_messages', locals: { column: :item_images, input: @item }
             .hidden-content
               = f.fields_for :item_images do |i|
 
@@ -55,10 +52,7 @@
               必須
           .si-container__si-box__input-container
             = f.text_field :name, placeholder: '商品名（必須 40文字まで)', class:'input-default'
-            - if @item.errors.any?
-              %ul.error-msg
-                - @item.errors.full_messages_for(:name).each do |message|
-                  %li= message
+            = render partial: 'devise/shared/error_messages', locals: { column: :name, input: @item }
         .si-container__si-box__box-frame.si-top
           .si-container__si-box__si-photos
             %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label
@@ -67,10 +61,7 @@
               必須
           .si-container__si-box__input-container
             = f.text_area :description, rows: '5', placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。', class:'text-default'
-            - if @item.errors.any?
-              %ul.error-msg
-                - @item.errors.full_messages_for(:description).each do |message|
-                  %li= message
+            = render partial: 'devise/shared/error_messages', locals: { column: :description, input: @item }
       %hr.si-container__si-box__si-inner__si-underline
 
       .si-container__si-box__si-picture-box.perimeter.display-box
@@ -86,10 +77,7 @@
             .sell-form-box__select-wrap#parent-category-menu-wrap
               %i.fas.fa-chevron-down
               = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: "---"}, {class: "selector-category", id: "parent-category-menu"}
-              - if @item.errors.any?
-                %ul.error-msg
-                  - @item.errors.full_messages_for(:category).each do |message|
-                    %li= message
+              = render partial: 'devise/shared/error_messages', locals: { column: :category_id, input: @item }
           .si-container__si-box__box-frame.si-top
             .si-container__si-box__si-photos
               %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label
@@ -99,10 +87,7 @@
             .sell-form-box__select-wrap
               %i.fas.fa-chevron-down
               = f.collection_select :condition_id, Condition.all, :id, :name, {prompt: "--"}, {class: 'selector-category'}
-          - if @item.errors.any?
-            %ul.error-msg
-              - @item.errors.full_messages_for(:condition_id).each do |message|
-                %li= message
+          = render partial: 'devise/shared/error_messages', locals: { column: :condition_id, input: @item }
       %hr.si-container__si-box__si-inner__si-underline
 
       .si-container__si-box__si-picture-box.perimeter.display-box
@@ -120,10 +105,7 @@
             .sell-form-box__select-wrap
               %i.fas.fa-chevron-down
               = f.collection_select :shipping_fee_who_id, ShippingFeeWho.all, :id, :name, {prompt: "--"}, {class: 'selector-category'}
-              - if @item.errors.any?
-                %ul.error-msg
-                  - @item.errors.full_messages_for(:shipping_fee_who_id).each do |message|
-                    %li= message
+              = render partial: 'devise/shared/error_messages', locals: { column: :shipping_fee_who_id, input: @item }
               -# ここから（追加実装用）
 
           -# .si-container__si-box__box-frame.si-top.none
@@ -147,10 +129,7 @@
             .sell-form-box__select-wrap
               %i.fas.fa-chevron-down
               = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "--"}, {class: 'selector-category'}
-              - if @item.errors.any?
-                %ul.error-msg
-                  - @item.errors.full_messages_for(:prefecture_id).each do |message|
-                    %li= message
+              = render partial: 'devise/shared/error_messages', locals: { column: :prefecture_id, input: @item }
 
           .si-container__si-box__box-frame.si-top
             .si-container__si-box__si-photos
@@ -161,10 +140,7 @@
             .sell-form-box__select-wrap
               %i.fas.fa-chevron-down
               = f.collection_select :shipping_days_id, ShippingDays.all, :id, :name, {prompt: "--"}, {class: 'selector-category'}
-              - if @item.errors.any?
-                %ul.error-msg
-                  - @item.errors.full_messages_for(:shipping_days_id).each do |message|
-                    %li= message
+              = render partial: 'devise/shared/error_messages', locals: { column: :shipping_days_id, input: @item }
       %hr.si-container__si-box__si-inner__si-underline
 
       .si-container__si-box__si-picture-box.perimeter.display-box
@@ -188,10 +164,7 @@
                     =  "¥"
                   .sell-form-box__sell-price-input__top__input-box.l-right
                     = f.text_field :price, placeholder: '例）300', class:'input-default input-right'
-                - if @item.errors.any?
-                  %ul.error-msg__min
-                    - @item.errors.full_messages_for(:price).each do |message|
-                      %li= message
+                = render partial: 'devise/shared/error_messages', locals: { column: :price, input: @item }
           -# ここから（追加実装用）
             -# %li.sell-form-box__price-list.display-box
             -#   .sell-form-box__price-list__l-left

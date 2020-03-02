@@ -7,37 +7,26 @@
         .registar-form__content__box
           %label.registar-form__content__box__label 郵便番号
           %span.registar-form__content__box__require 必須
-          = f.text_field :postal_code, placeholder: "例）123-4567", class: "registar-form__content__box--one-field" 
-          - if @address.errors.any?
-            %ul.error-msg
-              - @address.errors.full_messages_for(:postal_code).each do |message|
-                %li= message
+          = f.text_field :postal_code, placeholder: "例）123-4567", class: "registar-form__content__box--one-field"
+          = render partial: 'devise/shared/error_messages', locals: { column: :postal_code, input: @address }
 
         .registar-form__content__box
           %label.registar-form__content__box__label 都道府県
           %span.registar-form__content__box__require 必須
           = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", class: "registar-form__content__box--one-field"
-          - if @address.errors.any?
-            %ul.error-msg
-              - @address.errors.full_messages_for(:prefecture_id).each do |message|
-                %li= message
+          = render partial: 'devise/shared/error_messages', locals: { column: :prefecture_id, input: @address }
         
         .registar-form__content__box
           %label.registar-form__content__box__label 市区町村
           %span.registar-form__content__box__require 必須
           = f.text_field :address1, placeholder: "例）渋谷区神山町", class: "registar-form__content__box--one-field"
-          - if @address.errors.any?
-            %ul.error-msg
-              - @address.errors.full_messages_for(:address1).each do |message|
-                %li= message
+          = render partial: 'devise/shared/error_messages', locals: { column: :address1, input: @address }
+
         .registar-form__content__box
           %label.registar-form__content__box__label 番地
           %span.registar-form__content__box__require 必須
           = f.text_field :address2, placeholder: "例）1-1-1", class: "registar-form__content__box--one-field"
-          - if @address.errors.any?
-            %ul.error-msg
-              - @address.errors.full_messages_for(:address2).each do |message|
-                %li= message
+          = render partial: 'devise/shared/error_messages', locals: { column: :address2, input: @address }
           
         .registar-form__content__box
           %label.registar-form__content__box__label 建物名
