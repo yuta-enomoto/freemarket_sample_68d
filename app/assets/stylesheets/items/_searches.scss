@@ -167,12 +167,16 @@
       &__btns {
         height: 90px;
         padding: 40px 0 0;
+        display: flex;
 
         .clear-btn {
-          padding: 15px 31.4px;
+          cursor: pointer;
+          padding: 13px 30.4px;
           background: #aaa;
           border: 1px solid #aaa;
           color: #fff;
+          width: 112px;
+          margin: 0;
         }
         .comp-btn {
           cursor: pointer;
