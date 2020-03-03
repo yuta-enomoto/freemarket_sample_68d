@@ -8,6 +8,6 @@ class Address < ApplicationRecord
   validates :postal_code, presence: true,
             format: {
               with: /\A[0-9]{3}-[0-9]{4}\z/,
-              message: "の入力が正しくありません。郵便番号はハイフンを含めて入力して下さい。"
+              message: "はハイフンを含めて正しく入力して下さい。"
             }
 end

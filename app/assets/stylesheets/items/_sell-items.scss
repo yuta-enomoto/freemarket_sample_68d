@@ -172,17 +172,27 @@
             border-color: $lightgreen;
           }
         }
+        .si-right-box {
+          width: 80px;
+        }
         &__sell-price-input {
+          width: calc(100% - 80px);
           font-size: 10px;
           color: $sub-font;
-          display: flex;
-          align-items: center;
-          
-          &__input-box {
-            display: inline-block;
-            width: 80%;
-            margin: 0 0 0 5%;
+          &__top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &__yen {
+              padding-left: 30px;
+            }
+            &__input-box {
+              display: inline-block;
+              width: 80%;
+              margin: 0 0 0 5%;
+            }
           }
+
         }
         &__price-list {
           padding: 24px 0;
@@ -215,7 +225,6 @@
         .l-right {
           font-size: 14px;
           color: $sub-font;
-          width: 180px;
           text-align: right;
         }
       }
