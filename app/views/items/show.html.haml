@@ -9,12 +9,16 @@
           = @item.name
         .is-main__content__top__item__body
           .image-main
+            - unless @item.stock_status
+              .item-sold
+                .item-sold__inner
+                  = "SOLD"
             = image_tag @item_image, class:'main-photo'
           %ul.item-image-sub_top
             = render partial: "/shared/item_show_images", collection: @item.item_images, as: "item_image"
         
         .is-main__content__top__item__price
-          %span= "¥ #{@item.price}"
+          %span= "¥ #{@item.price.to_s(:delimited)}"
           .is-main__content__top__item__price__detail
             %span= "(税込み)"
             %span= "送料込み"

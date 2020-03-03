@@ -1,6 +1,10 @@
 = link_to item_path(item.id) do
   %li.my-items-container__contents__list__items__row
     .my-items-container__contents__list__items__row__image
+      - unless item.stock_status
+        .item-sold
+          .item-sold__inner
+            = "SOLD"
       = image_tag item.item_images[0].url.url
     .item-main
       .item-main__top
@@ -11,8 +15,8 @@
           = "¥ #{item.price.to_s(:delimited)}"
       .item-main__bottom
         %i.fas.fa-heart
-        .count= "(0)"
+        .count= "0"
         %i.far.fa-comment-alt
-        .count= "(0)"
+        .count= "0"
     .my-items-container__contents__list__items__row__right
       %i.fas.fa-chevron-right

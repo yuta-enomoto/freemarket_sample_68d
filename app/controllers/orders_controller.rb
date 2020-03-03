@@ -44,7 +44,9 @@ class OrdersController < ApplicationController
       )
       order = Order.new(item_id: @item.id, user_id: current_user.id)
       @item.stock_status = false
-      if order.save && @item.save
+      if order.save
+        @item.save
+        sele_create(order).save
         redirect_to action: 'done' 
       else
         redirect_to action: "pay"
@@ -57,5 +59,23 @@ class OrdersController < ApplicationController
   private
   def set_item
     @item = Item.find(params[:item_id])
+  end
+
+  def sele_create(order)
+    profit = @item.price.to_i * 0.9
+    category_data = Category.find(@item.category_id)
+    @item.brand_id.present? ? brand = Brand.find(@item.brand_id) : brand = ""
+    Sele.new(
+      order_id: order.id,
+      item_id: order.item_id,
+      user_id: @item.user_id,
+      revenue: @item.price.to_i,
+      profit: profit.round,
+      name: @item.name,
+      category: category_data.parent.parent.name,
+      subcategory: category_data.parent.name,
+      subsubcategory: category_data.name,
+      brand: brand
+    )
   end
 end

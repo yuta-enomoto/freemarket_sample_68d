@@ -1,0 +1,26 @@
+- item = Item.find(deposit.item_id)
+= link_to(request_one_sele_path(deposit.id), method: :post) do
+  %li.sh-seles
+    .sh-seles__image
+      = image_tag item.item_images[0].url.url
+    .sh-seles__item
+      .sh-seles__item__top
+        .sh-seles__item__top__name
+          = "売上日時：#{deposit.created_at.strftime("%Y/%m/%d  %H:%M")}"
+        .sh-seles__item__top__info
+          - if deposit.deposit
+            .sh-seles__item__top__info__true
+              = "振込申請済"
+          - else
+            .sh-seles__item__top__info__false
+              = "振込未申請"
+      .sh-seles__item__mid
+        .sh-seles__item__mid__name
+          = "商品名：#{deposit.name.truncate(10, omission: '…')}"
+        .sh-seles__item__mid__category
+          = "（#{deposit.category}）"
+      .sh-seles__item__bottom
+        %span= "販売利益"
+        %span= "¥ #{deposit.profit.to_s(:delimited)}"
+    .sh-seles__right
+      %i.fas.fa-chevron-right

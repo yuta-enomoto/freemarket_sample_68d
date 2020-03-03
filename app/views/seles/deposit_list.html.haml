@@ -1,0 +1,38 @@
+.wrapper 
+  = render 'shared/header'
+  - breadcrumb :deposit
+  = render "/shared/breadCrumb"
+  .wrapper__main
+    .mp-container
+      = render 'shared/myPageSideBar'
+      .mp-container__mp-content
+        %section.mp-container__mp-content__mypage-tab-container-notification-todo
+          %ul.mp-container__mp-content__mypage-tab-container-notification-todo__mypage-tabs
+            %li.tab-list.is-active
+              %h3.tab-content
+                = link_to '#mypage-tab-notification',class: "tab-link" do
+                  振込未申請リスト
+            %li.tab-list
+              %h3.tab-content
+                = link_to '#mypage-tab-todo',class: "tab-link" do
+                  振込申請済リスト
+          .mp-container__mp-content__mypage-tab-container-notification-todo__tab-content
+            %ul#mypage-tab-notification.mypage-item-list.tab-pane.active
+              = render partial: "request", collection: @deposit_yet, as: :deposit
+              %li.mypage-go-list
+                = link_to(request_all_seles_path, method: :post) do
+                  一括申し込み
+            %ul#mypage-tab-todo.mypage-item-list.tab-pane
+              = render partial: "cancel", collection: @deposit_already, as: :deposit
+              %li.mypage-go-list
+                = link_to(cancel_all_seles_path, method: :post) do
+                  一括取り消し
+          .page-number
+            = @seles.current_page
+        .my-pagenate
+          = paginate(@seles)
+    = link_to new_item_path, class: 'sell-icon' do
+      = render 'shared/sell-icon'
+
+  = render "/shared/footerFirst"
+  = render "/shared/footerSecond"
