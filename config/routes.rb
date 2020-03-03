@@ -42,6 +42,8 @@ Rails.application.routes.draw do
     member do
       post 'request_one', to: 'seles#request_one'
       post 'cancel_one', to: 'seles#cancel_one'
+    end
+  end
   resources :searches do 
     collection do 
       get 'detail_search' 
