@@ -52,11 +52,11 @@
                 %th
                   = "カテゴリー"
                 %td
-                  = link_to @item.category.parent.parent.name, '#'
+                  = @item.category.parent.parent.name
                   %br
-                  = link_to @item.category.parent.name, '#'
+                  = @item.category.parent.name
                   %br
-                  = link_to @item.category.name, '#'
+                  = @item.category.name
               %tr
                 %th
                   = "ブランド"
