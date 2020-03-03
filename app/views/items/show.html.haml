@@ -48,11 +48,11 @@
                 %th
                   = "カテゴリー"
                 %td
-                  = link_to "ベビー・キッズ", '#'
+                  = link_to @item.category.parent.parent.name, '#'
                   %br
-                  = link_to "ベビー服(男女兼用) ~95cm", '#'
+                  = link_to @item.category.parent.name, '#'
                   %br
-                  = link_to "アウター", '#'
+                  = link_to @item.category.name, '#'
               %tr
                 %th
                   = "ブランド"
