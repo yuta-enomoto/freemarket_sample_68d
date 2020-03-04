@@ -84,8 +84,13 @@ gem 'jquery-rails'
 gem 'payjp'
 gem 'dotenv-rails'
 gem 'meta_request'
+gem 'omniauth-slack', '~> 2.3.0'
+gem 'omniauth-facebook'
+gem 'omniauth-rails_csrf_protection'
+gem 'omniauth-oauth2'
 gem 'kaminari'
 gem "gretel"
 gem 'chart-js-rails', '~> 0.1.4'
 gem 'gon', '~> 6.2.0'
 gem 'ransack'
+

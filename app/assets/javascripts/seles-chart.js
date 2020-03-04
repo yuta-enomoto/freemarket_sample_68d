@@ -54,8 +54,8 @@ document.addEventListener("turbolinks:load", function() {
         }
       });
     } else {
-      return 'false';
+      return "";
     }
   };
-  check(gon.category.length);
+  check(gon.category);
 });

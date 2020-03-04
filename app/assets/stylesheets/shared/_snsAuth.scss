@@ -1,0 +1,32 @@
+.snsAuth {
+
+margin-bottom: 60px;
+
+  a {
+    display: block;
+    width: 328px;
+    height: 50px;
+    font-size: 14px;
+    line-height: 50px;
+    text-align: center;
+    color: $wh;
+    padding: 0 20px;
+    margin: 10px auto 0;
+  }
+
+  &__slackLink {
+    background-color: rgb(71, 35, 138);
+  }
+
+  &__facebookLink {
+    background-color: rgb(57, 81, 214);
+  }
+
+  &__icon {
+    margin-right: 20px;
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+  }
+}

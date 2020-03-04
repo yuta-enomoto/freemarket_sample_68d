@@ -10,6 +10,7 @@
 @import "modules/errorExplanation";
 @import "shared/overall";
 @import "registrations/new";
+@import "registrations/reg_select";
 @import "sessions/new";
 @import "shared/wrapper";
 @import "shared/general";
@@ -24,11 +25,13 @@
 @import "shared/pickUp";
 @import "shared/appBanners";
 @import "shared/breadCrumb";
+@import "shared/snsAuth";
 @import "items/show";
 @import "users/my-page";
 @import "items/searches";
 @import "items/destroy";
 @import "items/sell-items";
+@import "creditCards/creditCardsPage";
 @import "creditCards/creditCardsPage";
 @import "users/my-items";
 @import "users/seller-items";
