@@ -1,5 +1,8 @@
 %li.pickUp__content
   = link_to item_path(item.id), class: "pickUp__contentLink" do
+    .item-sold
+      .item-sold__inner
+        = "SOLD"
     = image_tag item.item_images[0].url.url, alt: "item3", class: "pickUp__itemImage"
   .pickUp__details
     .pickUp__itemDetails
