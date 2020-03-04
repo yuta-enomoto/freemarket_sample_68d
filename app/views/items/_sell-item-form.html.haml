@@ -80,7 +80,6 @@
             .sell-form-box__select-wrap
               %i.fas.fa-chevron-down
               = f.collection_select :brand_id, Brand.all, :id, :name, {prompt: "--"}, {class: 'selector-category'}
-              = render partial: 'devise/shared/error_messages', locals: { column: :brand_id, input: @item }
 
           .si-container__si-box__box-frame.si-top
             .si-container__si-box__si-photos
