@@ -41,11 +41,6 @@ class ItemsController < ApplicationController
 
   def edit
     @grandchild_category = Category.find(@item[:category_id])
-    @child_category = @grandchild_category.parent
-    @parent_category = @child_category.parent
-    @grandchild_categories = @child_category.children
-    @child_categories = @parent_category.children
-    @parent_categories = Category.where(ancestry: nil)
   end
 
   def update
