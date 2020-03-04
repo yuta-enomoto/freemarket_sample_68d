@@ -36,33 +36,33 @@
         .search-left__form__group__box
           .search-left__form__group__box__checkbox
             %label.search-left__form__group__box__checkbox__lbl.lbl-all
-              %input{type: "checkbox", id:'chk-box'}
+              %input{type: "checkbox",multiple: true, id:'chk-box'}
               = 'すべて'
           .search-left__form__group__box__checkbox.mar
             %label.search-left__form__group__box__checkbox__lbl
-              %input{type:'checkbox', value: "1", type: "checkbox", name: "q[condition_id_in]", id: "q_condition_id_in"}
+              %input{type:'checkbox', value: "1", type: "checkbox",multiple: true, name: "q[condition_id_in][]", id: "q_condition_id_in"}
               = '新品、未使用'
           .search-left__form__group__box__checkbox
             %label.search-left__form__group__box__checkbox__lbl
-              %input{type:'checkbox', value: "2", type: "checkbox", name: "q[condition_id_in]", id: "q_condition_id_in"}
+              %input{type:'checkbox', value: "2", type: "checkbox",multiple: true, name: "q[condition_id_in][]", id: "q_condition_id_in"}
               = '未使用に近い'
           .search-left__form__group__box__checkbox.mar
             %label.search-left__form__group__box__checkbox__lbl
-              %input{type:'checkbox', value: "3", type: "checkbox", name: "q[condition_id_in]", id: "q_condition_id_in"}
+              %input{type:'checkbox', value: "3", type: "checkbox",multiple: true, name: "q[condition_id_in][]", id: "q_condition_id_in"}
               目立った傷や
               %n 汚れなし
           .search-left__form__group__box__checkbox
             %label.search-left__form__group__box__checkbox__lbl
-              %input{type:'checkbox', value: "4", type: "checkbox", name: "q[condition_id_in]", id: "q_condition_id_in"}
+              %input{type:'checkbox', value: "4", type: "checkbox",multiple: true, name: "q[condition_id_in][]", id: "q_condition_id_in"}
               やや傷や汚れ
               %n あり
           .search-left__form__group__box__checkbox.mar
             %label.search-left__form__group__box__checkbox__lbl
-              %input{type:'checkbox', value: "5", type: "checkbox", name: "q[condition_id_in]", id: "q_condition_id_in"}
+              %input{type:'checkbox', value: "5", type: "checkbox",multiple: true, name: "q[condition_id_in][]", id: "q_condition_id_in"}
               = '傷や汚れあり'       
           .search-left__form__group__box__checkbox
             %label.search-left__form__group__box__checkbox__lbl
-              %input{type:'checkbox', value: "6", type: "checkbox", name: "q[condition_id_in]", id: "q_condition_id_in"}
+              %input{type:'checkbox', value: "6", type: "checkbox",multiple: true, name: "q[condition_id_in][]", id: "q_condition_id_in"}
               全体的に状態が
               %n 悪い
 
@@ -78,12 +78,12 @@
               = 'すべて'
           .search-left__form__group__box__checkbox.mar
             %label.search-left__form__group__box__checkbox__lbl
-              %input{type:'checkbox', value: "1", type: "checkbox", name: "q[shipping_fee_who_id_in]", id: "q_shipping_fee_who_id_in"}
+              %input{type:'checkbox', value: "1", type: "checkbox",multiple: true, name: "q[shipping_fee_who_id_in][]", id: "q_shipping_fee_who_id_in"}
               送料込み（出品
               %n 者負担
           .search-left__form__group__box__checkbox
             %label.search-left__form__group__box__checkbox__lbl
-              %input{type:'checkbox', value: "2", type: "checkbox", name: "q[shipping_fee_who_id_in]", id: "q_shipping_fee_who_id_in"}
+              %input{type:'checkbox', value: "2", type: "checkbox",multiple: true, name: "q[shipping_fee_who_id_in][]", id: "q_shipping_fee_who_id_in"}
               着払い（購入者
               %n 負担
 
@@ -99,11 +99,11 @@
               = 'すべて'
           .search-left__form__group__box__checkbox
             %label.search-left__form__group__box__checkbox__lbl
-              %input{type:'checkbox', value: "1", type: "checkbox", name: "q[stock_status_in]", id: "q_stock_status_in"}
+              %input{type:'checkbox', value: "1", type: "checkbox",multiple: true, name: "q[stock_status_in][]", id: "q_stock_status_in"}
               販売中
           .search-left__form__group__box__checkbox
             %label.search-left__form__group__box__checkbox__lbl
-              %input{type:'checkbox', value: "0", type: "checkbox", name: "q[stock_status_in]", id: "q_stock_status_in"}
+              %input{type:'checkbox', value: "0", type: "checkbox",multiple: true, name: "q[stock_status_in][]", id: "q_stock_status_in"}
               売り切れ
 
 
