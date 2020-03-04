@@ -1,21 +1,19 @@
 .search-right
   %section.search-right__container
     -if @items.present?
-      %h2.search-right__container__head
-        = @search
-        %span.search-right__container__head__text
-          の検索結果
-      .search-right__container__number
-        ="1-#{@items.count}件表示"
+      - if @search.present?
+        %h2.search-right__container__head
+          = @search
+          %span.search-right__container__head__text
+            の検索結果
+        .search-right__container__number
+          ="1-#{@items.count}件表示"
+      - else
+        %h3.search-right__container__nil
+          新着商品
       .search-right__container__contents
         = render partial: 'shared/item', collection: @items
 
-    -elsif params[:q][:name_cont].empty?
-      %h3.search-right__container__nil
-        新着商品
-      .search-right__container__contents
-        = render partial: 'shared/item', collection: @items_all
-  
     -else
       %h2.search-right__container__head
         = @search
