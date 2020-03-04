@@ -42,7 +42,7 @@
                 %th
                   = "出品者"
                 %td
-                  - if current_user.id == @item.user_id
+                  - if user_signed_in? && current_user.id == @item.user_id
                     = link_to user_path(current_user.id) do
                       = @item.user.nickname
                   - else
