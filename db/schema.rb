@@ -77,6 +77,15 @@ ActiveRecord::Schema.define(version: 2020_02_25_083330) do
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_likes_on_item_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "item_id", null: false
@@ -84,6 +93,30 @@ ActiveRecord::Schema.define(version: 2020_02_25_083330) do
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_orders_on_item_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+
+  create_table "seles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "revenue", null: false
+    t.integer "profit", null: false
+    t.boolean "deposit", default: false, null: false
+    t.string "name", null: false
+    t.string "category", null: false
+    t.string "subcategory"
+    t.string "subsubcategory"
+    t.string "brand"
+    t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
+    t.bigint "order_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_seles_on_item_id"
+    t.index ["order_id"], name: "index_seles_on_order_id"
+    t.index ["user_id"], name: "index_seles_on_user_id"
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -121,5 +154,10 @@ ActiveRecord::Schema.define(version: 2020_02_25_083330) do
   add_foreign_key "items", "users"
   add_foreign_key "orders", "items"
   add_foreign_key "orders", "users"
+
+  add_foreign_key "seles", "items"
+  add_foreign_key "seles", "orders"
+  add_foreign_key "seles", "users"
+
   add_foreign_key "sns_credentials", "users"
 end

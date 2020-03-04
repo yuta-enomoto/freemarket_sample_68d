@@ -1,0 +1,274 @@
+.search {
+  margin: 40px auto 0;
+  width: 1040px;
+  display: flex;
+
+  .search-left{
+    width: 280px;
+    margin: 0 40px 0 0;
+
+    &__sort {
+      text-align: left;
+      position: relative;
+
+      .fa-chevron-down {
+        position: absolute;
+        right: 16px;
+        top: 32%;
+        z-index: 2;
+        color: #888;
+        font-size: 20px;
+      }
+
+      .sort-selector {
+        background: $wh;
+        width: 280px;
+        height: 48px;
+        padding: 0 16px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        -webkit-appearance: none;
+        outline: none;
+      }
+    }
+
+    &__form {
+      background-color: $wh;
+      margin: 40px 0 100px 0;
+      position: static;
+      display: block;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      padding: 16px;
+
+      &__title {
+        color: #333;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      &__group {
+        margin: 24px 0 0;
+        font-size: 0;
+
+        &__label {
+          display: flex;
+          align-items: center;
+          position: relative;
+          top: -1px;
+          font-weight: 600;
+
+          i {
+            margin: 0 4px 2px 0;
+            color: #888;
+            font-size: 16px;
+            vertical-align: middle;
+          }
+          .fa-truck {
+            transform: scale(-1, 1);
+          }
+          span {
+            font-size: 14px;
+            vertical-align: middle;
+          }
+        }
+        select {
+          margin: 8px 0 0;
+          height: 48px;
+          width: 100%;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 15px;
+          cursor: pointer;
+          -webkit-appearance: none;
+          outline: none;
+        }
+
+        .input-default {
+          width: 100%;
+          margin: 8px 0 0;
+          height: 48px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: $wh;
+          line-height: 1.5;
+          font-size: 16px;
+          outline: none;
+
+          &:focus {
+            border-color: #3CCACE;
+          }
+        }
+
+        &__forms {
+          display: flex;
+
+          p {
+            display: inline-block;
+            width: 10%;
+            font-size: 10px;
+            text-align: center;
+            line-height: 62px;
+          }
+
+          .price-input {
+            height: 48px;
+            width: 45%;
+            margin: 8px 0 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            padding: 10px 16px 8px;
+            line-height: 1.5;
+            font-size: 14px;
+            outline: none;
+          }
+        }
+        &__box {
+          position: relative;
+          left: 5px;
+          display: flex;
+          flex-wrap: wrap;
+          &__checkbox {
+            margin: 16px 0 0;
+            display: inline-block;
+            width: 48%;
+            vertical-align: middle;
+            word-break: break-word;
+            &__lbl {
+              color: #333;
+              font-size: 14px;
+              font-weight: 400;
+              cursor: pointer;
+              display: inline-block;
+              vertical-align: middle;
+              word-break: break-word;
+            }
+            input {
+              padding: 0 0 0 28px;
+              transition: all ease-out .3s;
+              transform: translate(0, -50%);
+              transform:		scale(1.6);
+              margin: 0 4px 0 0;
+            }
+            n {
+              margin: 0 0 0 20px;
+            }
+          }
+          .mar {
+            margin: 16px 0 0 4%;
+          }
+        }
+      }
+      &__btns {
+        height: 90px;
+        padding: 40px 0 0;
+        display: flex;
+
+        .clear-btn {
+          outline: none;
+          cursor: pointer;
+          padding: 13px 30.4px;
+          background: #aaa;
+          border: 1px solid #aaa;
+          color: #fff;
+          width: 112px;
+          margin: 0;
+        }
+        .comp-btn {
+          cursor: pointer;
+          margin: 0 0 0 19px;
+          width: 45%;
+          height: 50px;
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          color: $wh;
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .search-right {
+    width: 776px;
+
+    &__container {
+      &__head {
+        &__text {
+          font-size: 18px;
+          font-weight: 400;
+          margin: 0px 0px 0px 4px;
+
+        }
+      }
+      &__number {
+        margin: 16px 0px;
+        font-size: 12px;
+        color: rgb(136, 136, 136);
+      }
+      &__contents {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+          list-style: none;
+          width: 160px;
+          margin: 0 20px 20px 0;
+
+          a {
+            width: 160px;
+
+            img {
+              width: 160px;
+            }
+          }
+
+          .pickUp__details {
+            width: 160px;
+            position: relative;
+            height: 58px;
+            padding: 8px 12px;
+
+            .pickUp__itemDetails {
+
+              .pickUp__name {
+
+                font-size: 14px;
+              }
+
+              .pickUp__price {
+                z-index: 2;
+                position: absolute;
+                top: -37px;
+                left: 0;
+                padding: 4px 12px 4px 8px;
+                border-radius: 0 16px 16px 0;
+                font-weight: 600;
+                color: $wh;
+                background-color: rgba(0,0,0,0.3);
+              }
+
+              .pickUp__taxInfo {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+      &__description {
+        margin: 16px 0 40px;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      &__nil {
+        font-weight: bold;
+        font-size: 22px;
+        margin: 0 0 16px;
+      }
+    } 
+  }
+}

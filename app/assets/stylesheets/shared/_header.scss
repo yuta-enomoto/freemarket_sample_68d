@@ -20,7 +20,7 @@
           display: block;
         }
 
-    &__searchForm {
+    .searchForm {
       display: flex;
       width: 100%;
     }
@@ -32,6 +32,10 @@
         box-shadow: none;
         font-size: 12px;
         background-color: $wh;
+        outline: none;
+        border: 1px solid $lightgray;
+        -webkit-appearance: none;
+        font-size: inherit;
 
         &:focus {
           border: 1px solid $lightgreen;
@@ -48,6 +52,7 @@
         color: $wh;
         outline: none;
         transition: all .2s;
+        position: relative;
 
         &:hover {
           background-color: $lightgreen-pale;

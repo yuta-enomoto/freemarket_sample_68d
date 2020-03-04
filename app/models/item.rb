@@ -2,7 +2,8 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
   has_many :item_images, dependent: :destroy
-  has_one :order
+  has_one :order, dependent: :destroy
+  has_one :sele, dependent: :destroy
   accepts_nested_attributes_for :item_images, allow_destroy: true
  
   belongs_to :user
@@ -18,6 +19,10 @@ class Item < ApplicationRecord
   validates :prefecture_id, :condition_id, :shipping_fee_who_id, :shipping_days_id, :item_images, presence: true
   validates :price, presence: true, numericality: {only_integer: true, greater_than: 300, less_than: 9999999}
 
-
   scope :date_desc, -> {order(created_at: :desc)}
+
+  def self.search(search)
+    return Item.all unless search
+    Item.where('name LIKE(?)', "%#{search}%")
+  end
 end

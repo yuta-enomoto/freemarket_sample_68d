@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :item_image do
-    url   {Rack::Test::UploadedFile.new(File.join(Rails.root, 'app/assets/images/logo.png'))}
+    url   {File.open("#{Rails.root}/public/images/a001.png")}
     item
   end
 end
