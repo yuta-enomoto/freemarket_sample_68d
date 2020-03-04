@@ -69,7 +69,6 @@ class ItemsController < ApplicationController
   end
 
   def category_flag(category)
-    binding.pry
     if category.ancestry.nil?
       return 1
     elsif category.parent.parent.nil?
