@@ -81,6 +81,17 @@
           .si-container__si-box__box-frame.si-top
             .si-container__si-box__si-photos
               %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label
+                ブランド
+              %span.upto-display
+                任意
+            .sell-form-box__select-wrap
+              %i.fas.fa-chevron-down
+              = f.collection_select :brand_id, Brand.all, :id, :name, {prompt: "--"}, {class: 'selector-category'}
+
+          
+          .si-container__si-box__box-frame.si-top
+            .si-container__si-box__si-photos
+              %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label
                 商品の状態
               %span.required-display
                 必須
