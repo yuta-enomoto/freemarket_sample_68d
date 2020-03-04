@@ -25,7 +25,6 @@
     
     &__product-list{
       display: flex;
-      justify-content: space-between;
     }
   }
 
@@ -33,6 +32,7 @@
       &__content {
         max-width: 200px;
         max-height: 245px;
+        margin: 0px 90px 0 0;
       }
 
         &__contentLink {
