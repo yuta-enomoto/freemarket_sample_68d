@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
 
   def show
     @item_image = @item.item_images[0].url.url
+    @category_flag = category_flag(@item.category)
     @next_id, @prev_id = set_page(@item)
   end
 
@@ -67,4 +68,14 @@ class ItemsController < ApplicationController
     return next_id, prev_id
   end
 
+  def category_flag(category)
+    binding.pry
+    if category.ancestry.nil?
+      return 1
+    elsif category.parent.parent.nil?
+      return 2
+    else
+      return 3
+    end
+  end
 end

@@ -52,11 +52,18 @@
                 %th
                   = "カテゴリー"
                 %td
-                  = link_to @item.category.parent.parent.name, "#"
-                  %br
-                  = link_to @item.category.parent.name, "#"
-                  %br
-                  = link_to @item.category.name, "#"
+                  - if @category_flag == 3
+                    = link_to @item.category.parent.parent.name, "#"
+                    %br
+                    = link_to @item.category.parent.name, "#"
+                    %br
+                    = link_to @item.category.name, "#"
+                  - elsif @category_flag == 2
+                    = link_to @item.category.parent.name, "#"
+                    %br
+                    = link_to @item.category.name, "#"
+                  - else
+                    = link_to @item.category.name, "#"
               %tr
                 %th
                   = "ブランド"
