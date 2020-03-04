@@ -120,12 +120,23 @@
           ul {
             margin: 10px 0 0;
             display: flex;
-            .like-btn {
+            .item-button-container__left__like{
               margin-right: auto;
               padding: 6px 10px;
               border-radius: 40px;
-              color: $lightgreen;
-              border: 1px solid $orange;
+              border: 1px solid $lightgreen;
+              .fa-heart{
+                color: red;
+              }
+            }
+            .item-button-container__left__dislike{
+              margin-right: auto;
+              padding: 6px 10px;
+              border-radius: 40px;
+              border: 1px solid $lightgreen;
+              .fa-heart{
+                color: red;
+              }
             }
             .report-box {
               font-size: 14px;

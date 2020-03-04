@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
 
   def show
     @item_image = @item.item_images[0].url.url
-    
+    @like = Like.where(item_id: params[:id], user_id: current_user.id)
   end
 
   def new

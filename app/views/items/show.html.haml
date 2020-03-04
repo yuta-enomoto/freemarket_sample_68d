@@ -75,8 +75,8 @@
         .is-main__content__top__item__option
           %ul
             %li.item-button-container
-              .item-button-container__left
-                = render partial: 'likes/like_links', locals: { item: @item, items: @items, likes: @likes, like: @like}
+              #item-button-container__left
+                = render partial: 'likes/like_links', locals: { item: @item, like: @like}
 
               
           %ul

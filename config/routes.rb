@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   
   root 'home#index'
   resources :items, except: [:index] do
-    resources :likes, only: [:create, :destroy]
+    resources :likes, only: [:index, :create, :destroy, :show]
     resources :orders, only: :new do
       collection do
         get 'new', to: 'orders#new'

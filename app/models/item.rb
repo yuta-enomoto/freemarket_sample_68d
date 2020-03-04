@@ -3,8 +3,9 @@ class Item < ApplicationRecord
 
   has_many :item_images
   has_many :likes, dependent: :destroy
-  def like_user(user_id)
-    likes.find_by(user_id: user_id)
+  
+  def like_user(user_id, item_id)
+    Like.find_by(user_id: user_id, item_id: item_id)
   end
   
   has_one :order
