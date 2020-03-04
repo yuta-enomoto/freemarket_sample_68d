@@ -65,7 +65,7 @@ class OrdersController < ApplicationController
     profit = @item.price.to_i * 0.9
     category_data = Category.find(@item.category_id)
     parent, child, grandchild = category_set(category_data)
-    @item.brand_id.present? ? brand = Brand.find(@item.brand_id) : brand = ""
+    @item.brand_id.present? ? brand = Brand.find(@item.brand_id).name : brand = ""
     Sele.new(
       order_id: order.id,
       item_id: order.item_id,
