@@ -2,8 +2,9 @@ class HomeController < ApplicationController
 
   def index
     @brand, @parent_categories, @picｋ_up_category, category_list = pick_up
-    @items_category = Item.includes(:user).where(stock_status: true, category_id: category_list).date_desc
-    @items_brand = Item.includes(:user).where(stock_status: true, brand_id: @brand.id).date_desc
+    @items = Item.includes(:user).where(stock_status: true).date_desc
+    @items_category = @items.where(category_id: category_list)
+    @items_brand = @items.where(brand_id: @brand.id)
   end
 
   private

@@ -28,11 +28,13 @@
             =link_to "商品の編集", edit_item_path(@item), method: :get
           .is-main__content__top__item__delete
             =link_to "この商品を削除する",  item_path(@item), method: :delete
-
         - else 
-          .is-main__content__top__item__buy
-            =link_to "購入画面に進む", item_orders_path(@item.id)
-
+          - if @item.stock_status
+            .is-main__content__top__item__buy
+              = link_to "購入画面に進む", item_orders_path(@item.id)
+          - else
+            .is-main__content__top__item__delete
+              %a= "売り切れました"
         .is-main__content__top__item__header
           = @item.description
         .is-main__content__top__item__table
