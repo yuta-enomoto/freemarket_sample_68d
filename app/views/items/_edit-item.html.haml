@@ -74,16 +74,22 @@
                 カテゴリー
               %span.required-display
                 必須
-            .sell-form-box__select-wrap#parent-category-menu-wrap
-              %i.fas.fa-chevron-down
-              = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: "---"}, {class: "selector-category", id: "parent-category-menu"}
-            .sell-form-box__select-wrap#child-category-menu-wrap
-              %i.fas.fa-chevron-down
-              = f.collection_select :category_id, Category.where(id: @grandchild_category.root.children), :id, :name, {prompt: "---"}, {class: "selector-category", id: "child-category-menu"}
-            .sell-form-box__select-wrap#grandchild-category-menu-wrap
-              %i.fas.fa-chevron-down
-              = f.collection_select :category_id, Category.where(id: @grandchild_category.parent.children), :id, :name, {prompt: "---"}, {class: "selector-category", id: "grandchild-category-menu"}
-              = render partial: 'devise/shared/error_messages', locals: { column: :category_id, input: @item }
+            - if @grandchild_category == nil
+              .sell-form-box__select-wrap#parent-category-menu-wrap
+                %i.fas.fa-chevron-down
+                = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: "---"}, {class: "selector-category", id: "parent-category-menu"}
+                = render partial: 'devise/shared/error_messages', locals: { column: :category, input: @item }
+            - else
+              .sell-form-box__select-wrap#parent-category-menu-wrap
+                %i.fas.fa-chevron-down
+                = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: "---"}, {class: "selector-category", id: "parent-category-menu"}
+              .sell-form-box__select-wrap#child-category-menu-wrap
+                %i.fas.fa-chevron-down
+                = f.collection_select :category_id, Category.where(id: @grandchild_category.root.children), :id, :name, {prompt: "---"}, {class: "selector-category", id: "child-category-menu"}
+              .sell-form-box__select-wrap#grandchild-category-menu-wrap
+                %i.fas.fa-chevron-down
+                = f.collection_select :category_id, Category.where(id: @grandchild_category.parent.children), :id, :name, {prompt: "---"}, {class: "selector-category", id: "grandchild-category-menu"}
+                = render partial: 'devise/shared/error_messages', locals: { column: :category_id, input: @item }
           .si-container__si-box__box-frame.si-top
             .si-container__si-box__si-photos
               %label.si-container__si-box__si-inner__si-picture-box__box-frame__si-photos__si-label
