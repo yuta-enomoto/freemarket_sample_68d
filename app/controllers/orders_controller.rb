@@ -64,6 +64,7 @@ class OrdersController < ApplicationController
   def sele_create(order)
     profit = @item.price.to_i * 0.9
     category_data = Category.find(@item.category_id)
+    parent, child, grandchild = category_set(category_data)
     @item.brand_id.present? ? brand = Brand.find(@item.brand_id) : brand = ""
     Sele.new(
       order_id: order.id,
@@ -72,10 +73,29 @@ class OrdersController < ApplicationController
       revenue: @item.price.to_i,
       profit: profit.round,
       name: @item.name,
-      category: category_data.parent.parent.name,
-      subcategory: category_data.parent.name,
-      subsubcategory: category_data.name,
+      category: parent,
+      subcategory: child,
+      subsubcategory: grandchild,
       brand: brand
     )
+  end
+
+  def category_set(category)
+    if category.ancestry.nil?
+      parent = category.name
+      child = ""
+      grandchild = ""
+      return parent, child, grandchild
+    elsif category.parent.parent.nil?
+      parent = category.parent.name
+      child = category.name
+      grandchild = ""
+      return parent, child, grandchild
+    else
+      parent = category.parent.parent.name
+      child = category.parent.name
+      grandchild = category.name
+      return parent, child, grandchild
+    end
   end
 end

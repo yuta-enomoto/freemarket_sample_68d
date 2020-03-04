@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, expect: [:show]
+  before_action :authenticate_user!, only: [:new, :create, :destory, :edit, :update]
   before_action :set_item, only: [:show ,:destroy, :edit, :update]
 
   def show
@@ -40,6 +40,12 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @grandchild_category = Category.find(@item[:category_id])
+    @child_category = @grandchild_category.parent
+    @parent_category = @child_category.parent
+    @grandchild_categories = @child_category.children
+    @child_categories = @parent_category.children
+    @parent_categories = Category.where(ancestry: nil)
   end
 
   def update
