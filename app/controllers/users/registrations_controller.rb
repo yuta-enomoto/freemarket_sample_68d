@@ -13,7 +13,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     if params[:sns_auth] == 'true'
-      pass = Devise.friendly_token[0, 10] + "abc"
+      pass = Devise.friendly_token[0, 10] + "a1"
       params[:user][:password] = pass
       params[:user][:password_confirmation] = pass
     end

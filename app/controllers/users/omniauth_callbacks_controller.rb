@@ -51,7 +51,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     else
       @sns_id = sns_info[:sns].id
       render template: 'devise/registrations/new'
-
     end
   end
 end
