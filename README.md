@@ -6,7 +6,7 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
-
+  <p>2.5.1
 * System dependencies
 
 * Configuration
@@ -151,6 +151,11 @@ Things you may want to cover:
 |revenue|integer|null: false|
 |profit|integer|null: false|
 |deposit|boolean|null: false, default: false|
+|name|string|null: false|
+|category|string|null: false|
+|subcategory|string||
+|subsubcategory|string||
+|brand|string||
 |user_id|integer|null: false, foreign_key: true|
 |item_id|integer|null: false, foreign_key: true|
 |order_id|integer|null: false, foreign_key: true|
@@ -158,3 +163,16 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belongs_to :item
+- belongs_to :order
+
+---------------------------------------------------------------
+
+## sns_credentialsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|provider|string||
+|uid|string||
+|user_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
