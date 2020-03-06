@@ -1,0 +1,49 @@
+= render "/shared/header"
+- breadcrumb :seller, @user
+= render "/shared/breadCrumb"
+.is-main
+  .is-main__content
+    .up-head
+      .up-head__user-icon
+        = image_tag "mypage-user.jpg" , alt: "test"
+      %p.up-head__user-name
+        = @user.nickname
+      .up-head__botom
+        .up-head__botom__info
+          .up-head__botom__info__tag
+            = "評価"
+          .up-head__botom__info__value
+            = "0"
+        .up-head__botom__info
+          .up-head__botom__info__tag
+            = "出品数"
+          .up-head__botom__info__value
+            = @items.length
+    .up-evaluate
+      .up-evaluate__box
+        %i.fas.fa-grin-beam
+        .up-evaluate__box__value
+          = "0"
+      .up-evaluate__box
+        %i.fas.fa-meh
+        .up-evaluate__box__value
+          = "0"
+      .up-evaluate__box
+        %i.fas.fa-tired
+        .up-evaluate__box__value
+          = "0"
+    .up-description
+      = "ここに自己紹介文が入ります"
+    .up-items
+      %h2.up-items__title
+        = "この出品者の商品"
+      %ul.up-items__list
+        = render partial: "seller-items", collection: @items, as: :item
+    .page-number
+      = @items.current_page
+    .my-pagenate
+      = paginate(@items)
+    = link_to new_item_path, class: 'sell-icon' do
+      = render 'shared/sell-icon'
+= render "/shared/footerFirst"
+= render "/shared/footerSecond"

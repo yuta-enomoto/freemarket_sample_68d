@@ -1,5 +1,7 @@
 .wrapper 
   = render 'shared/header'
+  - breadcrumb :mypage
+  = render "shared/breadCrumb"
   .wrapper__main
     .mp-container
       = render 'shared/myPageSideBar'

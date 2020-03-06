@@ -1,25 +1,18 @@
 .breadCrumbs {
+  background-color: $wh;
   width: 100%;
+  height: 40px;
+  line-height: 40px;
   border-top: 1px solid #eee;
-  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
-  position: relative;
+  box-shadow: 0 3px 3px 0 rgba(34, 32, 32, 0.16);
   padding: 0 60px;
-  ul {
-    padding: 17px 0 16px;
-    width: 100%;
-    max-width: 1040px;
-    font-size: 14px;
-    margin: 0 auto;
-    a {
-      padding-right: 5px;
-      &:hover {
-        opacity: .5;
-      }
+  color: $sub-font;
+  &__list {
+    .fa-angle-right {
+      padding: 0 10px;
     }
-    li {
-      padding: 0 10px 0 0;
-      float: left;
-    }
-    @include clearfix();
+  }
+  a:hover {
+    opacity: .6;
   }
 }
