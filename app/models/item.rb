@@ -1,6 +1,14 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
+  has_many :item_images
+  has_many :likes, dependent: :destroy
+  
+  def like_user(user_id, item_id)
+    Like.find_by(user_id: user_id, item_id: item_id)
+  end
+  
+  has_one :order
   has_many :item_images, dependent: :destroy
   has_one :order, dependent: :destroy
   has_one :sele, dependent: :destroy

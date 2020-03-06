@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
 
   def show
     @item_image = @item.item_images[0].url.url
+    @like = Like.where(item_id: params[:id], user_id: current_user.id)
     @category_flag = category_flag(@item.category)
     @next_id, @prev_id = set_page(@item)
   end
