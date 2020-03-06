@@ -1,0 +1,27 @@
+.wrapper 
+  = render 'shared/header'
+  - breadcrumb :history
+  = render "/shared/breadCrumb"
+  .wrapper__main
+    .mp-container
+      = render 'shared/myPageSideBar'
+      .mp-container__mp-content
+        .main__single-container
+          %h2.main__single-container__head
+            = "売上履歴"
+        %section.my-items-container
+          .my-items-container__contents
+            .my-items-container__contents__list.is-active
+              %ul.my-items-container__contents__list__items
+                = render @seles
+            .csv-footer
+              = link_to "CSV出力", history_seles_path(format: :csv), class: "csv-btn"
+            .page-number
+              = @seles.current_page
+          .my-pagenate
+            = paginate(@seles)
+    = link_to new_item_path, class: 'sell-icon' do
+      = render 'shared/sell-icon'
+
+  = render "/shared/footerFirst"
+  = render "/shared/footerSecond"

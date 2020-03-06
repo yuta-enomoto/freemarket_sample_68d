@@ -1,0 +1,12 @@
+.wrapper
+  = render 'shared/sub_header'
+
+  .main
+    %h2.main__regTitle 新規会員登録
+    .main__regSelect
+      = link_to new_user_registration_path, class: "main__regLink" do
+        %i.far.fa-envelope.main__icon      
+        %span.main__mailRegText メールアドレスで登録する
+      = render partial: "/shared/snsAuth", locals: {str: "登録"}
+
+  = render 'shared/sub_footer'

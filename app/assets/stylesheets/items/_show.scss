@@ -18,14 +18,29 @@
           margin: 16px 0 0;
           
           .image-main {
-            padding: 0 30px;
-            height: 346px;
-            width: 100%;
-            object-fit: cover;
+            height: 470px;
+            position: relative;
+            .item-sold {
+              position: absolute;
+              top: 0;
+              left: 0;
+              border-top: 100px solid #ea352d ;
+              border-right: 100px solid transparent;
+              border-bottom: 100px solid transparent;
+              border-left: 100px solid #ea352d ;
+              &__inner {
+                position: absolute;
+                top: -60px;
+                left: -97px;
+                transform: rotate(-45deg);
+                font-size: 50px;
+                color: $wh;
+                font-weight: 600;
+              }
+            }
             .main-photo{
               width: 100%;
-              height: 346px;
-              padding: 0 30px;
+              height: 470px;
               object-fit: cover;
             }
           }
@@ -33,10 +48,10 @@
             display: flex;
             flex-wrap: wrap;
             width: 100%;
-            padding: 0 60px;
             .item_show_images {
               width: 100px;
-              height: 87px;
+              height: 100px;
+              object-fit: cover;
               vertical-align: bottom;
             }
           }
@@ -66,14 +81,40 @@
           text-align: center;
           a{
             color: white;
+            padding: 16px 226px;
           }
-            
+        }
+        &__edit {
+          width: 620px;
+          height: 60px;
+          background-color:  #EA352D;
+          margin-top: 16px;
+          font-size: 16px;
+          line-height: 60px;
+          text-align: center;
+          a{
+            color: white;
+            padding: 21px 270px;
+          }
+        }
+        &__delete {
+          width: 620px;
+          height: 60px;
+          background-color: rgb(165, 165, 165);
+          margin-top: 16px;
+          font-size: 16px;
+          line-height: 60px;
+          text-align: center;
+          a{
+            color: white;
+            padding: 21px 238px;
+          }
         }
         
         &__header {
           line-height: 1.5;
           font-size: 18px;
-          margin-bottom: 30px;
+          padding: 30px 0;
         }
         &__table {
           margin-bottom: 20px;

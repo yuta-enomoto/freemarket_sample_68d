@@ -25,7 +25,6 @@
     
     &__product-list{
       display: flex;
-      justify-content: space-between;
     }
   }
 
@@ -33,13 +32,33 @@
       &__content {
         max-width: 200px;
         max-height: 245px;
+        margin: 0px 88px 0 0;
       }
 
         &__contentLink {
           display: block;
-
+          position: relative;
           &:hover {
             opacity: .5;
+          }
+          .item-sold {
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-top: 30px solid #ea352d ;
+            border-right: 30px solid transparent;
+            border-bottom: 30px solid transparent;
+            border-left: 30px solid #ea352d ;
+            &__inner {
+              text-align: center;
+              position: absolute;
+              top: -18px;
+              left: -30px;
+              transform: rotate(-45deg);
+              font-size: 15px;
+              color: $wh;
+              font-weight: 600;
+            }
           }
         }
 

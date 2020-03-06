@@ -9,12 +9,16 @@
           = @item.name
         .is-main__content__top__item__body
           .image-main
+            - unless @item.stock_status
+              .item-sold
+                .item-sold__inner
+                  = "SOLD"
             = image_tag @item_image, class:'main-photo'
           %ul.item-image-sub_top
             = render partial: "/shared/item_show_images", collection: @item.item_images, as: "item_image"
         
         .is-main__content__top__item__price
-          %span= "¥ #{@item.price}"
+          %span= "¥ #{@item.price.to_s(:delimited)}"
           .is-main__content__top__item__price__detail
             %span= "(税込み)"
             %span= "送料込み"
@@ -24,11 +28,13 @@
             =link_to "商品の編集", edit_item_path(@item), method: :get
           .is-main__content__top__item__delete
             =link_to "この商品を削除する",  item_path(@item), method: :delete
-
         - else 
-          .is-main__content__top__item__buy
-            =link_to "購入画面に進む", item_orders_path(@item.id)
-
+          - if @item.stock_status
+            .is-main__content__top__item__buy
+              = link_to "購入画面に進む", item_orders_path(@item.id)
+          - else
+            .is-main__content__top__item__delete
+              %a= "売り切れました"
         .is-main__content__top__item__header
           = @item.description
         .is-main__content__top__item__table
@@ -38,7 +44,7 @@
                 %th
                   = "出品者"
                 %td
-                  - if current_user.id == @item.user_id
+                  - if user_signed_in? && current_user.id == @item.user_id
                     = link_to user_path(current_user.id) do
                       = @item.user.nickname
                   - else
@@ -48,11 +54,18 @@
                 %th
                   = "カテゴリー"
                 %td
-                  = link_to "ベビー・キッズ", '#'
-                  %br
-                  = link_to "ベビー服(男女兼用) ~95cm", '#'
-                  %br
-                  = link_to "アウター", '#'
+                  - if @category_flag == 3
+                    = link_to @item.category.parent.parent.name, "#"
+                    %br
+                    = link_to @item.category.parent.name, "#"
+                    %br
+                    = link_to @item.category.name, "#"
+                  - elsif @category_flag == 2
+                    = link_to @item.category.parent.name, "#"
+                    %br
+                    = link_to @item.category.name, "#"
+                  - else
+                    = link_to @item.category.name, "#"
               %tr
                 %th
                   = "ブランド"

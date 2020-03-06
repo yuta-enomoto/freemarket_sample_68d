@@ -1,0 +1,35 @@
+.del-main {
+  height: 347px;
+  width: 100%;
+
+  &__notification {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 95px 0 0;
+    font-size: 25px;
+  }
+
+  &__main {
+    display: flex;
+    justify-content: center;
+    margin: 80px 0 0;
+
+    a {
+      width: 130px;
+      line-height: 50px;
+      text-align: center;
+      height: 50px;
+      background-color: skyblue;
+      border-radius: 20px;
+      color: #fff;
+      border: 0;
+      font-size: 18px;
+      margin: 0px 30px;
+      &:hover {
+        background-color: rgb(93, 182, 218);
+      }
+    }
+  }
+} 
